@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!textEl || !citeEl || !dotsEl || !card) return;
 
   var quotes = [
-    { text: '“De wereld is een boek, en wie niet reist, leest slechts één bladzijde.”', cite: '— toegeschreven aan Augustinus' },
+    { text: '“De wereld is een boek, en wie niet reist, leest slechts één bladzijde.”', cite: 'toegeschreven aan Augustinus' },
     { text: '“Reizen is het enige dat je koopt dat je rijker maakt.”', cite: '' },
     { text: '“Het leven is kort, en de wereld is groot.”', cite: '' },
     { text: '“Ik ben niet overal geweest, maar het staat op mijn lijstje.”', cite: '' },
-    { text: '“Een schip in de haven is veilig, maar daar zijn schepen niet voor gebouwd.”', cite: '— John A. Shedd' },
-    { text: '“Het leven is ofwel een dapper avontuur, of het is helemaal niets.”', cite: '— Helen Keller' }
+    { text: '“Een schip in de haven is veilig, maar daar zijn schepen niet voor gebouwd.”', cite: 'John A. Shedd' },
+    { text: '“Het leven is ofwel een dapper avontuur, of het is helemaal niets.”', cite: 'Helen Keller' }
   ];
 
   var current = 0;
