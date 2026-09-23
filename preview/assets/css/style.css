@@ -323,8 +323,9 @@ section{padding:88px 0}
 
 /* Cruise catalog: rederijen, bestemmingen, uitgelicht, modal */
 .line-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:36px}
+.line-grid--thumbs{row-gap:46px}
 .line-card{
-  background:#fff;border:1.5px solid var(--border);border-radius:18px;
+  position:relative;background:#fff;border:1.5px solid var(--border);border-radius:18px;
   padding:26px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:12px;text-align:center;cursor:pointer;font-family:inherit;min-height:132px;
   transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
@@ -335,6 +336,14 @@ section{padding:88px 0}
   display:none;font-family:'Manrope',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);
 }
 .line-card__tag{font-size:.76rem;color:var(--ink-muted);line-height:1.35}
+.line-card__thumb{
+  position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);
+  width:48px;height:48px;border-radius:50%;overflow:hidden;z-index:2;
+  border:3px solid #fff;box-shadow:0 6px 14px -6px rgba(18,33,63,.4);
+  transition:transform .2s ease;
+}
+.line-card:hover .line-card__thumb{transform:translateX(-50%) scale(1.08)}
+.line-card__thumb img{width:100%;height:100%;object-fit:cover;display:block}
 
 .dest-card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
 .mini-dest-card{
