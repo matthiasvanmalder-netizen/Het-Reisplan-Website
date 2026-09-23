@@ -278,7 +278,7 @@ section{padding:88px 0}
 }
 .dest-hero h1{color:#fff;font-size:2.6rem;max-width:640px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
 
-.dest-body{padding:76px 0 0}
+.dest-body{padding:76px 0 56px}
 .dest-body__grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start}
 .dest-body p{font-size:1.04rem}
 .dest-body p:first-of-type{font-size:1.14rem;color:var(--ink)}
