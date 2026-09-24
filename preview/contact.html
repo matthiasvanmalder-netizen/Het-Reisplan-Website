@@ -2,11 +2,11 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<script>(function(){try{var t=localStorage.getItem("hrp-theme")||new URLSearchParams(location.search).get("theme");if(t==="gold")document.documentElement.setAttribute("data-theme","gold");}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem("hrp-theme")||new URLSearchParams(location.search).get("theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact | Het Reisplan</title>
 <meta name="description" content="Neem contact op met Het Reisplan in Keerbergen: telefonisch of via het contactformulier, voor een reis volledig op maat.">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 <style>
   .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
   .info-list{display:flex;flex-direction:column;gap:26px;margin:0}
@@ -19,7 +19,7 @@
   .field label{font-size:.85rem;font-weight:600;color:var(--ink)}
   .field input,.field textarea{
     border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;font-family:inherit;
-    font-size:.95rem;background:#fff;color:var(--ink);resize:vertical;
+    font-size:.95rem;background:var(--surface);color:var(--ink);resize:vertical;
   }
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
   .form-note{font-size:.82rem;color:var(--ink-muted);margin:0}
@@ -96,7 +96,15 @@
           </div>
           <div>
             <dt>Bereikbaarheid</dt>
-            <dd>Als &lsquo;home based&rsquo; kantoor werken we op afspraak, telefonisch of bij je thuis.</dd>
+            <dd>Als &lsquo;home based&rsquo; reisbureau werken we op afspraak, telefonisch of kom langs tijdens de openingsuren.</dd>
+          </div>
+          <div>
+            <dt>Openingsuren</dt>
+            <dd>
+              Ma&ndash;Vr: 10u&ndash;18u30, uitgezonderd wo<br>
+              Wo: na afspraak<br>
+              Za: 10u&ndash;12u30, na afspraak
+            </dd>
           </div>
         </dl>
 
@@ -106,7 +114,11 @@
       </div>
 
       <div>
-        <form id="contact-form" class="form-card">
+        <form id="contact-form" class="form-card" action="https://formsubmit.co/info@hetreisplan.be" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe aanvraag via hetreisplan.be">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field-row">
             <div class="field">
               <label for="name">Naam en voornaam*</label>
@@ -126,7 +138,7 @@
             <textarea id="message" name="message" rows="6" required></textarea>
           </div>
           <button class="btn btn--navy" type="submit">Bericht versturen</button>
-          <p class="form-note" id="form-note">Dit is een ontwerp ter review. Het formulier wordt bij de bouw van de echte site gekoppeld zodat aanvragen rechtstreeks in je mailbox terechtkomen.</p>
+          <p class="form-note" id="form-note">We gebruiken je gegevens uitsluitend om jouw aanvraag te beantwoorden.</p>
         </form>
       </div>
 
@@ -172,13 +184,8 @@
 </footer>
 
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/theme-toggle.js"></script>
+<script src="assets/js/theme-toggle.js?v=2"></script>
 <script>
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    document.getElementById('form-note').textContent = 'Bedankt! (Demo-ontwerp: dit bericht is niet echt verstuurd.)';
-  });
-
   (function () {
     var params = new URLSearchParams(window.location.search);
     var interesse = params.get('interesse');

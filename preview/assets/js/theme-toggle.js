@@ -2,8 +2,8 @@
   var KEY = 'hrp-theme';
 
   function apply(theme) {
-    if (theme === 'gold') {
-      document.documentElement.setAttribute('data-theme', 'gold');
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
       document.documentElement.removeAttribute('data-theme');
     }
@@ -21,14 +21,14 @@
     btn.type = 'button';
 
     function label() {
-      return document.documentElement.getAttribute('data-theme') === 'gold'
-        ? 'Bekijk: Indigo versie'
-        : 'Bekijk: Navy & Goud versie';
+      return document.documentElement.getAttribute('data-theme') === 'dark'
+        ? 'Bekijk: Lichte versie'
+        : 'Bekijk: Donkere versie';
     }
 
     btn.textContent = label();
     btn.addEventListener('click', function () {
-      var next = document.documentElement.getAttribute('data-theme') === 'gold' ? 'default' : 'gold';
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'default' : 'dark';
       apply(next);
       localStorage.setItem(KEY, next);
       btn.textContent = label();
