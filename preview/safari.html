@@ -2,11 +2,10 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<script>(function(){try{var t=localStorage.getItem("hrp-theme")||new URLSearchParams(location.search).get("theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Safari | Het Reisplan</title>
 <meta name="description" content="Safari op maat: oog in oog met wilde dieren in hun natuurlijke habitat, verblijf in zorgvuldig geselecteerde lodges en begeleide game drives.">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
 </head>
 <body>
 
@@ -199,10 +198,18 @@
       <button type="button" class="modal-close" id="cruise-modal-close" aria-label="Sluiten">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
-      <img id="cruise-modal-img" class="modal-card__img" src="" alt="" onerror="this.style.display='none'">
+      <span class="modal-card__img-wrap" id="cruise-modal-img-wrap"><img id="cruise-modal-img" class="modal-card__img" src="" alt="" onerror="this.style.display='none'"></span>
       <span class="eyebrow" id="cruise-modal-tagline"></span>
       <h3 id="cruise-modal-title" style="margin-top:10px"></h3>
       <p id="cruise-modal-desc"></p>
+      <div class="modal-card__fact" id="cruise-modal-signature-wrap">
+        <span class="modal-card__fact-label">Kenmerkend</span>
+        <p id="cruise-modal-signature"></p>
+      </div>
+      <div class="modal-card__fact" id="cruise-modal-idealfor-wrap">
+        <span class="modal-card__fact-label">Ideaal voor</span>
+        <p id="cruise-modal-idealfor"></p>
+      </div>
       <a class="btn btn--accent" id="cruise-modal-cta" href="contact.html">Ik heb interesse</a>
     </div>
   </div>
@@ -211,7 +218,7 @@
     <div class="wrap">
       <span class="eyebrow">Ter inspiratie</span>
       <h2 style="margin-top:12px">Zo kan jouw reis eruitzien</h2>
-      <p class="lead" style="margin-top:14px;max-width:640px">Enkele voorbeelden van safari's die we eerder op maat samenstelden. Telkens een vertrekpunt, geen vast pakket &mdash; we stemmen alles af op jouw wensen.</p>
+      <p class="lead" style="margin-top:14px;max-width:640px">Enkele voorbeelden van safari's die we eerder op maat samenstelden. Telkens een vertrekpunt, geen vast pakket. We stemmen alles af op jouw wensen.</p>
       <!-- PLACEHOLDER-voorbeeldreizen: te vervangen door uitgewerkte reisvoorstellen zodra aangeleverd -->
       <div class="trip-selector">
 
@@ -238,7 +245,7 @@
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 7-8 &middot; Ngorongoro krater</b><p>Afdalen in een van de dichtste concentraties wildlife ter wereld.</p></div></li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 9-10 &middot; Zanzibar (optioneel)</b><p>Afsluiten met een paar dagen strand na de safari.</p></div></li>
               </ul>
-              <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie &mdash; we stellen dit reisschema samen op maat van jouw wensen.</p>
+              <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.</p>
               <a class="btn btn--accent btn--sm" href="contact.html?interesse=Safari%20Tanzania">Vraag deze reis aan</a>
             </div>
           </div>
@@ -267,7 +274,7 @@
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 6-7 &middot; Lake Naivasha</b><p>Rustiger tussenstop met boottochten tussen nijlpaarden en vogels.</p></div></li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 8-9 &middot; Amboseli</b><p>Olifanten met de Kilimanjaro op de achtergrond.</p></div></li>
               </ul>
-              <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie &mdash; we stellen dit reisschema samen op maat van jouw wensen.</p>
+              <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.</p>
               <a class="btn btn--accent btn--sm" href="contact.html?interesse=Safari%20Kenia">Vraag deze reis aan</a>
             </div>
           </div>
@@ -296,7 +303,7 @@
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 7-9 &middot; Chobe &amp; Savuti</b><p>E&eacute;n van de grootste olifantenpopulaties ter wereld, aan de oevers van de Chobe-rivier.</p></div></li>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 10 &middot; Terugreis</b><p>Via Johannesburg terug naar Brussel.</p></div></li>
               </ul>
-              <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie &mdash; we stellen dit reisschema samen op maat van jouw wensen.</p>
+              <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.</p>
               <a class="btn btn--accent btn--sm" href="contact.html?interesse=Safari%20Botswana">Vraag deze reis aan</a>
             </div>
           </div>
@@ -316,7 +323,6 @@
           <img src="assets/img/intercontinentaal.webp" alt="Vrouw met lama in Peru">
           <div class="route-card__body">
             <h3>Intercontinentaal</h3>
-            <span class="route-card__go">Ontdek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
 
@@ -324,7 +330,6 @@
           <img src="assets/img/strand-hotel.webp" alt="Infinity pool met zicht op zee">
           <div class="route-card__body">
             <h3>Strand &amp; Hotel</h3>
-            <span class="route-card__go">Ontdek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
 
@@ -332,7 +337,6 @@
           <img src="assets/img/cruises.webp" alt="Cruiseschip op zee bij zonsondergang">
           <div class="route-card__body">
             <h3>Cruises</h3>
-            <span class="route-card__go">Ontdek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
 
@@ -392,7 +396,6 @@
 </footer>
 
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/theme-toggle.js?v=2"></script>
 <script src="assets/js/catalog-modal.js"></script>
 <script src="assets/js/trip-plans.js"></script>
 </body>
