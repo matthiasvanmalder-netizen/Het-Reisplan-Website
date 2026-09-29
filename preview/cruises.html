@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cruises | Het Reisplan</title>
 <meta name="description" content="Cruises op maat: ontdek de wereld op een unieke en ontspannen manier, met alle luxe en comfort aan boord.">
-<link rel="stylesheet" href="assets/css/style.css?v=13">
+<link rel="stylesheet" href="assets/css/style.css?v=22">
 </head>
 <body>
 
@@ -77,172 +77,214 @@
   <section class="section-alt">
     <div class="wrap">
       <span class="eyebrow">Kies je stijl</span>
-      <h2 style="margin-top:12px">Cruises per rederij</h2>
-      <p class="lead" style="margin-top:14px;max-width:640px">Als CruisePlus-partner werken we samen met de mooiste rederijen ter wereld. Klik op een rederij voor meer uitleg, en laat ons weten welke jou aanspreekt.</p>
+      <h2 style="margin-top:12px">Welke cruise past bij jou?</h2>
+      <p class="lead" style="margin-top:14px;max-width:680px">Van een zeilschip met 32 gasten tot een luxeschip met 1.200: de grootte van het schip bepaalt het meest. Ze beslist over de sfeer aan boord, de faciliteiten en de havens waar je kan aanmeren. Klik op een type voor uitleg en de rederijen waarmee we werken.</p>
 
-      <div class="line-grid">
+      <div class="ctype-chart" role="tablist" aria-label="Soorten cruises">
+        <div class="ctype-chart__axis" aria-hidden="true">
+          <span class="ctype-chart__axis-label">Gasten aan boord</span>
+          <span class="ctype-chart__ticks"><span>0</span><span>250</span><span>500</span><span>750</span><span>1.000</span><span>1.250</span></span>
+        </div>
 
-        <button type="button" class="line-card" data-name="Silversea Cruises" data-tagline="Ultra-luxe, all-inclusive, op de meest exclusieve schepen." data-desc="Silversea werd in 1994 opgericht als 's werelds eerste all-inclusive premium cruiselijn en behoort vandaag tot de Royal Caribbean Group. De vloot telt twaalf schepen: acht Classic-schepen voor klassieke luxe cruises en vier Expedition-schepen voor verre poolreizen." data-signature="Het S.A.L.T.-programma (Sea And Land Taste) laat gasten elke bestemming proeven via lokaal eten en drank, aangevuld met de Romeins geïnspireerde Otium Spa." data-ideal-for="Wie klassieke ultra-luxe combineert met interesse in verre poolexpedities." data-img="assets/img/rederijen/silversea.png">
-          <img src="assets/img/rederijen/silversea.png" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Silversea Cruises</span>
-          <span class="line-card__tag">Ultra-luxe &amp; all-inclusive</span>
+        <button type="button" class="ctype-row" role="tab" id="ctype-tab-zeil" aria-controls="ctype-zeil" aria-selected="true">
+          <span class="ctype-row__name">Zeilschip</span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:2.6%;--width:15.6%"></span></span>
+          <span class="ctype-row__range">32&ndash;227</span>
         </button>
-
-        <button type="button" class="line-card" data-name="Regent Seven Seas Cruises" data-tagline="Het meest all-inclusive luxeconcept op zee." data-desc="Regent Seven Seas ontstond in 1992 uit de fusie van Radisson Cruises en Seven Seas Cruises, en maakt sinds 2014 deel uit van Norwegian Cruise Line Holdings. De vloot bestaat uit zes volledig suite- en balkonschepen, met een zevende op komst in 2026." data-signature="&lsquo;The Most Inclusive Luxury Experience&rsquo;: suites, gastronomie, dranken, fooien én excursies aan wal zijn standaard inbegrepen, zonder verrassingen achteraf." data-ideal-for="Wie vooraf precies wil weten dat alles is inbegrepen, zonder rekenwerk achteraf." data-img="assets/img/rederijen/regent-seven-seas.png">
-          <img src="assets/img/rederijen/regent-seven-seas.png" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Regent Seven Seas</span>
-          <span class="line-card__tag">Volledig all-inclusive</span>
+        <button type="button" class="ctype-row" role="tab" id="ctype-tab-rivier" aria-controls="ctype-rivier" aria-selected="false" tabindex="-1">
+          <span class="ctype-row__name">Riviercruise</span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:10.4%;--width:5.6%"></span></span>
+          <span class="ctype-row__range">&plusmn; 130&ndash;200</span>
         </button>
-
-        <button type="button" class="line-card" data-name="Seabourn" data-tagline="Kleinschalig, persoonlijk, ongehaast luxueus." data-desc="Seabourn werd in 1987 opgericht om het gevoel van een privéjacht naar zee te brengen: kleinschalige schepen waar gasten zich lid voelen van een select gezelschap. Naast de klassieke luxeschepen vaart Seabourn sinds 2022 ook met de expeditieschepen Venture en Pursuit." data-signature="Intuïtieve service met een hoge bemanning-gastverhouding, gratis minibar en drank op de kamer, en verrassende extra's zoals een gratis massage aan het zwembad." data-ideal-for="Wie de sfeer van een privéjacht zoekt, met of zonder poolexpeditie." data-img="assets/img/rederijen/seabourn.png">
-          <img src="assets/img/rederijen/seabourn.png" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Seabourn</span>
-          <span class="line-card__tag">Kleinschalig &amp; intiem</span>
+        <button type="button" class="ctype-row" role="tab" id="ctype-tab-expeditie" aria-controls="ctype-expeditie" aria-selected="false" tabindex="-1">
+          <span class="ctype-row__name">Expeditie</span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:8%;--width:13.6%"></span></span>
+          <span class="ctype-row__range">&plusmn; 100&ndash;270</span>
         </button>
-
-        <button type="button" class="line-card" data-name="Oceania Cruises" data-tagline="Culinaire cruises voor fijnproevers." data-desc="Oceania Cruises werd in 2003 opgericht door cruise-veteranen Frank Del Rio en Bob Binder, met &eacute;&eacute;n missie: een cruise laten beoordelen op wat er op het bord ligt. Chef Jacques P&eacute;pin was de eerste culinaire directeur en legde de basis van het gastronomische DNA van de rederij." data-signature="&lsquo;The Finest Cuisine at Sea&rsquo;: meerdere specialty-restaurants (Frans, Aziatisch, Italiaans, steakhouse) zonder meerprijs, plus kookworkshops en chef-geleide excursies aan wal." data-ideal-for="Fijnproevers voor wie de bestemming evenzeer via de keuken wordt ontdekt." data-img="assets/img/rederijen/oceania.svg">
-          <img src="assets/img/rederijen/oceania.svg" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Oceania Cruises</span>
-          <span class="line-card__tag">Culinair genieten</span>
+        <button type="button" class="ctype-row" role="tab" id="ctype-tab-jacht" aria-controls="ctype-jacht" aria-selected="false" tabindex="-1">
+          <span class="ctype-row__name">Jachtcruise</span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:23.8%;--width:12.4%"></span></span>
+          <span class="ctype-row__range">298&ndash;452</span>
         </button>
-
-        <button type="button" class="line-card" data-name="Explora Journeys" data-tagline="Modern, ruimtelijk en ontspannen luxe." data-desc="Explora Journeys werd in 2021 gelanceerd door de MSC Group, het familiebedrijf van de familie Aponte met eeuwenlange zeevaarttraditie. EXPLORA I (2023) en EXPLORA II (2024) zijn de eerste van zes nieuwe schepen, elk met uitsluitend oceaanzicht-suites." data-signature="De &lsquo;Ocean State of Mind&rsquo;-filosofie: elk schip is een drijvend luxehotel met privéterras en glas-tot-plafond ramen bij elke suite." data-ideal-for="Wie eigentijdse, Europese vormgeving en ruimte verkiest boven traditionele scheepsformaliteit." data-img="assets/img/rederijen/explora-journeys.jpg">
-          <img src="assets/img/rederijen/explora-journeys.jpg" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Explora Journeys</span>
-          <span class="line-card__tag">Modern &amp; ruimtelijk</span>
+        <button type="button" class="ctype-row" role="tab" id="ctype-tab-luxe" aria-controls="ctype-luxe" aria-selected="false" tabindex="-1">
+          <span class="ctype-row__name">Luxe oceaancruise</span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:36%;--width:60%"></span></span>
+          <span class="ctype-row__range">&plusmn; 450&ndash;1.200</span>
         </button>
+        <p class="ctype-chart__note">Indicatief aantal gasten per schip, bij de rederijen waarmee we samenwerken.</p>
+      </div>
 
-        <button type="button" class="line-card" data-name="Ritz-Carlton Yacht Collection" data-tagline="Reizen als aan boord van een priv&eacute;jacht." data-desc="Opgericht in 2017 om het iconische Ritz-Carlton-gevoel naar zee te brengen. De vloot bestaat uit drie superjachten (Evrima, Ilma en Luminara), elk met uitsluitend suites met priv&eacute;terras." data-signature="De kenmerkende Marina achteraan het schip voor watersporten, en service die &lsquo;gevoeld wordt, niet aangekondigd&rsquo;." data-ideal-for="Wie de Ritz-Carlton-gastvrijheid wil combineren met de vrijheid van een jachtvakantie." data-img="assets/img/rederijen/ritz-carlton-yacht.svg">
-          <img src="assets/img/rederijen/ritz-carlton-yacht.svg" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Ritz-Carlton Yacht Collection</span>
-          <span class="line-card__tag">Als een priv&eacute;jacht</span>
-        </button>
+      <div class="ctype-panel" role="tabpanel" id="ctype-zeil" aria-labelledby="ctype-tab-zeil">
+        <div class="ctype-panel__img"><img src="assets/img/cruisetypes/zeilschip.jpg" alt="Vijfmaster onder zeil op een kalme zee"></div>
+        <div class="ctype-panel__body">
+          <h3>Zeilschip</h3>
+          <p>Varen zoals het vroeger ging: onder echte zeilen, met het geluid van wind en water. De sfeer is ontspannen en informeel, en je leeft veel buiten aan dek. Op de tall ships van Star Clippers mag je onder begeleiding zelfs de mast in.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gasten aan boord</dt><dd>32 tot 227</dd></div>
+            <div><dt>Vaargebieden</dt><dd>Middellandse Zee, Cara&iuml;ben, Costa Rica en Panama</dd></div>
+            <div><dt>Typische duur</dt><dd>Meestal een week, van 3 tot 14 nachten</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Wie romantiek en buitenleven belangrijker vindt dan veel faciliteiten</dd></div>
+          </dl>
+          <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
+          <div class="ctype-lines">
+            <button type="button" class="line-chip" data-line="star-clippers"><img src="assets/img/rederijen/star-clippers.svg" alt="Star Clippers"></button>
+            <button type="button" class="line-chip" data-line="ponant"><img src="assets/img/rederijen/ponant.svg" alt="Ponant"></button>
+          </div>
+          <a class="btn btn--accent" href="contact.html?interesse=Cruise%20met%20een%20zeilschip">Vraag een zeilcruise aan</a>
+        </div>
+      </div>
 
-        <button type="button" class="line-card" data-name="Ponant" data-tagline="Franse elegantie op expeditie." data-desc="Ponant werd in 1988 opgericht door officieren van de Franse koopvaardij, als eerste Franse cruiserederij. Naast de sierlijke zeilboot Le Ponant vaart de vloot kleine expeditieschepen genoemd naar Franse ontdekkingsreizigers, en de ijsbreker Le Commandant Charcot die tot aan beide polen kan varen." data-signature="De &lsquo;Blue Eye&rsquo;, 's werelds eerste multisensori&euml;le onderwaterlounge, en nooit meer dan 500 gasten aan boord." data-ideal-for="Wie Franse verfijning wil combineren met avontuurlijke, verre bestemmingen." data-img="assets/img/rederijen/ponant.svg">
-          <img src="assets/img/rederijen/ponant.svg" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Ponant</span>
-          <span class="line-card__tag">Franse elegantie</span>
-        </button>
+      <div class="ctype-panel" role="tabpanel" id="ctype-rivier" aria-labelledby="ctype-tab-rivier" hidden>
+        <div class="ctype-panel__img"><img src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Rivier tussen heuvels met wijngaarden en een burcht"></div>
+        <div class="ctype-panel__body">
+          <h3>Riviercruise</h3>
+          <p>Elke dag een nieuwe stad of een nieuw dorp, vaak aangemeerd op wandelafstand van het centrum. Geen open zee en dus geen deining: je glijdt rustig langs wijngaarden, kastelen en stadsgezichten. Een ideale eerste kennismaking met cruisen.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gasten aan boord</dt><dd>Ongeveer 130 tot 200</dd></div>
+            <div><dt>Vaargebieden</dt><dd>Rijn, Donau, Moezel, Douro en Seine, en de Mekong in Zuidoost-Azi&euml;</dd></div>
+            <div><dt>Typische duur</dt><dd>Meestal 7 tot 14 nachten</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Een eerste cruise, cultuurliefhebbers en wie liever niet de open zee op gaat</dd></div>
+          </dl>
+          <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
+          <div class="ctype-lines">
+            <button type="button" class="line-chip" data-line="amawaterways"><img src="assets/img/rederijen/amawaterways.svg" alt="AmaWaterways"></button>
+            <button type="button" class="line-chip" data-line="scenic"><img src="assets/img/rederijen/scenic.svg" alt="Scenic" style="filter:invert(1)"></button>
+          </div>
+          <a class="btn btn--accent" href="contact.html?interesse=Riviercruise">Vraag een riviercruise aan</a>
+        </div>
+      </div>
 
-        <button type="button" class="line-card" data-name="Swan Hellenic" data-tagline="Ontdekking met wetenschappelijke diepgang." data-desc="Het verhaal begint in 1950 met culturele reizen naar Griekenland onder leiding van archeoloog Sir Mortimer Wheeler. Na een heropstart in 2021 vaart de volledig nieuwe vloot (SH Minerva, SH Vega, SH Diana) met ijsklasse-rompen naar de meest afgelegen streken." data-signature="Elke reis wordt begeleid door een team van historici, natuurgidsen en fotografen: cultuur en wetenschap staan centraal naast avontuur." data-ideal-for="Nieuwsgierige reizigers die tijdens een poolexpeditie ook iets willen bijleren." data-img="assets/img/rederijen/swan-hellenic.png">
-          <img src="assets/img/rederijen/swan-hellenic.png" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Swan Hellenic</span>
-          <span class="line-card__tag">Expeditie met diepgang</span>
-        </button>
+      <div class="ctype-panel" role="tabpanel" id="ctype-expeditie" aria-labelledby="ctype-tab-expeditie" hidden>
+        <div class="ctype-panel__img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="IJsberg in de poolzee"></div>
+        <div class="ctype-panel__body">
+          <h3>Expeditie</h3>
+          <p>Kleine, stevige schepen die komen waar grote cruiseschepen niet kunnen of mogen: tussen het pakijs van Antarctica of langs de eilanden van de Galapagos. Met rubberboten (zodiacs) ga je dagelijks aan wal, begeleid door natuurgidsen en wetenschappers van aan boord.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gasten aan boord</dt><dd>Ongeveer 100 tot 270</dd></div>
+            <div><dt>Vaargebieden</dt><dd>Antarctica, Spitsbergen en de Noordpool, IJsland en Groenland, de Galapagos</dd></div>
+            <div><dt>Typische duur</dt><dd>Van een week (Galapagos) tot drie weken (Antarctica)</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Natuurliefhebbers die avontuur zoeken zonder in te boeten aan comfort</dd></div>
+          </dl>
+          <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
+          <div class="ctype-lines">
+            <button type="button" class="line-chip" data-line="silversea"><img src="assets/img/rederijen/silversea.png" alt="Silversea Cruises"></button>
+            <button type="button" class="line-chip" data-line="seabourn"><img src="assets/img/rederijen/seabourn.png" alt="Seabourn"></button>
+            <button type="button" class="line-chip" data-line="ponant"><img src="assets/img/rederijen/ponant.svg" alt="Ponant"></button>
+            <button type="button" class="line-chip" data-line="swan-hellenic"><img src="assets/img/rederijen/swan-hellenic.png" alt="Swan Hellenic"></button>
+          </div>
+          <a class="btn btn--accent" href="contact.html?interesse=Expeditiecruise">Vraag een expeditiecruise aan</a>
+        </div>
+      </div>
 
-        <button type="button" class="line-card" data-name="AmaWaterways" data-tagline="Riviercruises met karakter en comfort." data-desc="In 2002 opgericht als familiebedrijf door Rudi Schreiner, Kristin Karst en Jimmy Murphy. Van &eacute;&eacute;n schip op de Donau groeide de vloot uit tot meer dan dertig schepen op de rivieren van Europa, Zuidoost-Azi&euml; en Afrika." data-signature="AmaWaterways introduceerde de tweezijdige balkonhut, ondertussen door de hele sector gekopieerd, en is de enige riviercruiserederij opgenomen in de prestigieuze gastronomische Cha&icirc;ne des R&ocirc;tisseurs." data-ideal-for="Wie de persoonlijke, gastvrije sfeer van een familiebedrijf op de rivier zoekt." data-img="assets/img/rederijen/amawaterways.svg">
-          <img src="assets/img/rederijen/amawaterways.svg" alt="" class="line-card__logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">AmaWaterways</span>
-          <span class="line-card__tag">Riviercruises</span>
-        </button>
+      <div class="ctype-panel" role="tabpanel" id="ctype-jacht" aria-labelledby="ctype-tab-jacht" hidden>
+        <div class="ctype-panel__img"><img src="assets/img/cruisetypes/jacht.jpg" alt="Superjacht voor anker in een baai aan de Middellandse Zee"></div>
+        <div class="ctype-panel__body">
+          <h3>Jachtcruise</h3>
+          <p>De sfeer van een priv&eacute;jacht, met de service van een luxehotel. Aan boord zijn er enkel suites, elk met een eigen terras. Door hun formaat leggen deze jachten aan in kleinere havens en baaien, en vanaf het achterdek stap je zo het water in.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gasten aan boord</dt><dd>298 tot 452</dd></div>
+            <div><dt>Vaargebieden</dt><dd>Middellandse Zee, Cara&iuml;ben, Azi&euml; en de Stille Oceaan</dd></div>
+            <div><dt>Typische duur</dt><dd>Meestal een week</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Wie hotelluxe wil combineren met de vrijheid van een jachtvakantie</dd></div>
+          </dl>
+          <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
+          <div class="ctype-lines">
+            <button type="button" class="line-chip" data-line="ritz-carlton-yacht"><img src="assets/img/rederijen/ritz-carlton-yacht.svg" alt="The Ritz-Carlton Yacht Collection"></button>
+          </div>
+          <a class="btn btn--accent" href="contact.html?interesse=Jachtcruise">Vraag een jachtcruise aan</a>
+        </div>
+      </div>
 
-        <button type="button" class="line-card" data-name="Scenic" data-tagline="All-inclusive luxe op de rivier." data-desc="Opgericht in 1986 door de Australische ondernemer Glen Moroney, met de eerste riviercruise in 2008. Vandaag telt de vloot vijftien schepen in Europa en Zuidoost-Azi&euml;." data-signature="De &lsquo;Space-Ships&rsquo;: een glazen zonnelounge die op elk balkon met &eacute;&eacute;n druk op de knop verandert in een priv&eacute;-wintertuin, plus butlerservice en gratis e-bikes." data-ideal-for="Wie op de rivier evenveel comfort verwacht als op een oceaancruise." data-img="assets/img/rederijen/scenic.svg" data-invert="true">
-          <img src="assets/img/rederijen/scenic.svg" alt="" class="line-card__logo" style="filter:invert(1)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="line-card__name" style="display:none">Scenic</span>
-          <span class="line-card__tag">All-inclusive rivier</span>
-        </button>
-
+      <div class="ctype-panel" role="tabpanel" id="ctype-luxe" aria-labelledby="ctype-tab-luxe" hidden>
+        <div class="ctype-panel__img"><img src="assets/img/bestemmingen/wereldcruise.jpg" alt="Teakhouten dek van een cruiseschip bij zonsondergang" style="object-position:82% center"></div>
+        <div class="ctype-panel__body">
+          <h3>Luxe oceaancruise</h3>
+          <p>Een drijvend vijfsterrenhotel: ruime suites, meerdere restaurants, een spa en een uitgebreid programma aan boord. Groot genoeg voor veel keuze, en toch persoonlijk van sfeer. Deze schepen varen over alle wereldzee&euml;n.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gasten aan boord</dt><dd>Ongeveer 450 tot 1.200</dd></div>
+            <div><dt>Vaargebieden</dt><dd>Wereldwijd, van de Middellandse Zee en Noord-Europa tot Azi&euml; en de Cara&iuml;ben</dd></div>
+            <div><dt>Typische duur</dt><dd>Van 7 nachten tot wereldreizen van enkele maanden</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Wie comfort, gastronomie en veel keuze aan boord zoekt</dd></div>
+          </dl>
+          <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
+          <div class="ctype-lines">
+            <button type="button" class="line-chip" data-line="silversea"><img src="assets/img/rederijen/silversea.png" alt="Silversea Cruises"></button>
+            <button type="button" class="line-chip" data-line="regent-seven-seas"><img src="assets/img/rederijen/regent-seven-seas.png" alt="Regent Seven Seas Cruises"></button>
+            <button type="button" class="line-chip" data-line="seabourn"><img src="assets/img/rederijen/seabourn.png" alt="Seabourn"></button>
+            <button type="button" class="line-chip" data-line="oceania"><img src="assets/img/rederijen/oceania.svg" alt="Oceania Cruises"></button>
+            <button type="button" class="line-chip" data-line="explora-journeys"><img src="assets/img/rederijen/explora-journeys.jpg" alt="Explora Journeys"></button>
+          </div>
+          <a class="btn btn--accent" href="contact.html?interesse=Luxe%20oceaancruise">Vraag een luxecruise aan</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <span class="eyebrow">Kies je vaargebied</span>
-      <h2 style="margin-top:12px">Cruises per bestemming</h2>
-      <p class="lead" style="margin-top:14px;max-width:640px">Van de Middellandse Zee tot Antarctica: elk vaargebied heeft zijn eigen karakter. Klik door voor inspiratie.</p>
+      <span class="eyebrow">Deze maand uitgelicht</span>
+      <h2 style="margin-top:12px">Enkele actuele cruise-aanbiedingen</h2>
+      <p class="lead" style="margin-top:14px;max-width:640px">Een kleine greep uit het huidige aanbod via onze cruisepartner CruisePlus. Deze selectie werken we regelmatig bij.</p>
+      <!-- Deze sectie handmatig bijwerken: pas de 3 kaarten hieronder aan met actuele aanbiedingen. -->
+      <div class="offer-grid">
 
-      <div class="dest-card-grid">
+        <article class="offer">
+          <p class="offer__where">Zuid-Amerika</p>
+          <h3>SH Vega</h3>
+          <p class="offer__line">Swan Hellenic</p>
+          <dl class="offer__facts">
+            <div><dt>Vertrek</dt><dd>25 oktober 2026</dd></div>
+            <div><dt>Duur</dt><dd>7 dagen</dd></div>
+          </dl>
+          <p>Last minute naar Brazili&euml; met Swan Hellenic: een unieke kans om dit vaargebied te ontdekken aan boord van een expeditieschip.</p>
+          <a class="btn btn--accent btn--sm" href="contact.html?interesse=SH%20Vega%20%E2%80%93%20Swan%20Hellenic%2C%20Zuid-Amerika">Ik heb interesse</a>
+        </article>
 
-        <button type="button" class="mini-dest-card" data-name="Middellandse Zee" data-desc="Historische havensteden, azuurblauwe baaien en zonovergoten eilanden: een klassieker die nooit verveelt. Van Barcelona tot Santorini, elke stop heeft zijn eigen verhaal." data-img="assets/img/bestemmingen/middellandse-zee.jpg">
-          <img src="assets/img/bestemmingen/middellandse-zee.jpg" alt="">
-          <span class="mini-dest-card__label">Middellandse Zee</span>
-        </button>
+        <article class="offer">
+          <p class="offer__where">Galapagos</p>
+          <h3>Silver Origin</h3>
+          <p class="offer__line">Silversea Cruises</p>
+          <dl class="offer__facts">
+            <div><dt>Vertrek</dt><dd>18 februari 2027</dd></div>
+            <div><dt>Duur</dt><dd>10 dagen</dd></div>
+          </dl>
+          <p>Een unieke, begeleide Galapagos-cruise met Silversea: oog in oog met een van de meest bijzondere ecosystemen ter wereld.</p>
+          <a class="btn btn--accent btn--sm" href="contact.html?interesse=Silver%20Origin%20%E2%80%93%20Silversea%2C%20Galapagos">Ik heb interesse</a>
+        </article>
 
-        <button type="button" class="mini-dest-card" data-name="Cara&iuml;ben" data-desc="Palmbomen, kristalhelder water en kleurrijke eilandculturen, voor wie droomt van pure zon en zee tussen verschillende eilanden door." data-img="assets/img/bestemmingen/caraiben.jpg">
-          <img src="assets/img/bestemmingen/caraiben.jpg" alt="">
-          <span class="mini-dest-card__label">Cara&iuml;ben</span>
-        </button>
+        <article class="offer">
+          <p class="offer__where">Middellandse Zee</p>
+          <h3>Explora II</h3>
+          <p class="offer__line">Explora Journeys</p>
+          <dl class="offer__facts">
+            <div><dt>Vertrek</dt><dd>29 maart 2027</dd></div>
+            <div><dt>Duur</dt><dd>7 dagen</dd></div>
+          </dl>
+          <p>Een schitterende promotie voor de paasvakantie, aan boord van &eacute;&eacute;n van de nieuwste ultra-luxe schepen op de Middellandse Zee.</p>
+          <a class="btn btn--accent btn--sm" href="contact.html?interesse=Explora%20II%20%E2%80%93%20Explora%20Journeys%2C%20Middellandse%20Zee">Ik heb interesse</a>
+        </article>
 
-        <button type="button" class="mini-dest-card" data-name="Noorse Fjorden" data-desc="Steile rotswanden, ruisende watervallen en een indrukwekkende stilte: de natuur op zijn meest dramatisch, vanaf het dek van je schip." data-img="assets/img/bestemmingen/noorse-fjorden.jpg">
-          <img src="assets/img/bestemmingen/noorse-fjorden.jpg" alt="">
-          <span class="mini-dest-card__label">Noorse Fjorden</span>
-        </button>
+      </div>
 
-        <button type="button" class="mini-dest-card" data-name="Alaska" data-desc="Gletsjers, walvissen en eindeloze wildernis: Alaska is een cruise-bestemming die je op geen enkele andere manier zo goed kan beleven." data-img="assets/img/bestemmingen/alaska.jpg">
-          <img src="assets/img/bestemmingen/alaska.jpg" alt="">
-          <span class="mini-dest-card__label">Alaska</span>
-        </button>
-
-        <button type="button" class="mini-dest-card" data-name="Riviercruises Europa" data-desc="Van kastelen langs de Rijn tot wijngaarden aan de Donau: Europa ontdekken, dorp per dorp, met elke ochtend een nieuwe aanlegplaats voor de deur." data-img="assets/img/bestemmingen/riviercruises-europa.jpg">
-          <img src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="">
-          <span class="mini-dest-card__label">Riviercruises Europa</span>
-        </button>
-
-        <button type="button" class="mini-dest-card" data-name="Verre Oosten" data-desc="Bruisende havensteden en eeuwenoude tradities, van Hongkong tot Singapore: een cruise als kennismaking met een compleet andere wereld." data-img="assets/img/bestemmingen/verre-oosten.jpg">
-          <img src="assets/img/bestemmingen/verre-oosten.jpg" alt="">
-          <span class="mini-dest-card__label">Verre Oosten</span>
-        </button>
-
-        <button type="button" class="mini-dest-card" data-name="Expeditiecruises" data-desc="Antarctica, de Noordpoolstreek en andere plekken die je met geen ander schip bereikt, voor de echte ontdekkingsreiziger." data-img="assets/img/bestemmingen/expeditiecruises.jpg">
-          <img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="">
-          <span class="mini-dest-card__label">Expeditiecruises</span>
-        </button>
-
-        <button type="button" class="mini-dest-card" data-name="Wereldcruise" data-desc="Meerdere continenten, &eacute;&eacute;n reis: de ultieme manier om in enkele maanden tijd de wereld te ontdekken, zonder ook maar &eacute;&eacute;n keer je koffers uit te pakken." data-img="assets/img/bestemmingen/wereldcruise.jpg">
-          <img src="assets/img/bestemmingen/wereldcruise.jpg" alt="">
-          <span class="mini-dest-card__label">Wereldcruise</span>
-        </button>
-
+      <div class="catalog-cta">
+        <div>
+          <h3>Het volledige, actuele aanbod</h3>
+          <p>Alle vertrekdata en prijzen van onze rederijen, via onze cruisepartner CruisePlus.</p>
+        </div>
+        <a class="btn catalog-cta__btn" href="https://www.cruiseplus.be/keerbergen/pcp_index.asp?partner=1" target="_blank" rel="noopener">Bekijk het volledige aanbod
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="visually-hidden">(opent in een nieuw venster)</span>
+        </a>
       </div>
     </div>
   </section>
 
   <section class="section-alt">
     <div class="wrap">
-      <span class="eyebrow">Deze maand uitgelicht</span>
-      <h2 style="margin-top:12px">Enkele actuele cruise-aanbiedingen</h2>
-      <p class="lead" style="margin-top:14px;max-width:640px">Een kleine greep uit het huidige aanbod via onze cruise-partner CruisePlus. Deze selectie werken we regelmatig bij.</p>
-      <!-- Deze sectie handmatig bijwerken: pas de 3 kaarten hieronder aan met actuele aanbiedingen. -->
-      <div class="highlight-grid">
+      <span class="eyebrow">Ter inspiratie</span>
+      <h2 style="margin-top:12px">Zo kan jouw cruise eruitzien</h2>
+      <p class="lead" style="margin-top:14px;max-width:640px">Enkele voorbeelden van cruises die we eerder op maat samenstelden. Telkens een vertrekpunt, geen vast pakket. We stemmen alles af op jouw wensen.</p>
 
-        <div class="highlight-card">
-          <span class="eyebrow">Zuid-Amerika &middot; Swan Hellenic</span>
-          <h3>SH Vega</h3>
-          <p class="highlight-card__meta">25 oktober 2026 &middot; 7 dagen</p>
-          <p>Last minute naar Brazili&euml; met Swan Hellenic: een unieke kans om dit vaargebied te ontdekken aan boord van een expeditieschip.</p>
-          <a class="btn btn--accent btn--sm" href="contact.html?interesse=SH%20Vega%20%E2%80%93%20Swan%20Hellenic%2C%20Zuid-Amerika">Ik heb interesse</a>
-        </div>
-
-        <div class="highlight-card">
-          <span class="eyebrow">Galapagos &middot; Silversea Cruises</span>
-          <h3>Silver Origin</h3>
-          <p class="highlight-card__meta">18 februari 2027 &middot; 10 dagen</p>
-          <p>Een unieke, begeleide Galapagos-cruise met Silversea: oog in oog met een van de meest bijzondere ecosystemen ter wereld.</p>
-          <a class="btn btn--accent btn--sm" href="contact.html?interesse=Silver%20Origin%20%E2%80%93%20Silversea%2C%20Galapagos">Ik heb interesse</a>
-        </div>
-
-        <div class="highlight-card">
-          <span class="eyebrow">Middellandse Zee &middot; Explora Journeys</span>
-          <h3>Explora II</h3>
-          <p class="highlight-card__meta">29 maart 2027 &middot; 7 dagen</p>
-          <p>Een schitterende promotie voor de paasvakantie, aan boord van &eacute;&eacute;n van de nieuwste ultra-luxe schepen op de Middellandse Zee.</p>
-          <a class="btn btn--accent btn--sm" href="contact.html?interesse=Explora%20II%20%E2%80%93%20Explora%20Journeys%2C%20Middellandse%20Zee">Ik heb interesse</a>
-        </div>
-
-      </div>
-
-      <div class="cruise-full-catalog">
-        <p>Benieuwd naar het volledige, actuele aanbod met alle data en prijzen?</p>
-        <a class="btn btn--ghost" href="https://www.cruiseplus.be/keerbergen/pcp_index.asp?partner=1" target="_blank" rel="noopener">Bekijk het volledige aanbod via onze cruise-partner &rarr;</a>
-        <p class="cruise-full-catalog__note">Tip: neem eerst contact met ons op, dan zoeken we samen mee en volgen we je aanvraag persoonlijk op.</p>
-      </div>
-
-      <div class="cruise-full-catalog" style="border-top:none;margin-top:56px;padding-top:0">
-        <span class="eyebrow">Ter inspiratie</span>
-        <h2 style="margin-top:12px">Zo kan jouw cruise eruitzien</h2>
-        <p class="lead" style="margin-top:14px;max-width:640px">Enkele voorbeelden van cruises die we eerder op maat samenstelden. Telkens een vertrekpunt, geen vast pakket. We stemmen alles af op jouw wensen.</p>
-      </div>
       <!-- PLACEHOLDER-voorbeeldreizen: te vervangen door uitgewerkte reisvoorstellen zodra aangeleverd -->
       <div class="trip-selector">
 
@@ -250,56 +292,70 @@
           <button type="button" class="trip-card__summary">
             <span class="trip-card__img"><img src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Riviercruise Europa"></span>
             <span class="trip-card__meta">
-              <span class="eyebrow">Riviercruise &middot; placeholder</span>
+              <span class="trip-card__kicker">Riviercruise <span class="tag">placeholder</span></span>
               <span class="trip-card__title">Riviercruise door Europa</span>
-              <span class="trip-card__desc">Voorbeeldreis, binnenkort aangevuld met een uitgewerkt reisvoorstel.</span>
-              <span class="trip-card__hint">Bekijk voorbeeldreisplan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="trip-card__desc">7 dagen, Basel tot Amsterdam</span>
+              <span class="trip-card__hint">Bekijk voorbeeldreisplan</span>
             </span>
           </button>
           <div class="trip-card__detail">
-            <button type="button" class="trip-card__close" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
             <div class="trip-card__detail-img"><img src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Riviercruise Europa"></div>
             <div class="trip-card__detail-body">
-              <span class="eyebrow">Riviercruise &middot; placeholder</span>
-              <h3>Riviercruise door Europa</h3>
-              <div class="trip-card__flight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span><strong>Vervoer:</strong> Brussel &rarr; instapstad Basel, per trein of vlucht (&plusmn; 3-6u reistijd)</span></div>
-              <ul class="trip-card__stages">
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 1 &middot; Inschepen in Basel</b><p>Start van de riviercruise op de Rijn.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 2-4 &middot; Rijn &amp; Moezel</b><p>Historische stadjes, wijngaarden en kastelen langs de oevers.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 5-6 &middot; K&ouml;ln &amp; Amsterdam</b><p>Aanmeren in het hart van bruisende steden.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 7 &middot; Ontschepen in Amsterdam</b><p>Terugreis naar Brussel.</p></div></li>
-              </ul>
+              <div class="trip-card__detail-head">
+                <div>
+                  <span class="trip-card__kicker">Riviercruise <span class="tag">placeholder</span></span>
+                  <h3>Riviercruise door Europa</h3>
+                </div>
+                <button type="button" class="btn btn--ghost btn--sm trip-card__close">Sluiten</button>
+              </div>
+              <div class="trip-route">
+                <p class="trip-route__line"><strong>Brussel</strong><span class="trip-route__dash" aria-hidden="true"></span><strong>instapstad Basel</strong></p>
+                <p class="trip-route__how">Vervoer per trein of vlucht (&plusmn; 3&ndash;6u reistijd)</p>
+              </div>
+              <ol class="trip-timeline">
+                <li><span class="trip-timeline__day">Dag 1</span><b>Inschepen in Basel</b><p>Start van de riviercruise op de Rijn.</p></li>
+                <li><span class="trip-timeline__day">Dag 2&ndash;4</span><b>Rijn &amp; Moezel</b><p>Historische stadjes, wijngaarden en kastelen langs de oevers.</p></li>
+                <li><span class="trip-timeline__day">Dag 5&ndash;6</span><b>K&ouml;ln &amp; Amsterdam</b><p>Aanmeren in het hart van bruisende steden.</p></li>
+                <li><span class="trip-timeline__day">Dag 7</span><b>Ontschepen in Amsterdam</b><p>Terugreis naar Brussel.</p></li>
+              </ol>
               <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.</p>
-              <a class="btn btn--accent btn--sm" href="contact.html?interesse=Riviercruise%20Europa">Vraag deze reis aan</a>
+              <a class="btn btn--accent" href="contact.html?interesse=Riviercruise%20Europa">Vraag deze reis aan</a>
             </div>
           </div>
         </div>
 
         <div class="trip-card">
           <button type="button" class="trip-card__summary">
-            <span class="trip-card__img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise"></span>
+            <span class="trip-card__img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise naar Antarctica"></span>
             <span class="trip-card__meta">
-              <span class="eyebrow">Expeditiecruise &middot; placeholder</span>
-              <span class="trip-card__title">Expeditiecruise</span>
-              <span class="trip-card__desc">Voorbeeldreis, binnenkort aangevuld met een uitgewerkt reisvoorstel.</span>
-              <span class="trip-card__hint">Bekijk voorbeeldreisplan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="trip-card__kicker">Expeditiecruise <span class="tag">placeholder</span></span>
+              <span class="trip-card__title">Expeditie naar Antarctica</span>
+              <span class="trip-card__desc">11 dagen, Ushuaia tot Ushuaia</span>
+              <span class="trip-card__hint">Bekijk voorbeeldreisplan</span>
             </span>
           </button>
           <div class="trip-card__detail">
-            <button type="button" class="trip-card__close" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-            <div class="trip-card__detail-img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise"></div>
+            <div class="trip-card__detail-img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise naar Antarctica"></div>
             <div class="trip-card__detail-body">
-              <span class="eyebrow">Expeditiecruise &middot; placeholder</span>
-              <h3>Expeditiecruise</h3>
-              <div class="trip-card__flight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span><strong>Vlucht:</strong> Brussel &rarr; Ushuaia (Argentini&euml;), via Buenos Aires (&plusmn; 20u reistijd)</span></div>
-              <ul class="trip-card__stages">
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 1-2 &middot; Ushuaia</b><p>Aankomst aan &lsquo;het einde van de wereld&rsquo;, inschepen aan boord van het expeditieschip.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 3-4 &middot; Drake Passage</b><p>Overtocht naar Antarctica, met lezingen aan boord.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 5-8 &middot; Antarctisch Schiereiland</b><p>Dagelijkse zodiac-excursies tussen ijsbergen, pingu&iuml;ns en zeeleeuwen.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 9-11 &middot; Terugtocht &amp; Ushuaia</b><p>Terug via de Drake Passage, ontschepen en terugreis.</p></div></li>
-              </ul>
+              <div class="trip-card__detail-head">
+                <div>
+                  <span class="trip-card__kicker">Expeditiecruise <span class="tag">placeholder</span></span>
+                  <h3>Expeditie naar Antarctica</h3>
+                </div>
+                <button type="button" class="btn btn--ghost btn--sm trip-card__close">Sluiten</button>
+              </div>
+              <div class="trip-route">
+                <p class="trip-route__line"><strong>Brussel</strong><span class="trip-route__dash" aria-hidden="true"></span><strong>Ushuaia</strong></p>
+                <p class="trip-route__how">Vlucht via Buenos Aires (&plusmn; 20u reistijd)</p>
+              </div>
+              <ol class="trip-timeline">
+                <li><span class="trip-timeline__day">Dag 1&ndash;2</span><b>Ushuaia</b><p>Aankomst aan &lsquo;het einde van de wereld&rsquo;, inschepen aan boord van het expeditieschip.</p></li>
+                <li><span class="trip-timeline__day">Dag 3&ndash;4</span><b>Drake Passage</b><p>Overtocht naar Antarctica, met lezingen aan boord.</p></li>
+                <li><span class="trip-timeline__day">Dag 5&ndash;8</span><b>Antarctisch Schiereiland</b><p>Dagelijkse zodiac-excursies tussen ijsbergen, pingu&iuml;ns en zeeleeuwen.</p></li>
+                <li><span class="trip-timeline__day">Dag 9&ndash;11</span><b>Terugtocht &amp; Ushuaia</b><p>Terug via de Drake Passage, ontschepen en terugreis.</p></li>
+              </ol>
               <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.</p>
-              <a class="btn btn--accent btn--sm" href="contact.html?interesse=Expeditiecruise">Vraag deze reis aan</a>
+              <a class="btn btn--accent" href="contact.html?interesse=Expeditiecruise">Vraag deze reis aan</a>
             </div>
           </div>
         </div>
@@ -308,27 +364,34 @@
           <button type="button" class="trip-card__summary">
             <span class="trip-card__img"><img src="assets/img/bestemmingen/caraiben.jpg" alt="Cara&iuml;bische cruise"></span>
             <span class="trip-card__meta">
-              <span class="eyebrow">Cara&iuml;ben &middot; placeholder</span>
+              <span class="trip-card__kicker">Cara&iuml;ben <span class="tag">placeholder</span></span>
               <span class="trip-card__title">Cruise door de Cara&iuml;ben</span>
-              <span class="trip-card__desc">Voorbeeldreis, binnenkort aangevuld met een uitgewerkt reisvoorstel.</span>
-              <span class="trip-card__hint">Bekijk voorbeeldreisplan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="trip-card__desc">7 dagen, Miami tot Miami</span>
+              <span class="trip-card__hint">Bekijk voorbeeldreisplan</span>
             </span>
           </button>
           <div class="trip-card__detail">
-            <button type="button" class="trip-card__close" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
             <div class="trip-card__detail-img"><img src="assets/img/bestemmingen/caraiben.jpg" alt="Cara&iuml;bische cruise"></div>
             <div class="trip-card__detail-body">
-              <span class="eyebrow">Cara&iuml;ben &middot; placeholder</span>
-              <h3>Cruise door de Cara&iuml;ben</h3>
-              <div class="trip-card__flight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span><strong>Vlucht:</strong> Brussel &rarr; Miami of Fort Lauderdale, met 1 tussenstop (&plusmn; 10-11u reistijd)</span></div>
-              <ul class="trip-card__stages">
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 1 &middot; Inschepen in Miami</b><p>Start van de cruise door de Cara&iuml;ben.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 2-3 &middot; Op zee &amp; eerste eiland</b><p>Ontspannen aan boord, eerste stop op een Cara&iuml;bisch eiland.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 4-6 &middot; St. Maarten &amp; Bahama&rsquo;s</b><p>Witte stranden, snorkelen en lokale sfeer op elk eiland.</p></div></li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Dag 7 &middot; Terug naar Miami</b><p>Ontschepen en terugreis naar Brussel.</p></div></li>
-              </ul>
+              <div class="trip-card__detail-head">
+                <div>
+                  <span class="trip-card__kicker">Cara&iuml;ben <span class="tag">placeholder</span></span>
+                  <h3>Cruise door de Cara&iuml;ben</h3>
+                </div>
+                <button type="button" class="btn btn--ghost btn--sm trip-card__close">Sluiten</button>
+              </div>
+              <div class="trip-route">
+                <p class="trip-route__line"><strong>Brussel</strong><span class="trip-route__dash" aria-hidden="true"></span><strong>Miami</strong></p>
+                <p class="trip-route__how">Vlucht naar Miami of Fort Lauderdale, met 1 tussenstop (&plusmn; 10&ndash;11u reistijd)</p>
+              </div>
+              <ol class="trip-timeline">
+                <li><span class="trip-timeline__day">Dag 1</span><b>Inschepen in Miami</b><p>Start van de cruise door de Cara&iuml;ben.</p></li>
+                <li><span class="trip-timeline__day">Dag 2&ndash;3</span><b>Op zee &amp; eerste eiland</b><p>Ontspannen aan boord, eerste stop op een Cara&iuml;bisch eiland.</p></li>
+                <li><span class="trip-timeline__day">Dag 4&ndash;6</span><b>St. Maarten &amp; Bahama&rsquo;s</b><p>Witte stranden, snorkelen en lokale sfeer op elk eiland.</p></li>
+                <li><span class="trip-timeline__day">Dag 7</span><b>Terug naar Miami</b><p>Ontschepen en terugreis naar Brussel.</p></li>
+              </ol>
               <p class="trip-card__plan-note">Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.</p>
-              <a class="btn btn--accent btn--sm" href="contact.html?interesse=Cruise%20Cara%C3%AFben">Vraag deze reis aan</a>
+              <a class="btn btn--accent" href="contact.html?interesse=Cruise%20Cara%C3%AFben">Vraag deze reis aan</a>
             </div>
           </div>
         </div>
@@ -357,6 +420,20 @@
       </div>
       <a class="btn btn--accent" id="cruise-modal-cta" href="contact.html">Ik heb interesse</a>
     </div>
+  </div>
+
+  <div hidden id="cruise-line-data">
+    <span data-line-id="silversea" data-name="Silversea Cruises" data-tagline="Ultra-luxe, all-inclusive, op de meest exclusieve schepen." data-desc="Silversea werd in 1994 opgericht als 's werelds eerste all-inclusive premium cruiselijn en behoort vandaag tot de Royal Caribbean Group. De vloot telt twaalf schepen: acht Classic-schepen voor klassieke luxe cruises en vier Expedition-schepen voor verre poolreizen." data-signature="Het S.A.L.T.-programma (Sea And Land Taste) laat gasten elke bestemming proeven via lokaal eten en drank, aangevuld met de Romeins geïnspireerde Otium Spa." data-ideal-for="Wie klassieke ultra-luxe combineert met interesse in verre poolexpedities." data-img="assets/img/rederijen/silversea.png"></span>
+    <span data-line-id="regent-seven-seas" data-name="Regent Seven Seas Cruises" data-tagline="Het meest all-inclusive luxeconcept op zee." data-desc="Regent Seven Seas ontstond in 1992 uit de fusie van Radisson Cruises en Seven Seas Cruises, en maakt sinds 2014 deel uit van Norwegian Cruise Line Holdings. De vloot bestaat uit zes volledig suite- en balkonschepen, met een zevende op komst in 2026." data-signature="&lsquo;The Most Inclusive Luxury Experience&rsquo;: suites, gastronomie, dranken, fooien én excursies aan wal zijn standaard inbegrepen, zonder verrassingen achteraf." data-ideal-for="Wie vooraf precies wil weten dat alles is inbegrepen, zonder rekenwerk achteraf." data-img="assets/img/rederijen/regent-seven-seas.png"></span>
+    <span data-line-id="seabourn" data-name="Seabourn" data-tagline="Kleinschalig, persoonlijk, ongehaast luxueus." data-desc="Seabourn werd in 1987 opgericht om het gevoel van een privéjacht naar zee te brengen: kleinschalige schepen waar gasten zich lid voelen van een select gezelschap. Naast de klassieke luxeschepen vaart Seabourn sinds 2022 ook met de expeditieschepen Venture en Pursuit." data-signature="Intuïtieve service met een hoge bemanning-gastverhouding, gratis minibar en drank op de kamer, en verrassende extra's zoals een gratis massage aan het zwembad." data-ideal-for="Wie de sfeer van een privéjacht zoekt, met of zonder poolexpeditie." data-img="assets/img/rederijen/seabourn.png"></span>
+    <span data-line-id="oceania" data-name="Oceania Cruises" data-tagline="Culinaire cruises voor fijnproevers." data-desc="Oceania Cruises werd in 2003 opgericht door cruise-veteranen Frank Del Rio en Bob Binder, met &eacute;&eacute;n missie: een cruise laten beoordelen op wat er op het bord ligt. Chef Jacques P&eacute;pin was de eerste culinaire directeur en legde de basis van het gastronomische DNA van de rederij." data-signature="&lsquo;The Finest Cuisine at Sea&rsquo;: meerdere specialty-restaurants (Frans, Aziatisch, Italiaans, steakhouse) zonder meerprijs, plus kookworkshops en chef-geleide excursies aan wal." data-ideal-for="Fijnproevers voor wie de bestemming evenzeer via de keuken wordt ontdekt." data-img="assets/img/rederijen/oceania.svg"></span>
+    <span data-line-id="explora-journeys" data-name="Explora Journeys" data-tagline="Modern, ruimtelijk en ontspannen luxe." data-desc="Explora Journeys werd in 2021 gelanceerd door de MSC Group, het familiebedrijf van de familie Aponte met eeuwenlange zeevaarttraditie. EXPLORA I (2023) en EXPLORA II (2024) zijn de eerste van zes nieuwe schepen, elk met uitsluitend oceaanzicht-suites." data-signature="De &lsquo;Ocean State of Mind&rsquo;-filosofie: elk schip is een drijvend luxehotel met privéterras en glas-tot-plafond ramen bij elke suite." data-ideal-for="Wie eigentijdse, Europese vormgeving en ruimte verkiest boven traditionele scheepsformaliteit." data-img="assets/img/rederijen/explora-journeys.jpg"></span>
+    <span data-line-id="ritz-carlton-yacht" data-name="Ritz-Carlton Yacht Collection" data-tagline="Reizen als aan boord van een priv&eacute;jacht." data-desc="Opgericht in 2017 om het iconische Ritz-Carlton-gevoel naar zee te brengen. De vloot bestaat uit drie superjachten (Evrima, Ilma en Luminara), elk met uitsluitend suites met priv&eacute;terras." data-signature="De kenmerkende Marina achteraan het schip voor watersporten, en service die &lsquo;gevoeld wordt, niet aangekondigd&rsquo;." data-ideal-for="Wie de Ritz-Carlton-gastvrijheid wil combineren met de vrijheid van een jachtvakantie." data-img="assets/img/rederijen/ritz-carlton-yacht.svg"></span>
+    <span data-line-id="ponant" data-name="Ponant" data-tagline="Franse elegantie op expeditie." data-desc="Ponant werd in 1988 opgericht door officieren van de Franse koopvaardij, als eerste Franse cruiserederij. Naast de sierlijke zeilboot Le Ponant vaart de vloot kleine expeditieschepen genoemd naar Franse ontdekkingsreizigers, en de ijsbreker Le Commandant Charcot die tot aan beide polen kan varen." data-signature="De &lsquo;Blue Eye&rsquo;, 's werelds eerste multisensori&euml;le onderwaterlounge, en nooit meer dan 500 gasten aan boord." data-ideal-for="Wie Franse verfijning wil combineren met avontuurlijke, verre bestemmingen." data-img="assets/img/rederijen/ponant.svg"></span>
+    <span data-line-id="swan-hellenic" data-name="Swan Hellenic" data-tagline="Ontdekking met wetenschappelijke diepgang." data-desc="Het verhaal begint in 1950 met culturele reizen naar Griekenland onder leiding van archeoloog Sir Mortimer Wheeler. Na een heropstart in 2021 vaart de volledig nieuwe vloot (SH Minerva, SH Vega, SH Diana) met ijsklasse-rompen naar de meest afgelegen streken." data-signature="Elke reis wordt begeleid door een team van historici, natuurgidsen en fotografen: cultuur en wetenschap staan centraal naast avontuur." data-ideal-for="Nieuwsgierige reizigers die tijdens een poolexpeditie ook iets willen bijleren." data-img="assets/img/rederijen/swan-hellenic.png"></span>
+    <span data-line-id="amawaterways" data-name="AmaWaterways" data-tagline="Riviercruises met karakter en comfort." data-desc="In 2002 opgericht als familiebedrijf door Rudi Schreiner, Kristin Karst en Jimmy Murphy. Van &eacute;&eacute;n schip op de Donau groeide de vloot uit tot meer dan dertig schepen op de rivieren van Europa, Zuidoost-Azi&euml; en Afrika." data-signature="AmaWaterways introduceerde de tweezijdige balkonhut, ondertussen door de hele sector gekopieerd, en is de enige riviercruiserederij opgenomen in de prestigieuze gastronomische Cha&icirc;ne des R&ocirc;tisseurs." data-ideal-for="Wie de persoonlijke, gastvrije sfeer van een familiebedrijf op de rivier zoekt." data-img="assets/img/rederijen/amawaterways.svg"></span>
+    <span data-line-id="scenic" data-name="Scenic" data-tagline="All-inclusive luxe op de rivier." data-desc="Opgericht in 1986 door de Australische ondernemer Glen Moroney, met de eerste riviercruise in 2008. Vandaag telt de vloot vijftien schepen in Europa en Zuidoost-Azi&euml;." data-signature="De &lsquo;Space-Ships&rsquo;: een glazen zonnelounge die op elk balkon met &eacute;&eacute;n druk op de knop verandert in een priv&eacute;-wintertuin, plus butlerservice en gratis e-bikes." data-ideal-for="Wie op de rivier evenveel comfort verwacht als op een oceaancruise." data-img="assets/img/rederijen/scenic.svg" data-invert="true"></span>
+    <span data-line-id="star-clippers" data-name="Star Clippers" data-tagline="Zeilen zoals vroeger, op echte tall ships." data-desc="Star Clippers werd in 1991 opgericht door de Zweedse ondernemer Mikael Krafft, om de klassieke clipperschepen uit de 19de eeuw opnieuw te laten varen. De vloot telt drie tall ships: de viermasters Star Flyer en Star Clipper (elk 166 gasten) en de vijfmaster Royal Clipper (227 gasten)." data-signature="Op zee vaart het schip zoveel mogelijk op zeilkracht. Wie wil, klimt onder begeleiding en met een veiligheidsharnas naar de uitkijkpost in de mast. Geen verplichte das: de sfeer is ontspannen en informeel." data-ideal-for="Wie de romantiek van het zeilen zoekt en graag buiten aan dek leeft." data-img="assets/img/rederijen/star-clippers.svg"></span>
   </div>
 
   <section class="dest-other">
@@ -393,7 +470,7 @@
   <section class="contact-band">
     <div class="wrap contact-band__inner">
       <div>
-        <h2>Liever eerst even praten?</h2>
+        <h2>Liever eerst kennismaken?</h2>
         <a class="contact-band__phone" href="tel:+3215234723">015 23 47 23</a>
       </div>
       <div class="contact-band__side">
@@ -437,6 +514,7 @@
 
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/catalog-modal.js"></script>
-<script src="assets/js/trip-plans.js"></script>
+<script src="assets/js/cruise-types.js"></script>
+<script src="assets/js/trip-plans.js?v=3"></script>
 </body>
 </html>

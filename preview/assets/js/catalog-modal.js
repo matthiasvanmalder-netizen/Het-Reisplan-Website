@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var idealforEl = document.getElementById('cruise-modal-idealfor');
   var ctaEl = document.getElementById('cruise-modal-cta');
   var closeBtn = document.getElementById('cruise-modal-close');
-  var triggers = document.querySelectorAll('.line-card, .mini-dest-card');
+  var triggers = document.querySelectorAll('.line-card, .mini-dest-card, [data-line]');
 
   function fillFact(wrapEl, textEl, value) {
     if (!wrapEl || !textEl) return;
@@ -26,12 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function open(card) {
-    var name = card.getAttribute('data-name') || '';
-    var tagline = card.getAttribute('data-tagline') || '';
-    var desc = card.getAttribute('data-desc') || '';
-    var signature = card.getAttribute('data-signature') || '';
-    var idealFor = card.getAttribute('data-ideal-for') || '';
-    var img = card.getAttribute('data-img') || '';
+    // Een rederij kan onder meerdere cruisetypes staan; haar gegevens staan
+    // dan een keer in #cruise-line-data en de knop verwijst ernaar via data-line.
+    var ref = card.getAttribute('data-line');
+    var src = ref ? document.querySelector('[data-line-id="' + ref + '"]') : card;
+    if (!src) return;
+    var name = src.getAttribute('data-name') || '';
+    var tagline = src.getAttribute('data-tagline') || '';
+    var desc = src.getAttribute('data-desc') || '';
+    var signature = src.getAttribute('data-signature') || '';
+    var idealFor = src.getAttribute('data-ideal-for') || '';
+    var img = src.getAttribute('data-img') || '';
 
     titleEl.textContent = name;
     descEl.textContent = desc;
@@ -49,14 +54,14 @@ document.addEventListener('DOMContentLoaded', function () {
       imgEl.src = img;
       imgEl.alt = name;
       imgEl.style.display = '';
-      imgEl.style.filter = card.getAttribute('data-invert') === 'true' ? 'invert(1)' : '';
+      imgEl.style.filter = src.getAttribute('data-invert') === 'true' ? 'invert(1)' : '';
       if (imgWrapEl) {
         imgWrapEl.style.display = '';
         // .line-card wordt hergebruikt voor twee dingen: rederijlogo's
         // (transparante achtergrond, plain .line-grid) en reistype-
         // kaarten met een echte foto (.line-grid--thumbs). Enkel de
         // logo's hebben de lichte achtergrond nodig.
-        var isLogo = card.classList.contains('line-card') && !card.closest('.line-grid--thumbs');
+        var isLogo = !!ref || (card.classList.contains('line-card') && !card.closest('.line-grid--thumbs'));
         imgWrapEl.classList.toggle('modal-card__img-wrap--logo', isLogo);
       }
     } else if (imgWrapEl) {

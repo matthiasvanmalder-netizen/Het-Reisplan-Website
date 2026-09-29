@@ -1,6 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.trip-selector').forEach(function (selector) {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var canTransition = typeof document.startViewTransition === 'function';
+
+  document.querySelectorAll('.trip-selector').forEach(function (selector, s) {
     var cards = Array.prototype.slice.call(selector.querySelectorAll('.trip-card'));
+    if (canTransition) {
+      selector.classList.add('has-vt');
+      selector.style.viewTransitionName = 'trip-selector-' + s;
+      cards.forEach(function (c, i) { c.style.viewTransitionName = 'trip-card-' + s + '-' + i; });
+    }
+
+    function animate(update) {
+      if (canTransition && !reduceMotion.matches) {
+        document.startViewTransition(update);
+      } else {
+        update();
+      }
+    }
 
     function collapseAll() {
       cards.forEach(function (c) {
@@ -18,9 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var btn = c.querySelector('.trip-card__summary');
         if (btn) btn.setAttribute('aria-expanded', isTarget ? 'true' : 'false');
       });
-      window.requestAnimationFrame(function () {
-        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
     }
 
     cards.forEach(function (card) {
@@ -30,17 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
       if (summaryBtn) {
         summaryBtn.setAttribute('aria-expanded', 'false');
         summaryBtn.addEventListener('click', function () {
-          if (card.classList.contains('is-expanded')) {
-            collapseAll();
-          } else {
-            expand(card);
-          }
+          animate(function () {
+            if (card.classList.contains('is-expanded')) collapseAll();
+            else expand(card);
+          });
         });
       }
       if (closeBtn) {
         closeBtn.addEventListener('click', function (e) {
           e.stopPropagation();
-          collapseAll();
+          animate(collapseAll);
         });
       }
     });
