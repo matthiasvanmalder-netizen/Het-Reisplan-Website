@@ -302,15 +302,10 @@ section{padding:88px 0}
 .dest-body p{font-size:1.04rem}
 .dest-body p:first-of-type{font-size:1.14rem;color:var(--ink)}
 
-.dest-highlight{
-  background:var(--cream);border-radius:20px;padding:32px;
-  border-left:3px solid var(--accent);
-}
-.dest-highlight p{
-  margin:0;font-family:'Manrope',sans-serif;font-weight:700;font-size:1.15rem;
-  color:var(--navy);font-style:normal;
-}
-.dest-highlight span{display:block;margin-top:14px;font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;color:var(--ink-muted)}
+.dest-aside{border-top:2px solid var(--accent);padding-top:22px}
+.dest-body .dest-aside .dest-aside__label{margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--accent)}
+.dest-aside h3{font-size:1.3rem;margin:0 0 12px;letter-spacing:-.01em}
+.dest-body .dest-aside p:not([class]){font-size:.98rem;color:var(--ink-muted);margin:0}
 
 .dest-other{padding:96px 0}
 .dest-other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
@@ -324,21 +319,6 @@ section{padding:88px 0}
   .dest-other-grid{grid-template-columns:1fr}
 }
 
-/* Local partners trust note */
-.local-partners-note{
-  display:flex;align-items:flex-start;gap:20px;
-  background:var(--navy);color:#fff;border-radius:20px;padding:28px 32px;margin-top:44px;
-}
-.local-partners-note__icon{
-  flex-shrink:0;width:44px;height:44px;
-  display:flex;align-items:center;justify-content:center;
-}
-.local-partners-note__icon svg{width:26px;height:26px;color:var(--accent-tint);display:block}
-.dest-body .local-partners-note p{margin:0;color:rgba(255,255,255,.88);font-size:.95rem;line-height:1.65}
-.local-partners-note strong{color:#fff}
-@media (max-width:620px){
-  .local-partners-note{flex-direction:column;padding:24px}
-}
 
 /* Cruise catalog: rederijen, bestemmingen, uitgelicht, modal */
 .line-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:36px}
@@ -459,6 +439,113 @@ section{padding:88px 0}
 .line-chip img{max-height:48px;max-width:170px;width:auto;object-fit:contain}
 .line-chip:hover{transform:translateY(-2px);box-shadow:0 0 0 2px var(--accent)}
 .line-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.ctype-panel:not([hidden]),
+.when-panel:not([hidden]){animation:panelIn .35s ease}
+@keyframes panelIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Intercontinentaal: waar en wanneer (maandraster + vliegtijd) */
+.when{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:44px;margin-top:40px;align-items:start}
+.when__legend{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:18px;font-size:.84rem;color:var(--ink-muted)}
+.when__key::before{
+  content:"";display:inline-block;width:12px;height:12px;margin-right:7px;vertical-align:-1px;border-radius:2px;
+}
+.when__key--b::before,.when-cell--b{background:var(--accent)}
+.when__key--g::before,.when-cell--g{background:rgba(201,162,78,.16);box-shadow:inset 0 0 0 1.5px rgba(201,162,78,.75)}
+.when__key--l::before,.when-cell--l{background:rgba(255,255,255,.08)}
+.when__head,
+.when-row{display:grid;grid-template-columns:170px minmax(0,1fr) 92px;gap:18px;align-items:center}
+.when__head{padding-bottom:10px;border-bottom:1px solid var(--border)}
+.when__head-label{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--ink-muted)}
+.when__months,
+.when-row__months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3px}
+.when__months button{
+  font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--ink-muted);
+  background:none;border:1px solid transparent;border-radius:2px;padding:6px 0;cursor:pointer;
+  transition:color .15s ease, border-color .15s ease, background .15s ease;
+}
+.when__months button:hover{color:var(--ink);border-color:var(--border)}
+.when__months button[aria-pressed="true"]{background:var(--ink);color:var(--navy)}
+.when__months button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.when__status{min-height:1.6em;margin:12px 0 0;font-size:.9rem;color:var(--ink)}
+.when__region{margin:22px 0 2px;font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--accent)}
+.when-row{
+  font:inherit;color:inherit;background:none;border:none;border-bottom:1px solid var(--border);
+  width:100%;padding:11px 0;text-align:left;cursor:pointer;
+  transition:opacity .25s ease, background .2s ease;
+}
+.when-row:hover{background:rgba(255,255,255,.03)}
+.when-row:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.when-row__name{font-family:'Manrope',sans-serif;font-weight:700;font-size:.98rem;color:var(--ink-muted);transition:color .2s ease}
+.when-row:hover .when-row__name,
+.when-row[aria-expanded="true"] .when-row__name{color:var(--ink)}
+.when-row[aria-expanded="true"] .when-row__name::before{
+  content:"";display:inline-block;width:6px;height:6px;margin-right:8px;vertical-align:2px;
+  border-radius:50%;background:var(--accent);
+}
+.when-row.is-dim{opacity:.32}
+.when-cell{height:18px;border-radius:2px;transition:box-shadow .2s ease}
+.when-cell.is-col{outline:1.5px solid var(--ink);outline-offset:1px}
+.when-row__flight{display:flex;flex-direction:column;gap:5px}
+.when-row__flight-bar{position:relative;height:3px;background:rgba(255,255,255,.1)}
+.when-row__flight-bar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--accent-3)}
+.when-row__flight-text{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--ink-muted)}
+.when__note{margin:16px 0 0;font-size:.82rem;color:var(--ink-muted)}
+.when__detail{position:sticky;top:104px}
+.when-panel{background:var(--navy);border-radius:4px;overflow:hidden}
+.when-panel[hidden]{display:none}
+.when-panel__img{aspect-ratio:2/1;overflow:hidden}
+.when-panel__img img{width:100%;height:100%;object-fit:cover}
+.when-panel__body{padding:26px 28px 30px}
+.when-panel__body h3{font-size:1.6rem;margin:0 0 10px;letter-spacing:-.01em}
+.when-panel__body > p:first-of-type{font-size:.96rem}
+.when-panel .ctype-facts{margin:20px 0 20px;padding:18px 0;gap:14px 22px}
+.when-tip{margin:0 0 24px;padding-left:14px;border-left:2px solid var(--accent-3);font-size:.9rem}
+.when-tip strong{color:var(--ink)}
+
+/* Intercontinentaal: reisvormen op een schaal van "alles geregeld" naar "jouw eigen ritme" */
+.style-scale{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:24px;margin-top:48px}
+.style-scale__end{font-family:'IBM Plex Mono',monospace;font-size:.76rem;line-height:1;color:var(--ink-muted);padding-top:17px}
+.style-scale__track{position:relative;height:84px}
+.style-scale__track::before{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:var(--border)}
+.style-scale__marker{
+  position:absolute;top:23px;left:var(--active);width:16px;height:16px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 5px rgba(201,162,78,.2);transform:translate(-50%,-50%);
+  transition:left .5s cubic-bezier(.65,0,.35,1);pointer-events:none;z-index:1;
+}
+.style-stop{
+  position:absolute;left:var(--pos);top:0;transform:translateX(-50%);width:24%;
+  display:flex;flex-direction:column;align-items:center;gap:18px;padding:16px 0 8px;
+  font:inherit;font-family:'Manrope',sans-serif;font-weight:700;font-size:.98rem;line-height:1.25;
+  color:var(--ink-muted);background:none;border:none;cursor:pointer;text-align:center;transition:color .2s ease;
+}
+.style-stop::before{
+  content:"";width:10px;height:10px;border-radius:50%;background:var(--surface);
+  border:2px solid rgba(255,255,255,.35);box-sizing:border-box;
+}
+.style-stop:hover,
+.style-stop[aria-selected="true"]{color:var(--ink)}
+.style-stop:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.style-themes{margin:24px 0 0;font-size:.92rem}
+.style-themes strong{color:var(--ink)}
+
+@media (max-width:860px){
+  .when{grid-template-columns:1fr;gap:0}
+  .when__detail{position:static}
+  .when__head,
+  .when-row{grid-template-columns:minmax(0,1fr) auto;gap:8px 12px}
+  .when__head-label:first-child{display:none}
+  .when__months{grid-column:1 / -1}
+  .when__head-label--flight{display:none}
+  .when-row__months{grid-column:1 / -1;order:3}
+  .when-row__flight{min-width:84px}
+  .when-panel{margin:4px 0 14px}
+  .style-scale{grid-template-columns:1fr 1fr;gap:10px}
+  .style-scale__track{grid-column:1 / -1;order:3;height:96px}
+  .style-scale__end{padding-top:0}
+  .style-scale__end:last-child{text-align:right}
+  .style-stop{font-size:.84rem}
+}
 
 /* Actuele aanbiedingen */
 .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
@@ -707,7 +794,6 @@ section{padding:88px 0}
 .trust-item,
 .section-head h2,
 .pillar h3,
-.dest-highlight p,
 .trip-card h3,
 .modal-card h3{
   color:var(--ink);
@@ -729,8 +815,7 @@ section{padding:88px 0}
 
 /* Zelf-gekleurde navy elementen krijgen een subtiele rand zodat ze
    afgetekend blijven tegen de navy pagina-achtergrond */
-.quote-card,
-.local-partners-note{
+.quote-card{
   border:1px solid rgba(255,255,255,.12);
 }
 .site-footer{

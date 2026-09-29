@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Intercontinentaal | Het Reisplan</title>
 <meta name="description" content="Intercontinentale reizen op maat: bruisende steden, tempels in Azië en adembenemende natuur in Afrika. Het Reisplan stelt jouw reis volledig samen.">
-<link rel="stylesheet" href="assets/css/style.css?v=22">
+<link rel="stylesheet" href="assets/css/style.css?v=30">
 </head>
 <body>
 
@@ -67,59 +67,316 @@
           <a class="btn btn--ghost" href="tel:+3215234723">Bel 015 23 47 23</a>
         </div>
       </div>
-      <div class="dest-highlight">
-        <p>&ldquo;Laat je inspireren en ontdek hoe groot de wereld &eacute;cht is.&rdquo;</p>
-        <span>Het Reisplan, Intercontinentaal op maat</span>
-      </div>
-    </div>
-    <div class="wrap">
-      <div class="local-partners-note">
-        <div class="local-partners-note__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
-        </div>
-        <p><strong>Erkende lokale partners, wereldwijd.</strong> Dankzij ons netwerk van zorgvuldig geselecteerde lokale partners en gidsen ter plaatse krijg je toegang tot expertise en ervaringen die een reis pas echt waardevol maken, van verborgen parels tot dat ene onvergetelijke verhaal onderweg.</p>
-      </div>
+      <aside class="dest-aside">
+        <p class="dest-aside__label">Ter plaatse</p>
+        <h3>Erkende lokale partners, wereldwijd</h3>
+        <p>Dankzij ons netwerk van zorgvuldig geselecteerde lokale partners en gidsen ter plaatse krijg je toegang tot expertise en ervaringen die een reis pas echt waardevol maken, van verborgen parels tot dat ene onvergetelijke verhaal onderweg.</p>
+      </aside>
     </div>
   </section>
 
   <section class="section-alt">
     <div class="wrap">
-      <span class="eyebrow">Kies je regio</span>
-      <h2 style="margin-top:12px">Intercontinentaal per regio</h2>
-      <p class="lead" style="margin-top:14px;max-width:640px">Elke regio heeft zijn eigen karakter en verhaal. Klik door voor inspiratie.</p>
+      <span class="eyebrow">Kies je bestemming</span>
+      <h2 style="margin-top:12px">Waar en wanneer?</h2>
+      <p class="lead" style="margin-top:14px;max-width:680px">De beste reisperiode verschilt sterk per bestemming. Kies een maand om te zien waar het dan op zijn best is, of klik op een bestemming voor uitleg en praktisch advies.</p>
 
-      <div class="dest-card-grid">
+      <!-- Maandcodes per bestemming (januari tot december): b = ideaal, g = goed, l = minder geschikt -->
+      <div class="when">
+        <div class="when__chart">
+          <div class="when__legend" aria-hidden="true">
+            <span class="when__key when__key--b">Ideaal</span>
+            <span class="when__key when__key--g">Goed</span>
+            <span class="when__key when__key--l">Minder geschikt</span>
+          </div>
+          <div class="when__head">
+            <span class="when__head-label">Vertrek in</span>
+            <div class="when__months" role="group" aria-label="Toon bestemmingen per vertrekmaand">
+              <button type="button" aria-pressed="false" aria-label="januari">jan</button>
+              <button type="button" aria-pressed="false" aria-label="februari">feb</button>
+              <button type="button" aria-pressed="false" aria-label="maart">mrt</button>
+              <button type="button" aria-pressed="false" aria-label="april">apr</button>
+              <button type="button" aria-pressed="false" aria-label="mei">mei</button>
+              <button type="button" aria-pressed="false" aria-label="juni">jun</button>
+              <button type="button" aria-pressed="false" aria-label="juli">jul</button>
+              <button type="button" aria-pressed="false" aria-label="augustus">aug</button>
+              <button type="button" aria-pressed="false" aria-label="september">sep</button>
+              <button type="button" aria-pressed="false" aria-label="oktober">okt</button>
+              <button type="button" aria-pressed="false" aria-label="november">nov</button>
+              <button type="button" aria-pressed="false" aria-label="december">dec</button>
+            </div>
+            <span class="when__head-label when__head-label--flight">Vliegtijd</span>
+          </div>
+          <p class="when__status" aria-live="polite"></p>
 
-        <button type="button" class="mini-dest-card" data-name="Noord-Amerika" data-desc="Noord-Amerika biedt een ongee&euml;venaarde diversiteit: bruisende metropolen, adembenemende natuurparken en eindeloze wegen om te ontdekken via een fly &amp; drive of rondreis." data-img="assets/img/regios/noord-amerika.jpg">
-          <img src="assets/img/regios/noord-amerika.jpg" alt="">
-          <span class="mini-dest-card__label">Noord-Amerika</span>
-        </button>
+          <p class="when__region">Noord-Amerika</p>
+          <button type="button" class="when-row" data-months="llgbbbggbbgl" aria-controls="when-vs" aria-expanded="true">
+            <span class="when-row__name">Verenigde Staten</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:36%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 8&ndash;12u</span></span>
+          </button>
+          <button type="button" class="when-row" data-months="llllgbbbbgll" aria-controls="when-canada" aria-expanded="false">
+            <span class="when-row__name">Canada</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:36%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 9&ndash;10u</span></span>
+          </button>
 
-        <button type="button" class="mini-dest-card" data-name="Zuid-Amerika" data-desc="Zuid-Amerika combineert oude beschavingen, dramatische landschappen en een rijke cultuur, van de Inca-paden in Peru tot de kleurrijke straten van Buenos Aires." data-img="assets/img/regios/zuid-amerika.jpg">
-          <img src="assets/img/regios/zuid-amerika.jpg" alt="">
-          <span class="mini-dest-card__label">Zuid-Amerika</span>
-        </button>
+          <p class="when__region">Zuid-Amerika</p>
+          <button type="button" class="when-row" data-months="lllgbbbbbgll" aria-controls="when-peru" aria-expanded="false">
+            <span class="when-row__name">Peru</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:50%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 13&ndash;15u</span></span>
+          </button>
+          <button type="button" class="when-row" data-months="bbbglllllgbb" aria-controls="when-argentinie" aria-expanded="false">
+            <span class="when-row__name">Argentini&euml; &amp; Patagoni&euml;</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:54%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 14&ndash;16u</span></span>
+          </button>
 
-        <button type="button" class="mini-dest-card" data-name="Azi&euml;" data-desc="Van de rijstterrassen van Bali tot de tempels van Angkor Wat: Azi&euml; biedt een fascinerende mix van tradities, gastvrijheid en adembenemende natuur." data-img="assets/img/regios/azie.jpg">
-          <img src="assets/img/regios/azie.jpg" alt="">
-          <span class="mini-dest-card__label">Azi&euml;</span>
-        </button>
+          <p class="when__region">Azi&euml;</p>
+          <button type="button" class="when-row" data-months="bbgglllllgbb" aria-controls="when-thailand" aria-expanded="false">
+            <span class="when-row__name">Thailand</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:43%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 11&ndash;13u</span></span>
+          </button>
+          <button type="button" class="when-row" data-months="lllgbbbbbgll" aria-controls="when-bali" aria-expanded="false">
+            <span class="when-row__name">Bali</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:63%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 16&ndash;19u</span></span>
+          </button>
+          <button type="button" class="when-row" data-months="ggbbblllgbbg" aria-controls="when-japan" aria-expanded="false">
+            <span class="when-row__name">Japan</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:50%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 13&ndash;15u</span></span>
+          </button>
 
-        <button type="button" class="mini-dest-card" data-name="Oceani&euml;" data-desc="Eindeloze kustlijnen, unieke wildlife en een ongee&euml;venaarde ruimte om te ontdekken: Oceani&euml; is de ideale bestemming voor een uitgebreide ontdekkingsreis." data-img="assets/img/regios/oceanie.jpg">
-          <img src="assets/img/regios/oceanie.jpg" alt="">
-          <span class="mini-dest-card__label">Oceani&euml;</span>
-        </button>
+          <p class="when__region">Oceani&euml;</p>
+          <button type="button" class="when-row" data-months="ggbbbgggbbbg" aria-controls="when-australie" aria-expanded="false">
+            <span class="when-row__name">Australi&euml;</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:82%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 22&ndash;24u</span></span>
+          </button>
+          <button type="button" class="when-row" data-months="bbbglllllggb" aria-controls="when-nz" aria-expanded="false">
+            <span class="when-row__name">Nieuw-Zeeland</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:95%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 25&ndash;28u</span></span>
+          </button>
 
-        <button type="button" class="mini-dest-card" data-name="Midden-Oosten" data-desc="Van de verloren stad Petra tot de duinen van Wadi Rum: het Midden-Oosten combineert geschiedenis, avontuur en unieke overnachtingen onder de sterrenhemel." data-img="assets/img/regios/midden-oosten.jpg">
-          <img src="assets/img/regios/midden-oosten.jpg" alt="">
-          <span class="mini-dest-card__label">Midden-Oosten</span>
-        </button>
+          <p class="when__region">Midden-Oosten</p>
+          <button type="button" class="when-row" data-months="bbbglllllgbb" aria-controls="when-dubai" aria-expanded="false">
+            <span class="when-row__name">Dubai &amp; Oman</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:23%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 6,5u</span></span>
+          </button>
+          <button type="button" class="when-row" data-months="lgbbblllgbbg" aria-controls="when-jordanie" aria-expanded="false">
+            <span class="when-row__name">Jordani&euml;</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:16%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 4,5u</span></span>
+          </button>
 
-        <button type="button" class="mini-dest-card" data-name="Afrika" data-desc="Afrika is veel meer dan safari alleen: ontdek de kleurrijke soeks van Marrakech, de eindeloze Sahara-duinen of de historische steden van Noord-Afrika." data-img="assets/img/regios/afrika-anders.jpg">
-          <img src="assets/img/regios/afrika-anders.jpg" alt="">
-          <span class="mini-dest-card__label">Afrika (buiten safari)</span>
-        </button>
+          <p class="when__region">Noord-Afrika</p>
+          <button type="button" class="when-row" data-months="ggbbblllgbbg" aria-controls="when-marokko" aria-expanded="false">
+            <span class="when-row__name">Marokko</span>
+            <span class="when-row__months"></span>
+            <span class="when-row__flight" style="--w:13%"><span class="when-row__flight-bar"></span><span class="when-row__flight-text">&plusmn; 3,5u</span></span>
+          </button>
 
+          <p class="when__note">Indicatief, op basis van weer en drukte. Elke bestemming kent regionale verschillen; in een persoonlijk gesprek bekijken we wat voor jouw reis het beste past.</p>
+        </div>
+
+        <div class="when__detail">
+          <div class="when-panel" id="when-vs">
+            <div class="when-panel__img"><img src="assets/img/regios/noord-amerika.jpg" alt="Skyline van New York bij zonsondergang"></div>
+            <div class="when-panel__body">
+              <h3>Verenigde Staten</h3>
+              <p>Van de wolkenkrabbers van New York tot de rode rotsen van Utah en de kust van Californi&euml;. Voor een rondreis langs de nationale parken zijn de lente en de vroege herfst ideaal: aangename temperaturen en minder drukte dan in juli en augustus.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 8u tot New York, &plusmn; 11&ndash;12u tot de westkust</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>&minus;6 tot &minus;9u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>2 &agrave; 3 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> In de winter zijn Florida en Hawaii een aangenaam alternatief, terwijl sommige bergwegen in de nationale parken dan gesloten zijn.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Verenigde%20Staten">Plan je reis naar de VS</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-canada" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/canada.jpg" alt="Moraine Lake in de Canadese Rocky Mountains"></div>
+            <div class="when-panel__body">
+              <h3>Canada</h3>
+              <p>Turquoise bergmeren, gletsjers en eindeloze bossen in de Rocky Mountains, met Vancouver als groene uitvalsbasis aan de Pacifische kust. Van juni tot september zijn alle wegen en wandelpaden open; eind september kleuren de lariksen goud en is het rustiger.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 9&ndash;10u tot Calgary of Vancouver, met overstap</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>&minus;8 &agrave; &minus;9u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>2 &agrave; 3 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> In juli en augustus zijn de lodges rond Banff en Jasper snel volzet; die boek je best ruim op voorhand.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Canada">Plan je reis naar Canada</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-peru" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/zuid-amerika.jpg" alt="Machu Picchu tussen de bergtoppen"></div>
+            <div class="when-panel__body">
+              <h3>Peru</h3>
+              <p>Machu Picchu, de Heilige Vallei en het Titicacameer: Peru is Inca-geschiedenis tussen besneeuwde Andestoppen. Het droge seizoen van mei tot september geeft de beste omstandigheden in de bergen, met heldere dagen en koude nachten.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 13&ndash;15u, met overstap</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>&minus;6 &agrave; &minus;7u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>2 &agrave; 3 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> De klassieke Inca Trail is in februari gesloten, en de vergunningen voor mei tot augustus zijn vaak maanden vooraf uitverkocht. Cusco ligt op 3.400 meter: we plannen een paar rustige dagen om te acclimatiseren.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Peru">Plan je reis naar Peru</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-argentinie" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/argentinie.jpg" alt="Fitz Roy en Laguna de los Tres in Patagoni&euml;"></div>
+            <div class="when-panel__body">
+              <h3>Argentini&euml; &amp; Patagoni&euml;</h3>
+              <p>Tango in Buenos Aires, de gletsjers rond El Calafate en de granieten pieken van de Fitz Roy. Patagoni&euml; is op zijn best in de zuidelijke zomer, van november tot maart, wanneer de dagen lang zijn en de wandelpaden open.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 14&ndash;16u, met overstap</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>&minus;4 &agrave; &minus;5u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>3 weken, met binnenlandse vluchten</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Januari en februari zijn hoogseizoen in Patagoni&euml;; estancia&rsquo;s en gletsjertochten boek je best ruim op voorhand.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Argentini%C3%AB">Plan je reis naar Argentini&euml;</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-thailand" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/thailand.jpg" alt="Thailand"></div>
+            <div class="when-panel__body">
+              <h3>Thailand</h3>
+              <p>Tempels en straatmarkten in Bangkok, de bergen rond Chiang Mai en tot slot een eiland in de Andamanzee. Van november tot februari is het droog en minder heet; daarna wordt het warmer, en vanaf mei begint het regenseizoen.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 11&ndash;13u</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>+5 &agrave; +6u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>2 &agrave; 3 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> De oostkust rond Koh Samui heeft een ander ritme: daar valt de meeste regen van oktober tot december, net wanneer de westkust op zijn best is.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Thailand">Plan je reis naar Thailand</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-bali" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/azie.jpg" alt="Rijstterrassen op Bali"></div>
+            <div class="when-panel__body">
+              <h3>Bali</h3>
+              <p>Rijstterrassen, hindoetempels en een ontspannen eilandritme, eenvoudig te combineren met de rust van de Gili-eilanden of het ruige Flores. Het droge seizoen loopt van april tot oktober.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 16&ndash;19u, met overstap</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>+6 &agrave; +7u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>2 &agrave; 3 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Juli, augustus en de kerstperiode zijn het drukst. Wie rust zoekt, kiest mei, juni of september.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Bali">Plan je reis naar Bali</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-japan" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/japan.jpg" alt="Kiyomizu-dera-tempel in Kyoto in de herfst"></div>
+            <div class="when-panel__body">
+              <h3>Japan</h3>
+              <p>Eeuwenoude tempels in Kyoto, de neonlichten van Tokio en rust in een ryokan met warmwaterbron. Lente en herfst zijn ideaal: eind maart de kersenbloesem, in november de rode herfstbladeren. De zomer is heet en vochtig, met een regenseizoen in juni.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 13&ndash;15u, met overstap</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>+7 &agrave; +8u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>2 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Tijdens de kersenbloesem, eind maart en begin april, is alles snel volzet. Die periode boek je best 9 &agrave; 12 maanden vooraf.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Japan">Plan je reis naar Japan</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-australie" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/oceanie.jpg" alt="Uluru bij zonsondergang"></div>
+            <div class="when-panel__body">
+              <h3>Australi&euml;</h3>
+              <p>Van het Great Barrier Reef tot Uluru in het rode hart en de kust rond Sydney: Australi&euml; is groot, en elke streek heeft zijn eigen seizoen. Lente en herfst zijn overal aangenaam; als het bij ons winter is, is het er zomer.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 22&ndash;24u, met overstap</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>+8 &agrave; +10u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>3 &agrave; 4 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Het tropische noorden, rond Cairns en Darwin, is het best van mei tot oktober: dan is het er droog en aangenaam.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Australi%C3%AB">Plan je reis naar Australi&euml;</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-nz" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/nieuw-zeeland.jpg" alt="Milford Sound in Nieuw-Zeeland"></div>
+            <div class="when-panel__body">
+              <h3>Nieuw-Zeeland</h3>
+              <p>Fjorden, vulkanen, gletsjers en wijnstreken op twee eilanden, ideaal om met een huurwagen te ontdekken. De zuidelijke zomer van december tot maart geeft de langste dagen, en dan zijn de meeste wandelpaden open.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 25&ndash;28u, met 1 &agrave; 2 overstappen</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>+10 &agrave; +12u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>3 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Door de lange reistijd raden we een tussenstop aan, bijvoorbeeld in Singapore of Dubai.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Nieuw-Zeeland">Plan je reis naar Nieuw-Zeeland</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-dubai" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/dubai.jpg" alt="Dubai"></div>
+            <div class="when-panel__body">
+              <h3>Dubai &amp; Oman</h3>
+              <p>De skyline van Dubai, gecombineerd met de fjorden van Musandam, de woestijn van Wahiba en de oude forten van Oman. Van november tot maart is het er zonnig en aangenaam warm; in de zomer loopt de temperatuur op tot boven de 40 graden.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 6,5u, rechtstreeks</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>+2 &agrave; +3u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>8 &agrave; 12 dagen</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Een ideale korte wintervakantie, en ook een goede tussenstop op weg naar Azi&euml; of Australi&euml;.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Dubai%20en%20Oman">Plan je reis naar Dubai &amp; Oman</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-jordanie" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/midden-oosten.jpg" alt="De rotsstad Petra in Jordani&euml;"></div>
+            <div class="when-panel__body">
+              <h3>Jordani&euml;</h3>
+              <p>De rozerode rotsstad Petra, een nacht onder de sterren in Wadi Rum en drijven in de Dode Zee. Lente en herfst zijn ideaal om te wandelen; in de zomer is het in de woestijn erg heet, in de winter kan het er fris zijn.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 4,5u</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>+1 &agrave; +2u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>8 &agrave; 10 dagen</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Plan minstens twee dagen voor Petra: de site is groot en op zijn mooist vroeg in de ochtend of laat in de namiddag.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Jordani%C3%AB">Plan je reis naar Jordani&euml;</a>
+            </div>
+          </div>
+
+          <div class="when-panel" id="when-marokko" hidden>
+            <div class="when-panel__img"><img src="assets/img/regios/afrika-anders.jpg" alt="Kamelen in de woestijn"></div>
+            <div class="when-panel__body">
+              <h3>Marokko</h3>
+              <p>De soeks van Marrakech, de kasbahs in het Atlasgebergte en een nacht tussen de duinen van de Sahara. In de lente en de herfst is het aangenaam warm; in de zomer is het binnenland zeer heet, in de winter zijn de woestijnnachten koud.</p>
+              <dl class="ctype-facts">
+                <div><dt>Beste periode</dt><dd data-best></dd></div>
+                <div><dt>Vliegtijd</dt><dd>&plusmn; 3,5u, rechtstreeks</dd></div>
+                <div><dt>Tijdsverschil</dt><dd>0 &agrave; &minus;1u</dd></div>
+                <div><dt>Ideale reisduur</dt><dd>1 &agrave; 2 weken</dd></div>
+              </dl>
+              <p class="when-tip"><strong>Goed om te weten.</strong> Tijdens de ramadan blijft reizen goed mogelijk, maar zijn sommige restaurants overdag gesloten.</p>
+              <a class="btn btn--accent" href="contact.html?interesse=Marokko">Plan je reis naar Marokko</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -127,90 +384,84 @@
   <section>
     <div class="wrap">
       <span class="eyebrow">Kies je stijl</span>
-      <h2 style="margin-top:12px">Type reis</h2>
-      <p class="lead" style="margin-top:14px;max-width:640px">Van een begeleide rondreis tot volledig op maat: elke reisstijl heeft zijn eigen aanpak.</p>
+      <h2 style="margin-top:12px">Hoe wil je reizen?</h2>
+      <p class="lead" style="margin-top:14px;max-width:680px">Elke reis stellen we op maat samen. Het verschil zit in hoeveel er onderweg voor je vastligt: van een gids die alles in goede banen leidt tot een reis die volledig jouw ritme volgt.</p>
 
-      <div class="line-grid line-grid--thumbs">
-
-        <button type="button" class="line-card" data-name="Rondreis met gids" data-desc="Ontspannen achterover leunen terwijl een lokale gids je langs de hoogtepunten van een land of regio brengt, inclusief alle logistiek en verborgen parels die je zelf niet zo snel zou vinden." data-img="assets/img/types/rondreis-gids.jpg">
-          <span class="line-card__body">
-            <span class="line-card__name" style="display:block">Rondreis met gids</span>
-            <span class="line-card__tag">Ontspannen &amp; begeleid</span>
-
-          </span>
-          <span class="line-card__thumb"><img src="assets/img/types/rondreis-gids.jpg" alt=""></span>
-        </button>
-
-        <button type="button" class="line-card" data-name="Fly &amp; drive" data-desc="Vlieg naar je bestemming en ontdek nadien alles in je eigen tempo, met een huurwagen en een zorgvuldig uitgestippelde route langs de mooiste plekken." data-img="assets/img/types/fly-drive.jpg">
-          <span class="line-card__body">
-            <span class="line-card__name" style="display:block">Fly &amp; drive</span>
-            <span class="line-card__tag">In je eigen tempo</span>
-
-          </span>
-          <span class="line-card__thumb"><img src="assets/img/types/fly-drive.jpg" alt=""></span>
-        </button>
-
-        <button type="button" class="line-card" data-name="Stedentrip" data-desc="Enkele dagen onderdompelen in de sfeer van een nieuwe stad: cultuur, gastronomie en architectuur, zonder lang op reis te hoeven zijn." data-img="assets/img/types/stedentrip.jpg">
-          <span class="line-card__body">
-            <span class="line-card__name" style="display:block">Stedentrip</span>
-            <span class="line-card__tag">Kort &amp; intens</span>
-
-          </span>
-          <span class="line-card__thumb"><img src="assets/img/types/stedentrip.jpg" alt=""></span>
-        </button>
-
-        <button type="button" class="line-card" data-name="Actieve ontdekkingsreis" data-desc="Voor wie liever wandelt, fietst of kajakt dan op een strandstoel ligt: een reis vol beweging, natuur en avontuur." data-img="assets/img/types/actieve-ontdekkingsreis.jpg">
-          <span class="line-card__body">
-            <span class="line-card__name" style="display:block">Actieve ontdekkingsreis</span>
-            <span class="line-card__tag">Vol beweging</span>
-
-          </span>
-          <span class="line-card__thumb"><img src="assets/img/types/actieve-ontdekkingsreis.jpg" alt=""></span>
-        </button>
-
-        <button type="button" class="line-card" data-name="Combinatiereis" data-desc="Waarom kiezen? Combineer een rondreis met een ontspannen strandverlengstuk, of steden met natuur. Wij stellen het perfecte evenwicht voor jou samen." data-img="assets/img/types/combinatiereis.jpg">
-          <span class="line-card__body">
-            <span class="line-card__name" style="display:block">Combinatiereis</span>
-            <span class="line-card__tag">Het beste van twee werelden</span>
-
-          </span>
-          <span class="line-card__thumb"><img src="assets/img/types/combinatiereis.jpg" alt=""></span>
-        </button>
-
-        <button type="button" class="line-card" data-name="Volledig op maat" data-desc="Geen vast programma, maar een reis die volledig is opgebouwd rond jouw wensen, interesses en tempo, van begin tot einde uniek voor jou." data-img="assets/img/types/op-maat.jpg">
-          <span class="line-card__body">
-            <span class="line-card__name" style="display:block">Volledig op maat</span>
-            <span class="line-card__tag">100% jouw reis</span>
-
-          </span>
-          <span class="line-card__thumb"><img src="assets/img/types/op-maat.jpg" alt=""></span>
-        </button>
-
+      <div class="style-scale">
+        <span class="style-scale__end">Alles geregeld</span>
+        <div class="style-scale__track" role="tablist" aria-label="Reisvormen" style="--active:12.5%">
+          <span class="style-scale__marker" aria-hidden="true"></span>
+          <button type="button" class="style-stop" role="tab" id="style-tab-gids" aria-controls="style-gids" aria-selected="true" data-pos="12.5%" style="--pos:12.5%">Rondreis met gids</button>
+          <button type="button" class="style-stop" role="tab" id="style-tab-combi" aria-controls="style-combi" aria-selected="false" tabindex="-1" data-pos="37.5%" style="--pos:37.5%">Combinatiereis</button>
+          <button type="button" class="style-stop" role="tab" id="style-tab-flydrive" aria-controls="style-flydrive" aria-selected="false" tabindex="-1" data-pos="62.5%" style="--pos:62.5%">Fly &amp; drive</button>
+          <button type="button" class="style-stop" role="tab" id="style-tab-maat" aria-controls="style-maat" aria-selected="false" tabindex="-1" data-pos="87.5%" style="--pos:87.5%">Volledig op maat</button>
+        </div>
+        <span class="style-scale__end">Jouw eigen ritme</span>
       </div>
+
+      <div class="ctype-panel" role="tabpanel" id="style-gids" aria-labelledby="style-tab-gids">
+        <div class="ctype-panel__img"><img src="assets/img/types/rondreis-gids.jpg" alt="Reizigers met een lokale gids"></div>
+        <div class="ctype-panel__body">
+          <h3>Rondreis met gids</h3>
+          <p>Een lokale gids begeleidt je van de eerste tot de laatste dag. Die kent de verhalen en de verborgen plekjes, en regelt onderweg alles. Jij hoeft enkel te genieten, in een kleine groep of met enkel je eigen reisgezelschap.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gids</dt><dd>Mee van begin tot einde</dd></div>
+            <div><dt>Vervoer ter plaatse</dt><dd>Chauffeur of minibus</dd></div>
+            <div><dt>Programma</dt><dd>Vast dagprogramma, vooraf samen afgestemd</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Een eerste verre reis, of landen waar zelf rijden lastig is, zoals Peru of Jordani&euml;</dd></div>
+          </dl>
+          <a class="btn btn--accent" href="contact.html?interesse=Rondreis%20met%20gids">Bespreek een rondreis met gids</a>
+        </div>
+      </div>
+
+      <div class="ctype-panel" role="tabpanel" id="style-combi" aria-labelledby="style-tab-combi" hidden>
+        <div class="ctype-panel__img"><img src="assets/img/types/combinatiereis.jpg" alt="Piramides van Gizeh"></div>
+        <div class="ctype-panel__body">
+          <h3>Combinatiereis</h3>
+          <p>Eerst een rondreis vol indrukken, daarna een paar dagen niets aan je hoofd aan het strand. Of een bruisende stad, gevolgd door natuur. Wij zorgen voor een vlotte overgang tussen de verschillende delen.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gids</dt><dd>Tijdens het rondreisdeel</dd></div>
+            <div><dt>Vervoer ter plaatse</dt><dd>Geregeld, ook tussen de onderdelen</dd></div>
+            <div><dt>Programma</dt><dd>Deels vast, deels vrij</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Wie cultuur &eacute;n rust wil, zoals Thailand met een eiland of Dubai met een strandverblijf</dd></div>
+          </dl>
+          <a class="btn btn--accent" href="contact.html?interesse=Combinatiereis">Bespreek een combinatiereis</a>
+        </div>
+      </div>
+
+      <div class="ctype-panel" role="tabpanel" id="style-flydrive" aria-labelledby="style-tab-flydrive" hidden>
+        <div class="ctype-panel__img"><img src="assets/img/types/fly-drive.jpg" alt="Weg door een weids berglandschap"></div>
+        <div class="ctype-panel__body">
+          <h3>Fly &amp; drive</h3>
+          <p>Je vliegt naar je bestemming en ontdekt de rest met een huurwagen, in je eigen tempo. Wij stippelen de route uit en boeken de hotels onderweg; hoe je je dagen invult, beslis je zelf.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gids</dt><dd>Geen, wel een uitgewerkte route</dd></div>
+            <div><dt>Vervoer ter plaatse</dt><dd>Huurwagen, je rijdt zelf</dd></div>
+            <div><dt>Programma</dt><dd>Route en hotels liggen vast, de dagen zijn vrij</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Wie graag zelf ontdekt, in landen als de Verenigde Staten, Canada of Nieuw-Zeeland</dd></div>
+          </dl>
+          <a class="btn btn--accent" href="contact.html?interesse=Fly%20%26%20drive">Bespreek een fly &amp; drive</a>
+        </div>
+      </div>
+
+      <div class="ctype-panel" role="tabpanel" id="style-maat" aria-labelledby="style-tab-maat" hidden>
+        <div class="ctype-panel__img"><img src="assets/img/types/op-maat.jpg" alt="Kaart, camera en reisplannen op tafel"></div>
+        <div class="ctype-panel__body">
+          <h3>Volledig op maat</h3>
+          <p>Geen vast format: we bouwen de reis helemaal rond jouw wensen. Een paar dagen met een gids, een stuk zelf rijden, een bijzondere lodge of een binnenlandse vlucht: alles kan, in het tempo dat bij jou past.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gids</dt><dd>Waar jij het wil</dd></div>
+            <div><dt>Vervoer ter plaatse</dt><dd>Een mix, naar keuze</dd></div>
+            <div><dt>Programma</dt><dd>Volledig rond jou opgebouwd</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Ervaren reizigers en wie bijzondere wensen heeft</dd></div>
+          </dl>
+          <a class="btn btn--accent" href="contact.html?interesse=Reis%20volledig%20op%20maat">Bespreek een reis op maat</a>
+        </div>
+      </div>
+
+      <p class="style-themes"><strong>Past bij elke reisvorm:</strong> een stedentrip van enkele dagen, of een actieve reis vol wandelen, fietsen of kajakken.</p>
     </div>
   </section>
-
-  <!-- Interest modal -->
-  <div class="modal-overlay" id="cruise-modal">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="cruise-modal-title">
-      <button type="button" class="modal-close" id="cruise-modal-close" aria-label="Sluiten">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-      <span class="modal-card__img-wrap" id="cruise-modal-img-wrap"><img id="cruise-modal-img" class="modal-card__img" src="" alt="" onerror="this.style.display='none'"></span>
-      <span class="eyebrow" id="cruise-modal-tagline"></span>
-      <h3 id="cruise-modal-title" style="margin-top:10px"></h3>
-      <p id="cruise-modal-desc"></p>
-      <div class="modal-card__fact" id="cruise-modal-signature-wrap">
-        <span class="modal-card__fact-label">Kenmerkend</span>
-        <p id="cruise-modal-signature"></p>
-      </div>
-      <div class="modal-card__fact" id="cruise-modal-idealfor-wrap">
-        <span class="modal-card__fact-label">Ideaal voor</span>
-        <p id="cruise-modal-idealfor"></p>
-      </div>
-      <a class="btn btn--accent" id="cruise-modal-cta" href="contact.html">Ik heb interesse</a>
-    </div>
-  </div>
 
   <section class="section-alt">
     <div class="wrap">
@@ -388,7 +639,8 @@
 </footer>
 
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/catalog-modal.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/when.js"></script>
 <script src="assets/js/trip-plans.js?v=3"></script>
 </body>
 </html>
