@@ -1,0 +1,9 @@
+{
+  // Cloudflare: publiceer enkel de map met de website en toon 404.html bij een onbekend adres
+  "name": "het-reisplan-website",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./preview",
+    "not_found_handling": "404-page"
+  }
+}

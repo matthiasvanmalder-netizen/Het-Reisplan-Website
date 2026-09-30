@@ -198,6 +198,22 @@ section{padding:88px 0}
   max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease, opacity .3s ease, margin .3s ease;}
 .route-card:hover p{max-height:80px;opacity:1}
 
+/* Juridische pagina's */
+.legal{padding:72px 0 96px}
+.legal h1{font-size:clamp(2.2rem,4vw,3rem);margin:0 0 10px;letter-spacing:-.02em}
+.legal__updated{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--ink-muted);margin:0 0 40px}
+.legal h2{font-size:1.3rem;margin:44px 0 12px}
+.legal p,.legal li{font-size:1rem;line-height:1.7}
+.legal ul{padding-left:20px;margin:0 0 1em}
+.legal li{margin-bottom:6px;color:var(--ink-muted)}
+.legal a{color:var(--accent-tint);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.legal strong{color:var(--ink)}
+/* nog aan te vullen gegevens: bewust opvallend zodat ze niet ongemerkt live gaan */
+.todo{
+  background:rgba(201,162,78,.12);color:var(--accent-tint);border:1px dashed var(--accent);
+  border-radius:2px;padding:1px 6px;font-family:'IBM Plex Mono',monospace;font-size:.85em;
+}
+
 /* Pillars */
 .process h2{font-size:clamp(2.2rem,4.2vw,3.3rem);max-width:720px;margin:0;letter-spacing:-.02em}
 /* doorlopende lijn over de kolommen heen: goud tijdens de voorbereiding, cyaan bij de reis zelf */
@@ -278,7 +294,10 @@ section{padding:88px 0}
 .footer-bottom{
   margin-top:52px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);
   font-size:.8rem;color:var(--ink-muted);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;
 }
+.footer-legal{display:flex;flex-wrap:wrap;gap:8px 20px}
+.site-footer .footer-legal a{font-size:.8rem;text-decoration:underline;text-underline-offset:3px}
 
 .skip-link{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
 .skip-link:focus{left:16px;top:16px}
