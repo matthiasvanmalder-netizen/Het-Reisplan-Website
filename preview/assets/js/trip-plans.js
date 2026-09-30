@@ -16,21 +16,42 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Eerst morphen de kaarten naar hun nieuwe vorm; pas daarna zakken de
-    // dichtgeklapte kaarten zacht weg (is-focused), zodat beide bewegingen
-    // elkaar niet kruisen.
+    // Dichtgeklapte kaarten stappen terug (is-focused). Tijdens de overgang
+    // gebeurt dat via de overgangslagen zelf, zodat het vervagen tegelijk met
+    // het verschuiven start; daarna neemt de gewone CSS-klasse het over.
+    var DIM = 0.42, FADE = 900;
+    function dimmedNow(c) { return selector.classList.contains('is-focused') && c.classList.contains('is-collapsed'); }
     function settle() {
       selector.classList.toggle('is-focused', !!selector.querySelector('.trip-card.is-expanded'));
     }
 
     function animate(update) {
-      selector.classList.remove('is-focused');
-      if (canTransition && !reduceMotion.matches) {
-        document.startViewTransition(update).finished.then(settle, settle);
-      } else {
+      if (!(canTransition && !reduceMotion.matches)) { update(); settle(); return; }
+      var before = cards.map(function (c) { return dimmedNow(c) ? DIM : 1; });
+      var vt = document.startViewTransition(function () {
+        selector.classList.remove('is-focused');
         update();
+      });
+      vt.ready.then(function () {
+        var anyOpen = cards.some(function (c) { return c.classList.contains('is-expanded'); });
+        cards.forEach(function (c, i) {
+          var to = anyOpen && c.classList.contains('is-collapsed') ? DIM : 1;
+          if (before[i] === 1 && to === 1) return;
+          ['trip-card-', 'trip-img-'].forEach(function (prefix) {
+            document.documentElement.animate({ opacity: [before[i], to] }, {
+              duration: FADE, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'forwards',
+              pseudoElement: '::view-transition-group(' + prefix + s + '-' + i + ')'
+            });
+          });
+        });
+      }).catch(function () {});
+      vt.finished.then(function () {
+        // eindtoestand zonder nog eens te animeren
+        selector.classList.add('no-fade');
         settle();
-      }
+        void selector.offsetWidth;
+        selector.classList.remove('no-fade');
+      });
     }
 
     function collapseAll() {

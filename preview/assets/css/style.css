@@ -739,7 +739,8 @@ main > section.wrap:first-child{padding-top:64px}
 
 /* Als er een reis open staat, stappen de andere kaarten zacht terug.
    Aanwijzen of met het toetsenbord erop komen brengt ze weer naar voren. */
-.trip-card{transition:opacity .5s cubic-bezier(.22,1,.36,1)}
+.trip-card{transition:opacity .9s cubic-bezier(.22,1,.36,1)}
+.trip-selector.no-fade .trip-card{transition:none}
 .trip-selector.is-focused .trip-card.is-collapsed{opacity:.42}
 .trip-selector.is-focused .trip-card.is-collapsed:hover,
 .trip-selector.is-focused .trip-card.is-collapsed:focus-within{opacity:.9;transition-duration:.25s}
