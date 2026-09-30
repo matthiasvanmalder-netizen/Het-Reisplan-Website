@@ -7,7 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (canTransition) {
       selector.classList.add('has-vt');
       selector.style.viewTransitionName = 'trip-selector-' + s;
-      cards.forEach(function (c, i) { c.style.viewTransitionName = 'trip-card-' + s + '-' + i; });
+      cards.forEach(function (c, i) {
+        c.style.viewTransitionName = 'trip-card-' + s + '-' + i;
+        // kaartfoto en bannerfoto delen een naam; er is er telkens maar één zichtbaar
+        c.querySelectorAll('.trip-card__img, .trip-card__detail-img').forEach(function (el) {
+          el.style.viewTransitionName = 'trip-img-' + s + '-' + i;
+        });
+      });
     }
 
     function animate(update) {
