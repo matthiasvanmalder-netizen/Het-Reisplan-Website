@@ -219,8 +219,8 @@ section{padding:88px 0}
 
 /* Persoonlijke signatuur van Yves (homepagina) */
 .signature{padding:128px 0}
-.signature__inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:88px;align-items:center}
-.signature__photo{margin:0;position:relative;isolation:isolate;max-width:440px}
+.signature__inner{display:grid;grid-template-columns:340px minmax(0,1fr);gap:96px;align-items:center}
+.signature__photo{margin:0;position:relative;isolation:isolate;max-width:340px}
 /* dunne gouden lijst, iets verschoven achter de foto */
 .signature__photo::after{
   content:"";position:absolute;inset:22px -22px -22px 22px;z-index:-1;
@@ -243,11 +243,11 @@ section{padding:88px 0}
 @media (max-width:860px){
   .signature{padding:88px 0}
   .signature__inner{grid-template-columns:1fr;gap:56px}
-  .signature__photo{max-width:300px}
+  .signature__photo{max-width:260px}
 }
 @media (max-width:620px){
   .signature{padding:64px 0 72px}
-  .signature__photo{max-width:250px}
+  .signature__photo{max-width:220px}
   .signature__photo::after{inset:14px -14px -14px 14px}
 }
 
