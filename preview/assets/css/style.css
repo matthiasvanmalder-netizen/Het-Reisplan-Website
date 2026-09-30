@@ -103,12 +103,12 @@ section{padding:88px 0}
 .nav-dest[open] summary::after{transform:rotate(-135deg);margin-top:2px}
 .nav-dest__menu{
   position:absolute;top:calc(100% + 18px);left:-16px;
-  background:var(--surface);border:1px solid var(--border);border-radius:16px;
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
   box-shadow:var(--shadow);padding:10px;min-width:230px;list-style:none;margin:0;
 }
 .nav-dest__menu li a{
   display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding:11px 14px;border-radius:10px;font-weight:600;font-size:.92rem;color:var(--ink);
+  padding:11px 14px;border-radius:6px;font-weight:600;font-size:.92rem;color:var(--ink);
 }
 .nav-dest__menu li a:hover{background:var(--cream);color:var(--navy)}
 .header-phone{
@@ -197,7 +197,7 @@ section{padding:88px 0}
 
 .route-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .route-card{
-  position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/3.3;
+  position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3.3;
   transition:transform .25s ease;
 }
 .route-card:hover{transform:translateY(-6px)}
@@ -434,7 +434,7 @@ main > section.wrap:first-child{padding-top:64px}
 /* Cruise catalog: rederijen, bestemmingen, uitgelicht, modal */
 .line-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:36px}
 .line-card{
-  position:relative;background:var(--surface);border:1.5px solid var(--border);border-radius:18px;
+  position:relative;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;
   padding:26px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:12px;text-align:center;cursor:pointer;font-family:inherit;min-height:150px;
   transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
@@ -460,7 +460,7 @@ main > section.wrap:first-child{padding-top:64px}
 
 .dest-card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
 .mini-dest-card{
-  position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3.2;
+  position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3.2;
   border:none;padding:0;cursor:pointer;box-shadow:0 8px 22px -14px rgba(18,33,63,.28);
   transition:transform .2s ease,box-shadow .2s ease;
 }
