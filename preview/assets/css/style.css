@@ -198,11 +198,11 @@ section{padding:88px 0}
 .route-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .route-card{
   position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3.3;
-  transition:transform .25s ease;
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
 }
 .route-card:hover{transform:translateY(-6px)}
-.route-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.route-card:hover img{transform:scale(1.06)}
+.route-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.route-card:hover img{transform:scale(1.05)}
 .route-card::after{
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg, rgba(18,33,63,0) 30%, rgba(15,23,43,.88) 100%);
@@ -552,8 +552,8 @@ main > section.wrap:first-child{padding-top:64px}
 .line-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 .ctype-panel:not([hidden]),
-.when-panel:not([hidden]){animation:panelIn .35s ease}
-@keyframes panelIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.when-panel:not([hidden]){animation:panelIn .45s cubic-bezier(.22,1,.36,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 /* Intercontinentaal: waar en wanneer (maandraster + vliegtijd) */
 .when{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:44px;margin-top:40px;align-items:start}
@@ -698,7 +698,7 @@ main > section.wrap:first-child{padding-top:64px}
 }
 /* Kaarten morphen via de View Transitions API (trip-plans.js); de snapshots
    worden in hun kader bijgesneden zodat inhoud niet uitrekt tijdens het schalen. */
-::view-transition-group(*){animation-duration:.55s;animation-timing-function:cubic-bezier(.65,0,.35,1)}
+::view-transition-group(*){animation-duration:.62s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
 ::view-transition-old(*),
 ::view-transition-new(*){animation-duration:.35s;animation-timing-function:ease}
 /* de rest van de pagina niet laten overvloeien (gaf spookbeelden); de secties
@@ -714,10 +714,10 @@ main > section.wrap:first-child{padding-top:64px}
 ::view-transition-old(*.trip),
 ::view-transition-new(*.trip){height:100%;width:auto;min-width:100%;object-fit:cover;object-position:left top}
 /* tekst niet laten kruisen: oud verdwijnt snel, nieuw verschijnt net erna */
-::view-transition-old(*.trip){animation:vtOut .18s ease both}
-::view-transition-new(*.trip){animation:vtIn .32s ease .2s both}
+::view-transition-old(*.trip){animation:vtOut .16s ease-out both}
+::view-transition-new(*.trip){animation:vtIn .42s cubic-bezier(.22,1,.36,1) .22s both}
 @keyframes vtOut{to{opacity:0}}
-@keyframes vtIn{from{opacity:0}}
+@keyframes vtIn{from{opacity:0;transform:translateY(6px)}}
 /* de foto van een kaart is een eigen laag: kaartfoto en banner zijn hetzelfde beeld,
    dus zonder overvloei lijkt het één foto die van vorm verandert */
 .has-vt .trip-card__img,
@@ -737,12 +737,20 @@ main > section.wrap:first-child{padding-top:64px}
 .trip-card.is-expanded{flex:4.5}
 .trip-card.is-collapsed{flex:1}
 
+/* Als er een reis open staat, stappen de andere kaarten zacht terug.
+   Aanwijzen of met het toetsenbord erop komen brengt ze weer naar voren. */
+.trip-card{transition:opacity .5s cubic-bezier(.22,1,.36,1)}
+.trip-selector.is-focused .trip-card.is-collapsed{opacity:.42}
+.trip-selector.is-focused .trip-card.is-collapsed:hover,
+.trip-selector.is-focused .trip-card.is-collapsed:focus-within{opacity:.9;transition-duration:.25s}
+@media (prefers-reduced-motion: reduce){ .trip-card{transition:none} }
+
 .trip-card__summary{
   all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;flex:1;width:100%;
 }
 .trip-card__summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .trip-card__img{aspect-ratio:4/3;overflow:hidden}
-.trip-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.trip-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .trip-card__summary:hover .trip-card__img img{transform:scale(1.04)}
 .trip-card__meta{padding:22px 24px 24px;display:flex;flex-direction:column;gap:6px;flex:1}
 .trip-card__kicker{

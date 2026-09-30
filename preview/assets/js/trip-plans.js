@@ -16,11 +16,20 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
+    // Eerst morphen de kaarten naar hun nieuwe vorm; pas daarna zakken de
+    // dichtgeklapte kaarten zacht weg (is-focused), zodat beide bewegingen
+    // elkaar niet kruisen.
+    function settle() {
+      selector.classList.toggle('is-focused', !!selector.querySelector('.trip-card.is-expanded'));
+    }
+
     function animate(update) {
+      selector.classList.remove('is-focused');
       if (canTransition && !reduceMotion.matches) {
-        document.startViewTransition(update);
+        document.startViewTransition(update).finished.then(settle, settle);
       } else {
         update();
+        settle();
       }
     }
 
