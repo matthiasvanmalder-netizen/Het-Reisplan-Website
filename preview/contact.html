@@ -18,10 +18,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/style.css?v=55">
 <style>
-  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+  .contact-section{padding-top:48px}
+  .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:80px;align-items:start}
+  /* linkerkolom begint op dezelfde hoogte als de inhoud van het formulier */
+  .contact-info{padding-top:40px}
   .info-list{display:flex;flex-direction:column;gap:26px;margin:0}
-  .info-list dt{font-family:'Manrope',sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-tint);margin-bottom:6px}
-  .info-list dd{margin:0;font-size:1.02rem;color:var(--ink)}
+  .info-list dt{font-family:'Inter',sans-serif;font-weight:600;font-size:.88rem;color:var(--accent);margin-bottom:6px}
+  .info-list dd{margin:0;font-size:1.02rem;line-height:1.6;color:var(--ink)}
   .info-list dd a{font-weight:600;color:var(--ink)}
   .form-card{background:var(--cream);border-radius:10px;padding:40px;display:flex;flex-direction:column;gap:24px}
   .form-card__head h2{font-size:1.6rem;margin:0 0 8px;letter-spacing:-.01em}
@@ -62,13 +65,19 @@
   .choice input:checked + span{border-color:var(--accent);color:var(--ink);background:rgba(201,162,78,.12)}
   .choice input:focus-visible + span{outline:2px solid var(--accent);outline-offset:3px}
   .form-note{font-size:.82rem;color:var(--ink-muted);margin:0}
+  .contact-photo{margin-top:40px;border-radius:10px;overflow:hidden}
+  .contact-photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+  .info-list dd a[target]{display:inline-block;margin-top:4px;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
   @media (max-width:860px){
-    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .contact-grid{grid-template-columns:1fr;gap:40px}
+    .contact-info{padding-top:0}
     .field-row{grid-template-columns:1fr}
   }
   @media (max-width:620px){
     .form-card{padding:26px 20px}
-    .choice-row:not(.choice-row--wrap){flex-direction:column}
+    .choice-row:not(.choice-row--wrap){display:grid;grid-template-columns:1fr 1fr}
+    .choice-row:not(.choice-row--wrap) .choice{display:flex}
+    .choice-row:not(.choice-row--wrap) .choice span{width:100%;justify-content:center;text-align:center;padding:10px 8px;white-space:nowrap;font-size:.88rem}
   }</style>
 </head>
 <body>
@@ -118,10 +127,10 @@
     <p class="lead" style="margin-top:18px;max-width:560px">Bel ons gerust voor persoonlijk advies, of stuur een bericht. We nemen zo snel mogelijk contact met je op.</p>
   </section>
 
-  <section>
+  <section class="contact-section">
     <div class="wrap contact-grid">
 
-      <div>
+      <div class="contact-info">
         <dl class="info-list">
           <div>
             <dt>Telefoon</dt>
@@ -131,7 +140,7 @@
             <dt>Adres</dt>
             <dd>
               Wielewaalweg 4<br>3140 Keerbergen, Belgi&euml;<br>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Wielewaalweg+4%2C+3140+Keerbergen%2C+Belgi%C3%AB" target="_blank" rel="noopener">Bekijk op Google Maps &rarr;</a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Wielewaalweg+4%2C+3140+Keerbergen%2C+Belgi%C3%AB" target="_blank" rel="noopener">Bekijk op Google Maps</a>
             </dd>
           </div>
           <div>
@@ -148,8 +157,8 @@
           </div>
         </dl>
 
-        <div style="margin-top:40px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)">
-          <img loading="lazy" decoding="async" src="assets/img/kantoor.webp" alt="Het kantoor van Het Reisplan in Keerbergen" style="width:100%;height:220px;object-fit:cover;object-position:center 55%">
+        <div class="contact-photo">
+          <img loading="lazy" decoding="async" src="assets/img/kantoor.webp" alt="Het kantoor van Het Reisplan in Keerbergen" style="object-position:center 55%">
         </div>
       </div>
 
