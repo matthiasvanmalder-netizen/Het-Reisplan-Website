@@ -203,6 +203,15 @@ section{padding:88px 0}
 .legal h1{font-size:clamp(2.2rem,4vw,3rem);margin:0 0 10px;letter-spacing:-.02em}
 .legal__updated{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--ink-muted);margin:0 0 40px}
 .legal h2{font-size:1.3rem;margin:44px 0 12px}
+.legal h3{font-size:1.02rem;margin:32px 0 8px;line-height:1.4}
+.legal-art{border-bottom:1px solid var(--border)}
+.legal h2 + .legal-art{margin-top:8px}
+.legal-art summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 0;font-weight:600;color:var(--ink);line-height:1.4}
+.legal-art summary::-webkit-details-marker{display:none}
+.legal-art summary::after{content:"+";flex:none;color:var(--accent-tint);font-size:1.25rem;line-height:1;transition:transform .2s}
+.legal-art[open] summary::after{transform:rotate(45deg)}
+.legal-art summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.legal-art > :last-child{padding-bottom:12px}
 .legal p,.legal li{font-size:1rem;line-height:1.7}
 .legal ul{padding-left:20px;margin:0 0 1em}
 .legal li{margin-bottom:6px;color:var(--ink-muted)}
