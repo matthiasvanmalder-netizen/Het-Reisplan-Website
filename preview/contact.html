@@ -23,21 +23,53 @@
   .info-list dt{font-family:'Manrope',sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-tint);margin-bottom:6px}
   .info-list dd{margin:0;font-size:1.02rem;color:var(--ink)}
   .info-list dd a{font-weight:600;color:var(--ink)}
-  .form-card{background:var(--cream);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:18px}
-  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-card{background:var(--cream);border-radius:10px;padding:40px;display:flex;flex-direction:column;gap:24px}
+  .form-card__head h2{font-size:1.6rem;margin:0 0 8px;letter-spacing:-.01em}
+  .form-card__head p{margin:0;font-size:.95rem}
+  .form-card__divider{height:1px;background:var(--border);margin:4px 0}
+  .form-card__submit{align-self:flex-start}
+  fieldset.field{border:0;padding:0;margin:0;min-width:0}
+  .field legend{padding:0;margin-bottom:10px;font-size:.85rem;font-weight:600;color:var(--ink)}
+  .field .field__section{font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:16px}font-weight:400;color:var(--ink-muted);margin-left:6px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
   .field{display:flex;flex-direction:column;gap:8px}
+  fieldset.field .field-row + .field{margin-top:16px}
   .field label{font-size:.85rem;font-weight:600;color:var(--ink)}
-  .field input,.field textarea{
-    border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;font-family:inherit;
-    font-size:.95rem;background:var(--surface);color:var(--ink);resize:vertical;
+  .field input:not([type=radio]):not([type=checkbox]),.field textarea,.field select{
+    border:1.5px solid var(--border);border-radius:8px;padding:12px 14px;font-family:inherit;
+    font-size:.95rem;background:var(--surface);color:var(--ink);resize:vertical;width:100%;
   }
-  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+  .field select{appearance:none;cursor:pointer;padding-right:40px;
+    background-image:linear-gradient(45deg,transparent 50%,var(--ink-muted) 50%),linear-gradient(135deg,var(--ink-muted) 50%,transparent 50%);
+    background-position:calc(100% - 20px) 52%,calc(100% - 15px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(170,180,201,.6)}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--accent)}
+  .field[hidden]{display:none}
+  .field--reveal{margin-top:14px}
+  .field--reveal:not([hidden]){animation:panelIn .4s cubic-bezier(.22,1,.36,1)}
+  /* keuzes als rustige knoppen; het echte vakje blijft bruikbaar met het toetsenbord */
+  .choice-row{display:flex;gap:10px}
+  .choice-row--wrap{flex-wrap:wrap}
+  .choice{position:relative;cursor:pointer}
+  .choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+  .choice span{
+    display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;
+    border:1.5px solid var(--border);background:var(--surface);font-size:.92rem;font-weight:600;color:var(--ink-muted);
+    transition:border-color .2s ease,color .2s ease,background .2s ease;
+  }
+  .choice:hover span{border-color:rgba(255,255,255,.3);color:var(--ink)}
+  .choice input:checked + span{border-color:var(--accent);color:var(--ink);background:rgba(201,162,78,.12)}
+  .choice input:checked + span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .choice input:focus-visible + span{outline:2px solid var(--accent);outline-offset:3px}
   .form-note{font-size:.82rem;color:var(--ink-muted);margin:0}
   @media (max-width:860px){
     .contact-grid{grid-template-columns:1fr;gap:36px}
     .field-row{grid-template-columns:1fr}
   }
-</style>
+  @media (max-width:620px){
+    .form-card{padding:26px 20px}
+    .choice-row:not(.choice-row--wrap){flex-direction:column}
+  }</style>
 </head>
 <body>
 
@@ -123,32 +155,101 @@
 
       <div>
         <form id="contact-form" class="form-card" action="https://formsubmit.co/info@hetreisplan.be" method="POST">
-          <input type="hidden" name="_subject" value="Nieuwe aanvraag via hetreisplan.be">
+          <input type="hidden" name="_subject" value="Nieuwe reisaanvraag via hetreisplan.be">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="Soort reis" id="reistype-value">
+
+          <div class="form-card__head">
+            <h2>Vertel ons kort over je reis</h2>
+            <p>Een paar vragen, zodat we je meteen gericht kunnen helpen. Weet je iets nog niet? Geen probleem, dat bespreken we samen.</p>
+          </div>
+
+          <fieldset class="field">
+            <legend>Waar wil je naartoe?</legend>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="Bestemming bekend" value="Ik weet het al" data-toggle="dest-field"><span>Ik weet het al</span></label>
+              <label class="choice"><input type="radio" name="Bestemming bekend" value="Ik zoek inspiratie" checked><span>Ik zoek inspiratie</span></label>
+            </div>
+            <div class="field field--reveal" id="dest-field" hidden>
+              <label for="destination">Welke bestemming?</label>
+              <input type="text" id="destination" name="Bestemming" disabled placeholder="Bijvoorbeeld Japan, of een cruise in de Noorse fjorden">
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Wat voor reis zoek je? <span class="field__hint">Meerdere keuzes kan</span></legend>
+            <div class="choice-row choice-row--wrap" id="reistype">
+              <label class="choice"><input type="checkbox" value="Cruise"><span>Cruise</span></label>
+              <label class="choice"><input type="checkbox" value="Rondreis"><span>Rondreis</span></label>
+              <label class="choice"><input type="checkbox" value="Safari"><span>Safari</span></label>
+              <label class="choice"><input type="checkbox" value="Strandvakantie"><span>Strandvakantie</span></label>
+              <label class="choice"><input type="checkbox" value="Stedentrip"><span>Stedentrip</span></label>
+              <label class="choice"><input type="checkbox" value="Anders"><span>Anders</span></label>
+            </div>
+          </fieldset>
+
           <div class="field-row">
             <div class="field">
-              <label for="name">Naam en voornaam*</label>
-              <input type="text" id="name" name="name" required>
+              <label for="when">Wanneer wil je vertrekken?</label>
+              <input type="text" id="when" name="Vertrek" placeholder="Bijvoorbeeld mei 2027">
             </div>
             <div class="field">
-              <label for="phone">Telefoon / GSM</label>
-              <input type="tel" id="phone" name="phone">
+              <label for="travellers">Met hoeveel personen?</label>
+              <select id="travellers" name="Aantal reizigers">
+                <option value="">Kies</option>
+                <option>1 persoon</option>
+                <option>2 personen</option>
+                <option>3 personen</option>
+                <option>4 personen</option>
+                <option>5 personen</option>
+                <option>6 of meer</option>
+              </select>
             </div>
           </div>
+
           <div class="field">
-            <label for="email">E-mail*</label>
-            <input type="email" id="email" name="email" required>
+            <label for="budget">Indicatief budget per persoon</label>
+            <select id="budget" name="Budget per persoon">
+              <option value="">Kies</option>
+              <option>Tot &euro; 2.000</option>
+              <option>&euro; 2.000 tot &euro; 3.500</option>
+              <option>&euro; 3.500 tot &euro; 5.000</option>
+              <option>&euro; 5.000 tot &euro; 7.500</option>
+              <option>Meer dan &euro; 7.500</option>
+              <option>Weet ik nog niet</option>
+            </select>
           </div>
+
           <div class="field">
-            <label for="message">Uw bericht*</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+            <label for="message">Wat vind je belangrijk tijdens je reis?</label>
+            <textarea id="message" name="Wat vind je belangrijk" rows="4" placeholder="Rust, cultuur, lekker eten, avontuur, een speciale gelegenheid..."></textarea>
           </div>
-          <button class="btn btn--navy" type="submit">Bericht versturen</button>
+
+          <div class="form-card__divider" role="presentation"></div>
+
+          <fieldset class="field">
+            <legend class="field__section">Hoe kunnen we je bereiken?</legend>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Naam en voornaam*</label>
+                <input type="text" id="name" name="Naam" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Telefoon of gsm</label>
+                <input type="tel" id="phone" name="Telefoon" autocomplete="tel">
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">E-mail*</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+          </fieldset>
+
+          <button class="btn btn--accent form-card__submit" type="submit">Bespreek mijn reis</button>
           <p class="form-note" id="form-note">We gebruiken je gegevens uitsluitend om jouw aanvraag te beantwoorden.</p>
-        </form>
-      </div>
+        </form>      </div>
 
     </div>
   </section>
@@ -189,14 +290,40 @@
 <script src="assets/js/nav.js"></script>
 <script>
   (function () {
-    var params = new URLSearchParams(window.location.search);
-    var interesse = params.get('interesse');
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var boxes = Array.prototype.slice.call(form.querySelectorAll('#reistype input'));
+
+    // "Ik weet het al" toont het veld voor de bestemming
+    var dest = document.getElementById('dest-field');
+    form.querySelectorAll('input[name="Bestemming bekend"]').forEach(function (r) {
+      r.addEventListener('change', function () {
+        var show = form.querySelector('[data-toggle="dest-field"]').checked;
+        dest.hidden = !show;
+        document.getElementById('destination').disabled = !show;
+        if (show) document.getElementById('destination').focus();
+      });
+    });
+
+    // gekozen reistypes samenvoegen tot een leesbare regel in de e-mail
+    form.addEventListener('submit', function () {
+      document.getElementById('reistype-value').value = boxes.filter(function (b) { return b.checked; })
+        .map(function (b) { return b.value; }).join(', ') || 'Nog niet gekozen';
+    });
+
+    // komt de bezoeker van een knop elders op de site, dan vullen we alvast in
+    var interesse = new URLSearchParams(window.location.search).get('interesse');
     if (!interesse) return;
     var eyebrow = document.getElementById('contact-eyebrow');
-    var message = document.getElementById('message');
     if (eyebrow) eyebrow.textContent = 'Interesse: ' + interesse;
-    if (message) message.value = 'Ik heb interesse in: ' + interesse + '. ';
+    var map = { cruise: 'Cruise', rivier: 'Cruise', expeditie: 'Cruise', jacht: 'Cruise', rondreis: 'Rondreis', 'fly': 'Rondreis', safari: 'Safari', strand: 'Strandvakantie', stedentrip: 'Stedentrip', 'new york': 'Stedentrip' };
+    var lower = interesse.toLowerCase();
+    Object.keys(map).forEach(function (k) {
+      if (lower.indexOf(k) !== -1) boxes.forEach(function (b) { if (b.value === map[k]) b.checked = true; });
+    });
+    var yes = form.querySelector('[data-toggle="dest-field"]');
+    yes.checked = true; dest.hidden = false; document.getElementById('destination').disabled = false;
+    document.getElementById('destination').value = interesse;
   })();
-</script>
-</body>
+</script></body>
 </html>
