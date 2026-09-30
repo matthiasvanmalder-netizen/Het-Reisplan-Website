@@ -5,7 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cruises | Het Reisplan</title>
 <meta name="description" content="Cruises op maat: ontdek de wereld op een unieke en ontspannen manier, met alle luxe en comfort aan boord.">
-<link rel="stylesheet" href="assets/css/style.css?v=47">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+<meta name="theme-color" content="#12213f">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="Het Reisplan">
+<meta property="og:title" content="Cruises | Het Reisplan">
+<meta property="og:description" content="Cruises op maat: ontdek de wereld op een unieke en ontspannen manier, met alle luxe en comfort aan boord.">
+<meta property="og:url" content="https://hetreisplan.be/cruises">
+<meta property="og:image" content="https://hetreisplan.be/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/style.css?v=48">
 </head>
 <body>
 
@@ -49,10 +60,11 @@
 <main id="main">
 
   <section class="dest-hero dest-hero--soft">
-    <img src="assets/img/cruises.jpg?v=2" alt="Cruiseschip in een stille fjord tijdens het blauwe uur">
+    <img fetchpriority="high" src="assets/img/cruises.jpg?v=2" alt="Cruiseschip in een stille fjord tijdens het blauwe uur">
     <div class="dest-hero__content">
       <div class="wrap">
         <h1>Cruises</h1>
+        <p class="dest-hero__lead">Van zeilschip tot expeditieschip: wij zoeken de rederij en de route die bij jou passen.</p>
       </div>
     </div>
   </section>
@@ -116,7 +128,7 @@
       </div>
 
       <div class="ctype-panel" role="tabpanel" id="ctype-zeil" aria-labelledby="ctype-tab-zeil">
-        <div class="ctype-panel__img"><img src="assets/img/cruisetypes/zeilschip.jpg" alt="Vijfmaster onder zeil op een kalme zee"></div>
+        <div class="ctype-panel__img"><img loading="lazy" decoding="async" src="assets/img/cruisetypes/zeilschip.jpg" alt="Vijfmaster onder zeil op een kalme zee"></div>
         <div class="ctype-panel__body">
           <h3>Zeilschip</h3>
           <p>Varen zoals het vroeger ging: onder echte zeilen, met het geluid van wind en water. De sfeer is ontspannen en informeel, en je leeft veel buiten aan dek. Op de tall ships van Star Clippers mag je onder begeleiding zelfs de mast in.</p>
@@ -128,15 +140,15 @@
           </dl>
           <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
           <div class="ctype-lines">
-            <button type="button" class="line-chip" data-line="star-clippers"><img src="assets/img/rederijen/star-clippers.svg" alt="Star Clippers"></button>
-            <button type="button" class="line-chip" data-line="ponant"><img src="assets/img/rederijen/ponant.svg" alt="Ponant"></button>
+            <button type="button" class="line-chip" data-line="star-clippers"><img loading="lazy" decoding="async" src="assets/img/rederijen/star-clippers.svg" alt="Star Clippers"></button>
+            <button type="button" class="line-chip" data-line="ponant"><img loading="lazy" decoding="async" src="assets/img/rederijen/ponant.svg" alt="Ponant"></button>
           </div>
           <a class="btn btn--accent" href="contact.html?interesse=Cruise%20met%20een%20zeilschip">Vraag een zeilcruise aan</a>
         </div>
       </div>
 
       <div class="ctype-panel" role="tabpanel" id="ctype-rivier" aria-labelledby="ctype-tab-rivier" hidden>
-        <div class="ctype-panel__img"><img src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Rivier tussen heuvels met wijngaarden en een burcht"></div>
+        <div class="ctype-panel__img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Rivier tussen heuvels met wijngaarden en een burcht"></div>
         <div class="ctype-panel__body">
           <h3>Riviercruise</h3>
           <p>Elke dag een nieuwe stad of een nieuw dorp, vaak aangemeerd op wandelafstand van het centrum. Geen open zee en dus geen deining: je glijdt rustig langs wijngaarden, kastelen en stadsgezichten. Een ideale eerste kennismaking met cruisen.</p>
@@ -148,15 +160,15 @@
           </dl>
           <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
           <div class="ctype-lines">
-            <button type="button" class="line-chip" data-line="amawaterways"><img src="assets/img/rederijen/amawaterways.svg" alt="AmaWaterways"></button>
-            <button type="button" class="line-chip" data-line="scenic"><img src="assets/img/rederijen/scenic.svg" alt="Scenic" style="filter:invert(1)"></button>
+            <button type="button" class="line-chip" data-line="amawaterways"><img loading="lazy" decoding="async" src="assets/img/rederijen/amawaterways.svg" alt="AmaWaterways"></button>
+            <button type="button" class="line-chip" data-line="scenic"><img loading="lazy" decoding="async" src="assets/img/rederijen/scenic.svg" alt="Scenic" style="filter:invert(1)"></button>
           </div>
           <a class="btn btn--accent" href="contact.html?interesse=Riviercruise">Vraag een riviercruise aan</a>
         </div>
       </div>
 
       <div class="ctype-panel" role="tabpanel" id="ctype-expeditie" aria-labelledby="ctype-tab-expeditie" hidden>
-        <div class="ctype-panel__img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="IJsberg in de poolzee"></div>
+        <div class="ctype-panel__img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/expeditiecruises.jpg" alt="IJsberg in de poolzee"></div>
         <div class="ctype-panel__body">
           <h3>Expeditie</h3>
           <p>Kleine, stevige schepen die komen waar grote cruiseschepen niet kunnen of mogen: tussen het pakijs van Antarctica of langs de eilanden van de Galapagos. Met rubberboten (zodiacs) ga je dagelijks aan wal, begeleid door natuurgidsen en wetenschappers van aan boord.</p>
@@ -168,17 +180,17 @@
           </dl>
           <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
           <div class="ctype-lines">
-            <button type="button" class="line-chip" data-line="silversea"><img src="assets/img/rederijen/silversea.png" alt="Silversea Cruises"></button>
-            <button type="button" class="line-chip" data-line="seabourn"><img src="assets/img/rederijen/seabourn.png" alt="Seabourn"></button>
-            <button type="button" class="line-chip" data-line="ponant"><img src="assets/img/rederijen/ponant.svg" alt="Ponant"></button>
-            <button type="button" class="line-chip" data-line="swan-hellenic"><img src="assets/img/rederijen/swan-hellenic.png" alt="Swan Hellenic"></button>
+            <button type="button" class="line-chip" data-line="silversea"><img loading="lazy" decoding="async" src="assets/img/rederijen/silversea.png" alt="Silversea Cruises"></button>
+            <button type="button" class="line-chip" data-line="seabourn"><img loading="lazy" decoding="async" src="assets/img/rederijen/seabourn.png" alt="Seabourn"></button>
+            <button type="button" class="line-chip" data-line="ponant"><img loading="lazy" decoding="async" src="assets/img/rederijen/ponant.svg" alt="Ponant"></button>
+            <button type="button" class="line-chip" data-line="swan-hellenic"><img loading="lazy" decoding="async" src="assets/img/rederijen/swan-hellenic.png" alt="Swan Hellenic"></button>
           </div>
           <a class="btn btn--accent" href="contact.html?interesse=Expeditiecruise">Vraag een expeditiecruise aan</a>
         </div>
       </div>
 
       <div class="ctype-panel" role="tabpanel" id="ctype-jacht" aria-labelledby="ctype-tab-jacht" hidden>
-        <div class="ctype-panel__img"><img src="assets/img/cruisetypes/jacht.jpg" alt="Superjacht voor anker in een baai aan de Middellandse Zee"></div>
+        <div class="ctype-panel__img"><img loading="lazy" decoding="async" src="assets/img/cruisetypes/jacht.jpg" alt="Superjacht voor anker in een baai aan de Middellandse Zee"></div>
         <div class="ctype-panel__body">
           <h3>Jachtcruise</h3>
           <p>De sfeer van een priv&eacute;jacht, met de service van een luxehotel. Aan boord zijn er enkel suites, elk met een eigen terras. Door hun formaat leggen deze jachten aan in kleinere havens en baaien, en vanaf het achterdek stap je zo het water in.</p>
@@ -190,14 +202,14 @@
           </dl>
           <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
           <div class="ctype-lines">
-            <button type="button" class="line-chip" data-line="ritz-carlton-yacht"><img src="assets/img/rederijen/ritz-carlton-yacht.svg" alt="The Ritz-Carlton Yacht Collection"></button>
+            <button type="button" class="line-chip" data-line="ritz-carlton-yacht"><img loading="lazy" decoding="async" src="assets/img/rederijen/ritz-carlton-yacht.svg" alt="The Ritz-Carlton Yacht Collection"></button>
           </div>
           <a class="btn btn--accent" href="contact.html?interesse=Jachtcruise">Vraag een jachtcruise aan</a>
         </div>
       </div>
 
       <div class="ctype-panel" role="tabpanel" id="ctype-luxe" aria-labelledby="ctype-tab-luxe" hidden>
-        <div class="ctype-panel__img"><img src="assets/img/bestemmingen/wereldcruise.jpg" alt="Teakhouten dek van een cruiseschip bij zonsondergang" style="object-position:82% center"></div>
+        <div class="ctype-panel__img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/wereldcruise.jpg" alt="Teakhouten dek van een cruiseschip bij zonsondergang" style="object-position:82% center"></div>
         <div class="ctype-panel__body">
           <h3>Luxe oceaancruise</h3>
           <p>Een drijvend vijfsterrenhotel: ruime suites, meerdere restaurants, een spa en een uitgebreid programma aan boord. Groot genoeg voor veel keuze, en toch persoonlijk van sfeer. Deze schepen varen over alle wereldzee&euml;n.</p>
@@ -209,11 +221,11 @@
           </dl>
           <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
           <div class="ctype-lines">
-            <button type="button" class="line-chip" data-line="silversea"><img src="assets/img/rederijen/silversea.png" alt="Silversea Cruises"></button>
-            <button type="button" class="line-chip" data-line="regent-seven-seas"><img src="assets/img/rederijen/regent-seven-seas.png" alt="Regent Seven Seas Cruises"></button>
-            <button type="button" class="line-chip" data-line="seabourn"><img src="assets/img/rederijen/seabourn.png" alt="Seabourn"></button>
-            <button type="button" class="line-chip" data-line="oceania"><img src="assets/img/rederijen/oceania.svg" alt="Oceania Cruises"></button>
-            <button type="button" class="line-chip" data-line="explora-journeys"><img src="assets/img/rederijen/explora-journeys.jpg" alt="Explora Journeys"></button>
+            <button type="button" class="line-chip" data-line="silversea"><img loading="lazy" decoding="async" src="assets/img/rederijen/silversea.png" alt="Silversea Cruises"></button>
+            <button type="button" class="line-chip" data-line="regent-seven-seas"><img loading="lazy" decoding="async" src="assets/img/rederijen/regent-seven-seas.png" alt="Regent Seven Seas Cruises"></button>
+            <button type="button" class="line-chip" data-line="seabourn"><img loading="lazy" decoding="async" src="assets/img/rederijen/seabourn.png" alt="Seabourn"></button>
+            <button type="button" class="line-chip" data-line="oceania"><img loading="lazy" decoding="async" src="assets/img/rederijen/oceania.svg" alt="Oceania Cruises"></button>
+            <button type="button" class="line-chip" data-line="explora-journeys"><img loading="lazy" decoding="async" src="assets/img/rederijen/explora-journeys.jpg" alt="Explora Journeys"></button>
           </div>
           <a class="btn btn--accent" href="contact.html?interesse=Luxe%20oceaancruise">Vraag een luxecruise aan</a>
         </div>
@@ -291,7 +303,7 @@
 
         <div class="trip-card">
           <button type="button" class="trip-card__summary">
-            <span class="trip-card__img"><img src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Riviercruise Europa"></span>
+            <span class="trip-card__img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Riviercruise Europa"></span>
             <span class="trip-card__meta">
               <span class="trip-card__kicker">Riviercruise <span class="tag">placeholder</span></span>
               <span class="trip-card__title">Riviercruise door Europa</span>
@@ -300,7 +312,7 @@
             </span>
           </button>
           <div class="trip-card__detail">
-            <div class="trip-card__detail-img"><img src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Riviercruise Europa"></div>
+            <div class="trip-card__detail-img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/riviercruises-europa.jpg" alt="Riviercruise Europa"></div>
             <div class="trip-card__detail-body">
               <div class="trip-card__detail-head">
                 <div>
@@ -327,7 +339,7 @@
 
         <div class="trip-card">
           <button type="button" class="trip-card__summary">
-            <span class="trip-card__img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise naar Antarctica"></span>
+            <span class="trip-card__img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise naar Antarctica"></span>
             <span class="trip-card__meta">
               <span class="trip-card__kicker">Expeditiecruise <span class="tag">placeholder</span></span>
               <span class="trip-card__title">Expeditie naar Antarctica</span>
@@ -336,7 +348,7 @@
             </span>
           </button>
           <div class="trip-card__detail">
-            <div class="trip-card__detail-img"><img src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise naar Antarctica"></div>
+            <div class="trip-card__detail-img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/expeditiecruises.jpg" alt="Expeditiecruise naar Antarctica"></div>
             <div class="trip-card__detail-body">
               <div class="trip-card__detail-head">
                 <div>
@@ -363,7 +375,7 @@
 
         <div class="trip-card">
           <button type="button" class="trip-card__summary">
-            <span class="trip-card__img"><img src="assets/img/bestemmingen/caraiben.jpg" alt="Cara&iuml;bische cruise"></span>
+            <span class="trip-card__img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/caraiben.jpg" alt="Cara&iuml;bische cruise"></span>
             <span class="trip-card__meta">
               <span class="trip-card__kicker">Cara&iuml;ben <span class="tag">placeholder</span></span>
               <span class="trip-card__title">Cruise door de Cara&iuml;ben</span>
@@ -372,7 +384,7 @@
             </span>
           </button>
           <div class="trip-card__detail">
-            <div class="trip-card__detail-img"><img src="assets/img/bestemmingen/caraiben.jpg" alt="Cara&iuml;bische cruise"></div>
+            <div class="trip-card__detail-img"><img loading="lazy" decoding="async" src="assets/img/bestemmingen/caraiben.jpg" alt="Cara&iuml;bische cruise"></div>
             <div class="trip-card__detail-body">
               <div class="trip-card__detail-head">
                 <div>
@@ -407,7 +419,7 @@
       <button type="button" class="modal-close" id="cruise-modal-close" aria-label="Sluiten">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
-      <span class="modal-card__img-wrap" id="cruise-modal-img-wrap"><img id="cruise-modal-img" class="modal-card__img" src="" alt="" onerror="this.style.display='none'"></span>
+      <span class="modal-card__img-wrap" id="cruise-modal-img-wrap"><img loading="lazy" decoding="async" id="cruise-modal-img" class="modal-card__img" src="" alt="" onerror="this.style.display='none'"></span>
       <span class="eyebrow" id="cruise-modal-tagline"></span>
       <h3 id="cruise-modal-title" style="margin-top:10px"></h3>
       <p id="cruise-modal-desc"></p>
@@ -444,21 +456,21 @@
       <div class="dest-other-grid">
 
         <a class="route-card" href="rondreizen.html">
-          <img src="assets/img/rondreizen.jpg" alt="Een weg tussen rode rotsen en een bergtop in de Verenigde Staten">
+          <img loading="lazy" decoding="async" src="assets/img/rondreizen.jpg" alt="Een weg tussen rode rotsen en een bergtop in de Verenigde Staten">
           <div class="route-card__body">
             <h3>Rondreizen</h3>
           </div>
         </a>
 
         <a class="route-card" href="safari.html">
-          <img src="assets/img/safari.jpg" alt="Olifanten op een zandweg, gezien vanuit een open safarijeep">
+          <img loading="lazy" decoding="async" src="assets/img/safari.jpg" alt="Olifanten op een zandweg, gezien vanuit een open safarijeep">
           <div class="route-card__body">
             <h3>Safari</h3>
           </div>
         </a>
 
         <a class="route-card" href="strand-stedentrips.html">
-          <img src="assets/img/strand-stedentrips.jpg" alt="De baai en de stad van Nice, aan de Middellandse Zee">
+          <img loading="lazy" decoding="async" src="assets/img/strand-stedentrips.jpg" alt="De baai en de stad van Nice, aan de Middellandse Zee">
           <div class="route-card__body">
             <h3>Strand &amp; Stedentrips</h3>
           </div>
@@ -473,7 +485,10 @@
       <div>
         <h2>Liever eerst kennismaken?</h2>
         <a class="contact-band__phone" href="tel:+3215234723">015 23 47 23</a>
-      </div>
+        <div class="contact-band__person">
+          <img src="assets/img/yves.jpg" alt="" loading="lazy" decoding="async">
+          <div><b>Yves Van Malder</b><span>Zaakvoerder van Het Reisplan</span></div>
+        </div>      </div>
       <div class="contact-band__side">
         <dl class="contact-band__hours">
           <dt>Ma&ndash;Vr</dt><dd>10u &ndash; 18u30, uitgezonderd wo</dd>

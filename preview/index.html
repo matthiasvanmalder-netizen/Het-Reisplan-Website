@@ -5,8 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Het Reisplan | Reizen volledig op maat</title>
 <meta name="description" content="Home based reisbureau in Keerbergen. Reizen op maat: cruises, rondreizen, safari, strand en stedentrips, met persoonlijk advies.">
-<link rel="stylesheet" href="assets/css/style.css?v=47">
-</head>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+<meta name="theme-color" content="#12213f">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="Het Reisplan">
+<meta property="og:title" content="Het Reisplan | Reizen volledig op maat">
+<meta property="og:description" content="Home based reisbureau in Keerbergen. Reizen op maat: cruises, rondreizen, safari, strand en stedentrips, met persoonlijk advies.">
+<meta property="og:url" content="https://hetreisplan.be/">
+<meta property="og:image" content="https://hetreisplan.be/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/style.css?v=48">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Het Reisplan",
+  "legalName": "BV Het Reisplan",
+  "url": "https://hetreisplan.be/",
+  "logo": "https://hetreisplan.be/assets/img/logo.png",
+  "image": "https://hetreisplan.be/assets/img/og.jpg",
+  "telephone": "+32 15 23 47 23",
+  "email": "info@hetreisplan.be",
+  "vatID": "BE0470088625",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Wielewaalweg 4",
+    "postalCode": "3140",
+    "addressLocality": "Keerbergen",
+    "addressCountry": "BE"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "10:00", "closes": "18:30" }
+  ],
+  "founder": { "@type": "Person", "name": "Yves Van Malder" }
+}
+</script></head>
 <body>
 
 <a class="skip-link" href="#main">Naar inhoud</a>
@@ -118,7 +153,7 @@
 
       <div class="route-grid">
         <a class="route-card" href="cruises.html">
-          <img src="assets/img/cruises.jpg?v=2" alt="Cruiseschip in een stille fjord tijdens het blauwe uur">
+          <img loading="lazy" decoding="async" src="assets/img/cruises.jpg?v=2" alt="Cruiseschip in een stille fjord tijdens het blauwe uur">
           <div class="route-card__body">
             <h3>Cruises</h3>
             <p>Ontdek de wereld op een unieke, ontspannen manier, met alle luxe en comfort aan boord.</p>
@@ -127,7 +162,7 @@
 
 
         <a class="route-card" href="rondreizen.html">
-          <img src="assets/img/rondreizen.jpg" alt="Een weg tussen rode rotsen en een bergtop in de Verenigde Staten">
+          <img loading="lazy" decoding="async" src="assets/img/rondreizen.jpg" alt="Een weg tussen rode rotsen en een bergtop in de Verenigde Staten">
           <div class="route-card__body">
             <h3>Rondreizen</h3>
             <p>Verre bestemmingen, andere culturen en onvergetelijke ervaringen, volledig op maat.</p>
@@ -135,7 +170,7 @@
         </a>
 
         <a class="route-card" href="safari.html">
-          <img src="assets/img/safari.jpg" alt="Olifanten op een zandweg, gezien vanuit een open safarijeep">
+          <img loading="lazy" decoding="async" src="assets/img/safari.jpg" alt="Olifanten op een zandweg, gezien vanuit een open safarijeep">
           <div class="route-card__body">
             <h3>Safari</h3>
             <p>Oog in oog met wilde dieren in hun natuurlijke habitat, vanuit zorgvuldig gekozen lodges.</p>
@@ -143,7 +178,7 @@
         </a>
 
         <a class="route-card" href="strand-stedentrips.html">
-          <img src="assets/img/strand-stedentrips.jpg" alt="De baai en de stad van Nice, aan de Middellandse Zee">
+          <img loading="lazy" decoding="async" src="assets/img/strand-stedentrips.jpg" alt="De baai en de stad van Nice, aan de Middellandse Zee">
           <div class="route-card__body">
             <h3>Strand &amp; Stedentrips</h3>
             <p>Zorgeloze dagen aan zee of een bruisende stad ontdekken, in een hotel dat bij jou past.</p>
@@ -154,14 +189,27 @@
     </div>
   </section>
 
-  <!-- TODO: hier komt in een latere iteratie een testimonials-blok of een foto/quote van de eigenaar i.p.v. de generieke reiscitaten -->
-
+  <!-- Tekst van Yves: voorlopige versie, wordt vervangen door zijn eigen woorden -->
+  <section class="signature" aria-labelledby="signature-title">
+    <div class="wrap signature__inner">
+      <figure class="signature__photo">
+        <img loading="lazy" decoding="async" src="assets/img/yves.jpg" alt="Portret van Yves Van Malder, zaakvoerder van Het Reisplan">
+      </figure>
+      <div>
+        <h2 class="visually-hidden" id="signature-title">Een woord van Yves</h2>
+        <p class="signature__text">Een goede reis begint niet bij een bestemming, maar bij een gesprek. Ik neem de tijd om te horen waar je van droomt, en ook wat je liever niet wil. Pas dan stippel ik een reis uit die echt de jouwe is.</p>
+        <div class="signature__by">
+          <div><span class="signature__name">Yves Van Malder</span><span class="signature__role">Zaakvoerder van Het Reisplan</span></div>
+        </div>
+        <a class="signature__link" href="over-ons.html">Lees ons verhaal</a>
+      </div>
+    </div>
+  </section>
   <section class="contact-band">
     <div class="wrap contact-band__inner">
       <div>
         <h2>Liever eerst kennismaken?</h2>
-        <a class="contact-band__phone" href="tel:+3215234723">015 23 47 23</a>
-      </div>
+        <a class="contact-band__phone" href="tel:+3215234723">015 23 47 23</a>      </div>
       <div class="contact-band__side">
         <dl class="contact-band__hours">
           <dt>Ma&ndash;Vr</dt><dd>10u &ndash; 18u30, uitgezonderd wo</dd>
