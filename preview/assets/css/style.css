@@ -395,17 +395,17 @@ main > section.wrap:first-child{padding-top:64px}
 .dest-hero__lead{max-width:540px;margin:14px 0 0;font-size:1.1rem;line-height:1.55;color:rgba(255,255,255,.86);text-wrap:pretty}
 
 /* Over ons: portret naast het verhaal */
-.story{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px;align-items:start}
+.story{display:grid;grid-template-columns:300px minmax(0,1fr);gap:80px;align-items:start}
 .story__photo{margin:0;position:sticky;top:120px}
 .story__photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:40% 30%;border-radius:4px;filter:grayscale(1) contrast(1.04)}
 .story__photo figcaption{margin-top:16px;font-size:.9rem;color:var(--ink-muted)}
 .story__photo figcaption b{display:block;font-family:'Manrope',sans-serif;font-weight:800;color:var(--ink);font-size:1rem}
-.story__text{display:flex;flex-direction:column;gap:22px}
+.story__text{display:flex;flex-direction:column;gap:22px;max-width:620px}
 .story__text p{margin:0}
 .story__text p:first-child{font-size:1.2rem;color:var(--ink)}
 @media (max-width:860px){
   .story{grid-template-columns:1fr;gap:40px}
-  .story__photo{position:static;max-width:280px}
+  .story__photo{position:static;max-width:240px}
 }
 
 .dest-body{padding:76px 0 56px}
