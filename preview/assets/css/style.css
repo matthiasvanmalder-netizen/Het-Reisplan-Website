@@ -338,7 +338,7 @@ main > section.wrap:first-child{padding-top:64px}
 /* Contactbalk onderaan elke pagina */
 .contact-band{background:var(--cream);padding:96px 0}
 .contact-band__inner{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
-.contact-band h2{font-size:clamp(2.2rem,4vw,3.2rem);max-width:520px;margin:0 0 18px;letter-spacing:-.02em}
+.contact-band h2{font-size:clamp(1.9rem,3.2vw,2.6rem);max-width:600px;margin:0 0 20px;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
 .contact-band__phone{
   display:inline-block;font-family:'Manrope',sans-serif;font-weight:800;line-height:1;
   font-size:clamp(2.6rem,5vw,4rem);letter-spacing:-.02em;color:var(--accent);
