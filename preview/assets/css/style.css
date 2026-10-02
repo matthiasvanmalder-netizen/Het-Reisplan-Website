@@ -219,14 +219,14 @@ section{padding:88px 0}
 
 /* Reisinhoudstafel (homepagina): grote namen links, één foto rechts die
    overvloeit naar de aangewezen reisvorm. Op gsm rustige kaarten. */
-.dest-index__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,88px);align-items:center}
+.dest-index__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,88px);align-items:start}
 .dest-index__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
 .dest-index__list li{border-bottom:1px solid var(--border)}
 .dest-index__item{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:0;padding:26px 0;position:relative}
 .dest-index__thumb{display:none}
 .dest-index__name{
   grid-column:2;font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;
-  font-size:clamp(1.8rem,3.2vw,2.7rem);color:rgba(244,246,250,.38);
+  font-size:clamp(1.8rem,3.2vw,2.7rem);color:rgba(244,246,250,.62);
   transition:color .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1);
 }
 /* gouden streepje dat inschuift voor de actieve reisvorm */
