@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://hetreisplan.be/">
 <meta property="og:image" content="https://hetreisplan.be/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/style.css?v=57">
+<link rel="stylesheet" href="assets/css/style.css?v=59">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -141,7 +141,7 @@
     </div>
   </section>
 
-  <section id="bestemmingen">
+  <section id="bestemmingen" class="dest-index">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -151,40 +151,35 @@
         <p>Elke bestemming volledig samengesteld rond jouw wensen, budget en reisstijl.</p>
       </div>
 
-      <div class="route-grid">
-        <a class="route-card" href="cruises.html">
-          <img loading="lazy" decoding="async" src="assets/img/cruises.jpg?v=2" alt="Cruiseschip in een stille fjord tijdens het blauwe uur">
-          <div class="route-card__body">
-            <h3>Cruises</h3>
-            <p>Ontdek de wereld op een unieke, ontspannen manier, met alle luxe en comfort aan boord.</p>
-          </div>
-        </a>
-
-
-        <a class="route-card" href="rondreizen.html">
-          <img loading="lazy" decoding="async" src="assets/img/rondreizen.jpg" alt="Een weg tussen rode rotsen en een bergtop in de Verenigde Staten">
-          <div class="route-card__body">
-            <h3>Rondreizen</h3>
-            <p>Verre bestemmingen, andere culturen en onvergetelijke ervaringen, volledig op maat.</p>
-          </div>
-        </a>
-
-        <a class="route-card" href="safari.html">
-          <img loading="lazy" decoding="async" src="assets/img/safari.jpg" alt="Olifanten op een zandweg, gezien vanuit een open safarijeep">
-          <div class="route-card__body">
-            <h3>Safari</h3>
-            <p>Oog in oog met wilde dieren in hun natuurlijke habitat, vanuit zorgvuldig gekozen lodges.</p>
-          </div>
-        </a>
-
-        <a class="route-card" href="strand-stedentrips.html">
-          <img loading="lazy" decoding="async" src="assets/img/strand-stedentrips.jpg" alt="De baai en de stad van Nice, aan de Middellandse Zee">
-          <div class="route-card__body">
-            <h3>Strand &amp; Stedentrips</h3>
-            <p>Zorgeloze dagen aan zee of een bruisende stad ontdekken, in een hotel dat bij jou past.</p>
-          </div>
-        </a>
-
+      <div class="dest-index__grid">
+        <ul class="dest-index__list">
+          <li><a class="dest-index__item is-active" href="cruises.html">
+            <span class="dest-index__thumb"><img loading="lazy" decoding="async" src="assets/img/cruises.jpg?v=2" alt=""></span>
+            <span class="dest-index__name">Cruises</span>
+            <span class="dest-index__line">Ontdek de wereld op een unieke, ontspannen manier, met alle luxe en comfort aan boord.<span class="dest-index__more">Ontdek onze cruises</span></span>
+          </a></li>
+          <li><a class="dest-index__item" href="rondreizen.html">
+            <span class="dest-index__thumb"><img loading="lazy" decoding="async" src="assets/img/rondreizen.jpg" alt=""></span>
+            <span class="dest-index__name">Rondreizen</span>
+            <span class="dest-index__line">Verre bestemmingen, andere culturen en onvergetelijke ervaringen, volledig op maat.<span class="dest-index__more">Ontdek onze rondreizen</span></span>
+          </a></li>
+          <li><a class="dest-index__item" href="safari.html">
+            <span class="dest-index__thumb"><img loading="lazy" decoding="async" src="assets/img/safari.jpg" alt=""></span>
+            <span class="dest-index__name">Safari</span>
+            <span class="dest-index__line">Oog in oog met wilde dieren in hun natuurlijke habitat, vanuit zorgvuldig gekozen lodges.<span class="dest-index__more">Ontdek onze safari&rsquo;s</span></span>
+          </a></li>
+          <li><a class="dest-index__item" href="strand-stedentrips.html">
+            <span class="dest-index__thumb"><img loading="lazy" decoding="async" src="assets/img/strand-stedentrips.jpg" alt=""></span>
+            <span class="dest-index__name">Strand &amp; Stedentrips</span>
+            <span class="dest-index__line">Zorgeloze dagen aan zee of een bruisende stad ontdekken, in een hotel dat bij jou past.<span class="dest-index__more">Ontdek strand en stedentrips</span></span>
+          </a></li>
+        </ul>
+        <div class="dest-index__visual" aria-hidden="true">
+        <img class="is-active" loading="lazy" decoding="async" src="assets/img/cruises.jpg?v=2" alt="Cruiseschip in een stille fjord tijdens het blauwe uur">
+        <img class="" loading="lazy" decoding="async" src="assets/img/rondreizen.jpg" alt="Een weg tussen rode rotsen en een bergtop in de Verenigde Staten">
+        <img class="" loading="lazy" decoding="async" src="assets/img/safari.jpg" alt="Olifanten op een zandweg, gezien vanuit een open safarijeep">
+        <img class="" loading="lazy" decoding="async" src="assets/img/strand-stedentrips.jpg" alt="De baai en de stad van Nice, aan de Middellandse Zee">
+        </div>
       </div>
     </div>
   </section>
@@ -255,5 +250,6 @@
 </footer>
 
 <script src="assets/js/nav.js"></script>
+<script src="assets/js/dest-index.js"></script>
 </body>
 </html>

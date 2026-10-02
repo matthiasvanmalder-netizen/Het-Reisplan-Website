@@ -217,6 +217,57 @@ section{padding:88px 0}
   .route-card p{max-height:none;opacity:1}
 }
 
+/* Reisinhoudstafel (homepagina): grote namen links, één foto rechts die
+   overvloeit naar de aangewezen reisvorm. Op gsm rustige kaarten. */
+.dest-index__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,88px);align-items:center}
+.dest-index__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.dest-index__list li{border-bottom:1px solid var(--border)}
+.dest-index__item{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:0;padding:26px 0;position:relative}
+.dest-index__thumb{display:none}
+.dest-index__name{
+  grid-column:2;font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;
+  font-size:clamp(1.8rem,3.2vw,2.7rem);color:rgba(244,246,250,.38);
+  transition:color .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1);
+}
+/* gouden streepje dat inschuift voor de actieve reisvorm */
+.dest-index__item::before{
+  content:"";grid-column:1;grid-row:1;align-self:center;height:2px;width:0;margin-right:0;background:var(--accent);
+  transition:width .45s cubic-bezier(.22,1,.36,1), margin .45s cubic-bezier(.22,1,.36,1);
+}
+.dest-index__line{
+  grid-column:2;display:block;max-width:40ch;font-size:.98rem;line-height:1.55;color:var(--ink-muted);
+  max-height:0;opacity:0;overflow:hidden;margin-top:0;
+  transition:max-height .5s cubic-bezier(.22,1,.36,1), opacity .4s ease, margin .5s cubic-bezier(.22,1,.36,1);
+}
+.dest-index__item.is-active .dest-index__name{color:var(--ink)}
+.dest-index__more{display:block;margin-top:12px;font-family:'Manrope',sans-serif;font-weight:700;font-size:.92rem;color:var(--accent-tint);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+.dest-index__item.is-active .dest-index__line{max-height:140px}
+.dest-index__item.is-active::before{width:36px;margin-right:18px}
+.dest-index__item.is-active .dest-index__line{max-height:80px;opacity:1;margin-top:10px}
+.dest-index__item:hover .dest-index__name{color:var(--ink)}
+.dest-index__visual{position:relative;aspect-ratio:5/4;border-radius:10px;overflow:hidden;background:var(--navy-2)}
+.dest-index__visual img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transform:scale(1.045);
+  transition:opacity .7s cubic-bezier(.22,1,.36,1), transform 1.2s cubic-bezier(.22,1,.36,1);
+}
+.dest-index__visual img.is-active{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .dest-index__name,.dest-index__item::before,.dest-index__line,.dest-index__visual img{transition:none}
+}
+@media (max-width:860px){
+  .dest-index__grid{grid-template-columns:1fr}
+  .dest-index__visual{display:none}
+  .dest-index__list{border-top:0;display:grid;gap:36px}
+  .dest-index__list li{border-bottom:0}
+  .dest-index__item{display:block;padding:0}
+  .dest-index__item::before{display:none}
+  .dest-index__thumb{display:block;aspect-ratio:16/10;border-radius:10px;overflow:hidden;margin-bottom:16px}
+  .dest-index__thumb img{width:100%;height:100%;object-fit:cover}
+  .dest-index__name,.dest-index__item.is-active .dest-index__name{display:block;font-size:1.6rem;color:var(--ink)}
+  .dest-index__line,.dest-index__item.is-active .dest-index__line{max-height:none;opacity:1;margin-top:8px}
+}
+
 /* Persoonlijke signatuur van Yves (homepagina) */
 .signature{padding:128px 0}
 .signature__inner{display:grid;grid-template-columns:340px minmax(0,1fr);gap:96px;align-items:center}
