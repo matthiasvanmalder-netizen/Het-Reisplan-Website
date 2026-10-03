@@ -69,6 +69,8 @@ section{padding:88px 0}
   border:1.5px solid transparent;cursor:pointer;transition:all .18s ease;
   white-space:nowrap;
 }
+/* Marcellus heeft geen vette letter: de knoppen krijgen een dunne contour in hun eigen kleur, zodat de tekst steviger staat zonder wazig nagemaakt vet */
+.btn,.btn--ghost-light{-webkit-text-stroke:.45px currentColor;letter-spacing:.01em}
 .btn--navy{background:var(--navy);color:#fff}
 .btn--navy:hover{background:var(--navy-2);transform:translateY(-1px)}
 .btn--accent{background:var(--accent);color:var(--navy)}
