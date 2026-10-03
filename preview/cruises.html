@@ -91,38 +91,43 @@
     <div class="wrap">
       <span class="eyebrow">Kies je stijl</span>
       <h2 style="margin-top:12px">Welke cruise past bij jou?</h2>
-      <p class="lead" style="margin-top:14px;max-width:680px">Van een zeilschip met 32 gasten tot een luxeschip met 1.200: de grootte van het schip bepaalt het meest. Ze beslist over de sfeer aan boord, de faciliteiten en de havens waar je kan aanmeren. Klik op een type voor uitleg en de rederijen waarmee we werken.</p>
+      <p class="lead" style="margin-top:14px;max-width:680px">Van een zeilschip met 32 gasten tot een groot cruiseschip met 6.000: de grootte van het schip bepaalt het meest. Ze beslist over de sfeer aan boord, de faciliteiten en de havens waar je kan aanmeren. Klik op een type voor uitleg en de rederijen waarmee we werken.</p>
 
       <div class="ctype-chart" role="tablist" aria-label="Soorten cruises">
         <div class="ctype-chart__axis" aria-hidden="true">
           <span class="ctype-chart__axis-label">Gasten aan boord</span>
-          <span class="ctype-chart__ticks"><span>0</span><span>250</span><span>500</span><span>750</span><span>1.000</span><span>1.250</span></span>
+          <span class="ctype-chart__ticks"><span>0</span><span>1.250</span><span>2.500</span><span>3.750</span><span>5.000</span><span>6.250</span></span>
         </div>
 
         <button type="button" class="ctype-row" role="tab" id="ctype-tab-zeil" aria-controls="ctype-zeil" aria-selected="true">
           <span class="ctype-row__name">Zeilschip</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:2.6%;--width:15.6%"></span></span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:0.5%;--width:3.1%"></span></span>
           <span class="ctype-row__range">32&ndash;227</span>
         </button>
         <button type="button" class="ctype-row" role="tab" id="ctype-tab-rivier" aria-controls="ctype-rivier" aria-selected="false" tabindex="-1">
           <span class="ctype-row__name">Riviercruise</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:10.4%;--width:5.6%"></span></span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:2.1%;--width:1.1%"></span></span>
           <span class="ctype-row__range">&plusmn; 130&ndash;200</span>
         </button>
         <button type="button" class="ctype-row" role="tab" id="ctype-tab-expeditie" aria-controls="ctype-expeditie" aria-selected="false" tabindex="-1">
           <span class="ctype-row__name">Expeditie</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:8%;--width:13.6%"></span></span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:1.6%;--width:2.7%"></span></span>
           <span class="ctype-row__range">&plusmn; 100&ndash;270</span>
         </button>
         <button type="button" class="ctype-row" role="tab" id="ctype-tab-jacht" aria-controls="ctype-jacht" aria-selected="false" tabindex="-1">
           <span class="ctype-row__name">Jachtcruise</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:23.8%;--width:12.4%"></span></span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:4.8%;--width:2.5%"></span></span>
           <span class="ctype-row__range">298&ndash;452</span>
         </button>
         <button type="button" class="ctype-row" role="tab" id="ctype-tab-luxe" aria-controls="ctype-luxe" aria-selected="false" tabindex="-1">
           <span class="ctype-row__name">Luxe oceaancruise</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:36%;--width:60%"></span></span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:7.2%;--width:12%"></span></span>
           <span class="ctype-row__range">&plusmn; 450&ndash;1.200</span>
+        </button>
+        <button type="button" class="ctype-row" role="tab" id="ctype-tab-groot" aria-controls="ctype-groot" aria-selected="false" tabindex="-1">
+          <span class="ctype-row__name">Groot cruiseschip</span>
+          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:32%;--width:64%"></span></span>
+          <span class="ctype-row__range">&plusmn; 2.000&ndash;6.000</span>
         </button>
         <p class="ctype-chart__note">Indicatief aantal gasten per schip, bij de rederijen waarmee we samenwerken.</p>
       </div>
@@ -228,6 +233,27 @@
             <button type="button" class="line-chip" data-line="explora-journeys"><img loading="lazy" decoding="async" src="assets/img/rederijen/explora-journeys.jpg" alt="Explora Journeys"></button>
           </div>
           <a class="btn btn--accent" href="contact.html?interesse=Luxe%20oceaancruise">Bespreek mijn cruise</a>
+        </div>
+      </div>
+
+      <div class="ctype-panel" role="tabpanel" id="ctype-groot" aria-labelledby="ctype-tab-groot" hidden>
+        <div class="ctype-panel__img"><img loading="lazy" decoding="async" src="assets/img/cruisetypes/groot-schip.jpg" alt="Groot cruiseschip op open zee onder een wolkenlucht"></div>
+        <div class="ctype-panel__body">
+          <h3>Groot cruiseschip</h3>
+          <p>Een drijvend vakantieresort: zwembaden en glijbanen, theatershows, tientallen restaurants en bars, en eigen clubs voor kinderen en tieners. Er is altijd iets te doen, en door het grote aanbod vind je net zo goed een rustig plekje. Per nacht vaak de voordeligste manier om te cruisen.</p>
+          <dl class="ctype-facts">
+            <div><dt>Gasten aan boord</dt><dd>Ongeveer 2.000 tot 6.000</dd></div>
+            <div><dt>Vaargebieden</dt><dd>Middellandse Zee, Noord-Europa, Cara&iuml;ben, Alaska en het Midden-Oosten</dd></div>
+            <div><dt>Typische duur</dt><dd>Meestal 7 nachten, ook korte cruises van 3 tot 5 nachten</dd></div>
+            <div><dt>Ideaal voor</dt><dd>Gezinnen, vriendengroepen en wie veel keuze en animatie aan boord zoekt</dd></div>
+          </dl>
+          <p class="ctype-lines__label">Rederijen, klik voor meer uitleg</p>
+          <div class="ctype-lines">
+            <button type="button" class="line-chip" data-line="msc-cruises"><img loading="lazy" decoding="async" src="assets/img/rederijen/msc-cruises.png" alt="MSC Cruises"></button>
+            <button type="button" class="line-chip" data-line="royal-caribbean"><img loading="lazy" decoding="async" src="assets/img/rederijen/royal-caribbean.svg" alt="Royal Caribbean"></button>
+            <button type="button" class="line-chip" data-line="celebrity-cruises"><img loading="lazy" decoding="async" src="assets/img/rederijen/celebrity-cruises.svg" alt="Celebrity Cruises"></button>
+          </div>
+          <a class="btn btn--accent" href="contact.html?interesse=Cruise%20met%20een%20groot%20schip">Bespreek mijn cruise</a>
         </div>
       </div>
     </div>
@@ -436,6 +462,9 @@
   </div>
 
   <div hidden id="cruise-line-data">
+    <span data-line-id="msc-cruises" data-name="MSC Cruises" data-tagline="Europese sfeer op grote, moderne schepen." data-desc="MSC Cruises is de cruisetak van de MSC Group van de familie Aponte, met wortels in de Italiaanse zeevaart. De rederij groeide uit tot een van de grootste cruisemaatschappijen ter wereld, met een moderne vloot die vooral in Europa vaart, maar ook in de Cara&iuml;ben en het Midden-Oosten." data-signature="De MSC Yacht Club: een afgeschermd schip-in-het-schip met suites, butlerservice en een eigen restaurant, lounge en zonnedek." data-ideal-for="Wie veel keuze aan boord en een scherpe prijs zoekt, met de optie op extra exclusiviteit." data-img="assets/img/rederijen/msc-cruises.png"></span>
+    <span data-line-id="royal-caribbean" data-name="Royal Caribbean" data-tagline="Spektakel en beleving op de grootste schepen." data-desc="Royal Caribbean werd in 1968 opgericht en heeft zijn thuisbasis in Miami. De rederij staat bekend om haar vernieuwende reuzenschepen, waaronder Icon of the Seas, een van de grootste cruiseschepen ter wereld." data-signature="Beleving aan boord: surfsimulators, klimwanden, waterparken, ijsshows en complete parkwijken zoals Central Park op de Oasis-schepen." data-ideal-for="Gezinnen en actieve reizigers die op zee evenveel willen beleven als aan wal." data-img="assets/img/rederijen/royal-caribbean.svg"></span>
+    <span data-line-id="celebrity-cruises" data-name="Celebrity Cruises" data-tagline="Moderne luxe op een groot schip." data-desc="Celebrity Cruises werd in 1988 opgericht en maakt deel uit van de Royal Caribbean Group. De rederij mikt op &lsquo;modern luxury&rsquo;: grote schepen met een stijlvolle, rustigere sfeer en een sterke keuken." data-signature="Op de Edge-schepen de Magic Carpet: een platform langs de flank van het schip dat op en neer beweegt en dienstdoet als bar, restaurant of instapplek voor de tenders." data-ideal-for="Wie de keuze van een groot schip wil, maar met een volwassen, verfijnde sfeer." data-img="assets/img/rederijen/celebrity-cruises.svg"></span>
     <span data-line-id="silversea" data-name="Silversea Cruises" data-tagline="Ultra-luxe, all-inclusive, op de meest exclusieve schepen." data-desc="Silversea werd in 1994 opgericht als 's werelds eerste all-inclusive premium cruiselijn en behoort vandaag tot de Royal Caribbean Group. De vloot telt twaalf schepen: acht Classic-schepen voor klassieke luxe cruises en vier Expedition-schepen voor verre poolreizen." data-signature="Het S.A.L.T.-programma (Sea And Land Taste) laat gasten elke bestemming proeven via lokaal eten en drank, aangevuld met de Romeins geïnspireerde Otium Spa." data-ideal-for="Wie klassieke ultra-luxe combineert met interesse in verre poolexpedities." data-img="assets/img/rederijen/silversea.png"></span>
     <span data-line-id="regent-seven-seas" data-name="Regent Seven Seas Cruises" data-tagline="Het meest all-inclusive luxeconcept op zee." data-desc="Regent Seven Seas ontstond in 1992 uit de fusie van Radisson Cruises en Seven Seas Cruises, en maakt sinds 2014 deel uit van Norwegian Cruise Line Holdings. De vloot bestaat uit zes volledig suite- en balkonschepen, met een zevende op komst in 2026." data-signature="&lsquo;The Most Inclusive Luxury Experience&rsquo;: suites, gastronomie, dranken, fooien én excursies aan wal zijn standaard inbegrepen, zonder verrassingen achteraf." data-ideal-for="Wie vooraf precies wil weten dat alles is inbegrepen, zonder rekenwerk achteraf." data-img="assets/img/rederijen/regent-seven-seas.png"></span>
     <span data-line-id="seabourn" data-name="Seabourn" data-tagline="Kleinschalig, persoonlijk, ongehaast luxueus." data-desc="Seabourn werd in 1987 opgericht om het gevoel van een privéjacht naar zee te brengen: kleinschalige schepen waar gasten zich lid voelen van een select gezelschap. Naast de klassieke luxeschepen vaart Seabourn sinds 2022 ook met de expeditieschepen Venture en Pursuit." data-signature="Intuïtieve service met een hoge bemanning-gastverhouding, gratis minibar en drank op de kamer, en verrassende extra's zoals een gratis massage aan het zwembad." data-ideal-for="Wie de sfeer van een privéjacht zoekt, met of zonder poolexpeditie." data-img="assets/img/rederijen/seabourn.png"></span>
