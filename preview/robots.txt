@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hetreisplan.be/sitemap.xml
