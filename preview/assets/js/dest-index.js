@@ -11,6 +11,26 @@
     images.forEach(function (el, n) { el.classList.toggle('is-active', n === i); });
   }
 
+  // Elke omschrijving krijgt de hoogte van de langste, zodat de lijst (en dus
+  // de foto ernaast) even hoog blijft, welke reisvorm ook open staat.
+  var list = root.querySelector('.dest-index__list');
+  var lines = Array.prototype.slice.call(root.querySelectorAll('.dest-index__line'));
+  function sizeLines() {
+    list.style.removeProperty('--line-h');
+    // meten op de breedte van een actieve regel: het gouden streepje (36px + 18px marge) neemt dan plaats in
+    var w = items[0].clientWidth - 54;
+    var h = 0;
+    lines.forEach(function (el) {
+      el.style.width = w + 'px';
+      h = Math.max(h, el.scrollHeight);
+      el.style.width = '';
+    });
+    if (h) list.style.setProperty('--line-h', h + 'px');
+  }
+  sizeLines();
+  window.addEventListener('resize', sizeLines);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeLines);
+
   items.forEach(function (el, i) {
     el.addEventListener('mouseenter', function () { activate(i); });
     el.addEventListener('focus', function () { activate(i); });
