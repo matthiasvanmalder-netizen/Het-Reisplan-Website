@@ -539,6 +539,35 @@ main > section.wrap:first-child{padding-top:64px}
   color:var(--ink-muted);border:1px solid var(--border);padding:0 7px;border-radius:2px;
 }
 
+/* Cruisetypes als rij lijntekeningen op één waterlijn, oplopend in grootte.
+   Elk schip is een tab; het gekozen schip kleurt goud. */
+.ship-row{display:grid;grid-template-columns:60fr 66fr 70fr 80fr 96fr 124fr;grid-template-rows:auto auto auto;margin-top:48px;border-bottom:1px solid var(--border)}
+.ship{
+  grid-row:1 / 4;min-width:0;display:grid;grid-template-rows:subgrid;align-content:end;
+  background:none;border:0;padding:0 10px 0;cursor:pointer;color:var(--ink-muted);font:inherit;text-align:center;
+}
+.ship__art{display:flex;align-self:end;align-items:flex-end;justify-content:center;padding-bottom:6px;border-bottom:1px solid rgba(201,162,78,.35);margin:0 -10px}
+.ship__art svg{width:100%;height:auto;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.55;transition:opacity .35s ease, color .35s ease, transform .5s cubic-bezier(.22,1,.36,1)}
+.ship__art svg *{vector-effect:non-scaling-stroke}
+.ship__art .ship__soft{opacity:.6}
+.ship__name{display:block;align-self:start;margin-top:16px;font-size:1rem;line-height:1.25;color:var(--ink-muted);transition:color .3s ease}
+.ship__count{display:block;align-self:start;margin:4px 0 18px;font-size:.85rem;color:var(--ink-muted);opacity:.8;font-variant-numeric:tabular-nums}
+.ship:hover .ship__art svg{opacity:.9}
+.ship:hover .ship__name{color:var(--ink)}
+.ship[aria-selected="true"]{color:var(--accent)}
+.ship[aria-selected="true"] .ship__art svg{opacity:1;transform:translateY(-4px)}
+.ship[aria-selected="true"] .ship__name{color:var(--ink)}
+.ship[aria-selected="true"] .ship__count{color:var(--accent-tint);opacity:1}
+.ship:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.ship-row__note{margin:12px 0 0;font-size:.82rem;color:var(--ink-muted)}
+@media (prefers-reduced-motion: reduce){ .ship__art svg{transition:none} }
+/* gsm: een strook die je zijwaarts schuift, schepen blijven groot genoeg */
+@media (max-width:760px){
+  .ship-row{overflow-x:auto;scroll-snap-type:x proximity;margin-left:-28px;margin-right:-28px;padding:0 28px;scrollbar-width:none}
+  .ship-row::-webkit-scrollbar{display:none}
+  .ship-row{grid-template-columns:96px 104px 112px 128px 152px 196px}
+}
+
 /* Cruisetypes: de keuzelijst is zelf een grafiek van de scheepsgrootte */
 .ctype-chart{margin-top:44px}
 .ctype-chart__axis,

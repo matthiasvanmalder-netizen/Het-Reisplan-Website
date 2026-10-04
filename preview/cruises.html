@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://hetreisplan.be/cruises">
 <meta property="og:image" content="https://hetreisplan.be/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/style.css?v=63">
+<link rel="stylesheet" href="assets/css/style.css?v=65">
 </head>
 <body>
 
@@ -93,44 +93,39 @@
       <h2 style="margin-top:12px">Welke cruise past bij jou?</h2>
       <p class="lead" style="margin-top:14px;max-width:680px">Van een zeilschip met 32 gasten tot een groot cruiseschip met 6.000: de grootte van het schip bepaalt het meest. Ze beslist over de sfeer aan boord, de faciliteiten en de havens waar je kan aanmeren. Klik op een type voor uitleg en de rederijen waarmee we werken.</p>
 
-      <div class="ctype-chart" role="tablist" aria-label="Soorten cruises">
-        <div class="ctype-chart__axis" aria-hidden="true">
-          <span class="ctype-chart__axis-label">Gasten aan boord</span>
-          <span class="ctype-chart__ticks"><span>0</span><span>1.250</span><span>2.500</span><span>3.750</span><span>5.000</span><span>6.250</span></span>
-        </div>
-
-        <button type="button" class="ctype-row" role="tab" id="ctype-tab-zeil" aria-controls="ctype-zeil" aria-selected="true">
-          <span class="ctype-row__name">Zeilschip</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:0.5%;--width:3.1%"></span></span>
-          <span class="ctype-row__range">32&ndash;227</span>
+      <div class="ship-row" role="tablist" aria-label="Soorten cruises">
+        <button type="button" class="ship" role="tab" id="ctype-tab-zeil" aria-controls="ctype-zeil" aria-selected="true" style="--size:60">
+          <span class="ship__art"><svg viewBox="0 0 172 120" aria-hidden="true"><path d="M10 100 H150 L139 112 H22 Z"/><path d="M150 100 L168 88"/><path d="M42 100 V22 M72 100 V12 M102 100 V22 M128 100 V36"/><path class="ship__soft" d="M31 28 H53 L51 44 H33 Z M29 50 H55 L53 68 H31 Z M27 74 H57 L55 92 H29 Z M60 18 H84 L82 36 H62 Z M58 42 H86 L84 62 H60 Z M56 68 H88 L86 90 H58 Z M91 28 H113 L111 44 H93 Z M89 50 H115 L113 68 H91 Z M87 74 H117 L115 92 H89 Z M128 40 L146 92 H128"/></svg></span>
+          <span class="ship__name">Zeilschip</span>
+          <span class="ship__count">32&ndash;227 gasten</span>
         </button>
-        <button type="button" class="ctype-row" role="tab" id="ctype-tab-rivier" aria-controls="ctype-rivier" aria-selected="false" tabindex="-1">
-          <span class="ctype-row__name">Riviercruise</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:2.1%;--width:1.1%"></span></span>
-          <span class="ctype-row__range">&plusmn; 130&ndash;200</span>
+        <button type="button" class="ship" role="tab" id="ctype-tab-rivier" aria-controls="ctype-rivier" aria-selected="false" tabindex="-1" style="--size:66">
+          <span class="ship__art"><svg viewBox="0 0 200 80" aria-hidden="true"><path d="M6 60 H194 L187 70 H13 Z"/><path d="M18 60 V44 H182 V60"/><path class="ship__soft" d="M24 52 H176" stroke-dasharray="6 4"/><path d="M34 44 V38 H166 V44"/><path d="M148 38 V29 H166 V38"/></svg></span>
+          <span class="ship__name">Riviercruise</span>
+          <span class="ship__count">&plusmn; 130&ndash;200 gasten</span>
         </button>
-        <button type="button" class="ctype-row" role="tab" id="ctype-tab-expeditie" aria-controls="ctype-expeditie" aria-selected="false" tabindex="-1">
-          <span class="ctype-row__name">Expeditie</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:1.6%;--width:2.7%"></span></span>
-          <span class="ctype-row__range">&plusmn; 100&ndash;270</span>
+        <button type="button" class="ship" role="tab" id="ctype-tab-expeditie" aria-controls="ctype-expeditie" aria-selected="false" tabindex="-1" style="--size:70">
+          <span class="ship__art"><svg viewBox="0 0 190 104" aria-hidden="true"><path d="M6 80 H158 L184 60 L174 92 H16 Z"/><path d="M22 80 V60 H126 V80"/><path class="ship__soft" d="M28 70 H120" stroke-dasharray="5 4"/><path d="M96 60 V46 H134 L142 60"/><path d="M114 46 V28 M106 34 H122"/><path class="ship__soft" d="M36 60 V54 H86 V60"/></svg></span>
+          <span class="ship__name">Expeditie</span>
+          <span class="ship__count">&plusmn; 100&ndash;270 gasten</span>
         </button>
-        <button type="button" class="ctype-row" role="tab" id="ctype-tab-jacht" aria-controls="ctype-jacht" aria-selected="false" tabindex="-1">
-          <span class="ctype-row__name">Jachtcruise</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:4.8%;--width:2.5%"></span></span>
-          <span class="ctype-row__range">298&ndash;452</span>
+        <button type="button" class="ship" role="tab" id="ctype-tab-jacht" aria-controls="ctype-jacht" aria-selected="false" tabindex="-1" style="--size:80">
+          <span class="ship__art"><svg viewBox="0 0 204 100" aria-hidden="true"><path d="M4 80 H176 L200 68 L190 90 H14 Z"/><path d="M18 80 V66 H152 L172 80"/><path d="M38 66 V54 H132 L148 66"/><path d="M62 54 V44 H112 L122 54"/><path d="M90 44 V30"/><path class="ship__soft" d="M26 73 H156 M46 60 H136" stroke-dasharray="7 4"/></svg></span>
+          <span class="ship__name">Jachtcruise</span>
+          <span class="ship__count">298&ndash;452 gasten</span>
         </button>
-        <button type="button" class="ctype-row" role="tab" id="ctype-tab-luxe" aria-controls="ctype-luxe" aria-selected="false" tabindex="-1">
-          <span class="ctype-row__name">Luxe oceaancruise</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:7.2%;--width:12%"></span></span>
-          <span class="ctype-row__range">&plusmn; 450&ndash;1.200</span>
+        <button type="button" class="ship" role="tab" id="ctype-tab-luxe" aria-controls="ctype-luxe" aria-selected="false" tabindex="-1" style="--size:96">
+          <span class="ship__art"><svg viewBox="0 0 232 112" aria-hidden="true"><path d="M6 88 H210 L228 74 L218 100 H18 Z"/><path d="M18 88 V62 H198 V88"/><path d="M30 62 V50 H182 V62"/><path d="M58 50 V40 H152 V50"/><path d="M114 40 L119 20 H140 L137 40"/><path class="ship__soft" d="M24 72 H192 M24 80 H192 M36 56 H176" stroke-dasharray="5 3"/></svg></span>
+          <span class="ship__name">Luxe oceaancruise</span>
+          <span class="ship__count">&plusmn; 450&ndash;1.200 gasten</span>
         </button>
-        <button type="button" class="ctype-row" role="tab" id="ctype-tab-groot" aria-controls="ctype-groot" aria-selected="false" tabindex="-1">
-          <span class="ctype-row__name">Groot cruiseschip</span>
-          <span class="ctype-row__track"><span class="ctype-row__bar" style="--from:32%;--width:64%"></span></span>
-          <span class="ctype-row__range">&plusmn; 2.000&ndash;6.000</span>
+        <button type="button" class="ship" role="tab" id="ctype-tab-groot" aria-controls="ctype-groot" aria-selected="false" tabindex="-1" style="--size:124">
+          <span class="ship__art"><svg viewBox="0 0 272 142" aria-hidden="true"><path d="M6 114 H248 L266 98 L256 128 H18 Z"/><path d="M16 114 V48 H234 V114"/><path d="M40 48 V36 H212 V48"/><path d="M168 36 L172 18 H194 L191 36"/><path d="M58 36 C48 22 78 16 76 36"/><path class="ship__soft" d="M22 100 H228 M22 88 H228 M22 76 H228 M22 64 H228 M22 56 H228" stroke-dasharray="6 3"/></svg></span>
+          <span class="ship__name">Groot cruiseschip</span>
+          <span class="ship__count">&plusmn; 2.000&ndash;6.000 gasten</span>
         </button>
-        <p class="ctype-chart__note">Indicatief aantal gasten per schip, bij de rederijen waarmee we samenwerken.</p>
       </div>
+      <p class="ship-row__note">Illustratief, niet op schaal. Indicatief aantal gasten per schip, bij de rederijen waarmee we samenwerken.</p>
 
       <div class="ctype-panel" role="tabpanel" id="ctype-zeil" aria-labelledby="ctype-tab-zeil">
         <div class="ctype-panel__img"><img loading="lazy" decoding="async" src="assets/img/cruisetypes/zeilschip.jpg" alt="Vijfmaster onder zeil op een kalme zee"></div>
