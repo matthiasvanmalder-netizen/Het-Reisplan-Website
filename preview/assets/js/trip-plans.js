@@ -80,15 +80,20 @@ document.addEventListener('DOMContentLoaded', function () {
         summaryBtn.setAttribute('aria-expanded', 'false');
         summaryBtn.addEventListener('click', function () {
           animate(function () {
-            if (card.classList.contains('is-expanded')) collapseAll();
-            else expand(card);
+            if (card.classList.contains('is-expanded')) { collapseAll(); return; }
+            expand(card);
+            // de knop waarop je klikte verdwijnt: focus naar het geopende reisplan
+            if (closeBtn) closeBtn.focus({ preventScroll: true });
           });
         });
       }
       if (closeBtn) {
         closeBtn.addEventListener('click', function (e) {
           e.stopPropagation();
-          animate(collapseAll);
+          animate(function () {
+            collapseAll();
+            if (summaryBtn) summaryBtn.focus({ preventScroll: true });
+          });
         });
       }
     });
