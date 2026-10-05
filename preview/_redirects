@@ -1,0 +1,8 @@
+# Doorverwijzingen van de oude website (DeZign Crew) naar de nieuwe pagina's.
+# 301 = permanent verhuisd, zodat Google de opgebouwde positie overdraagt.
+# /cruises, /contact, /juridisch, /cookie-policy en /privacy-verklaring
+# bestaan op hetzelfde adres en hebben geen doorverwijzing nodig.
+/links  /  301
+/cruises-golfvakanties-reizen-op-maat-golfreizen-het-reisplan  /cruises  301
+/Areas/Website/UploadData/61/TinyMce/PPT%20rederijen%20grafiek_RP.pdf  /cruises  301
+/Areas/*  /  301
