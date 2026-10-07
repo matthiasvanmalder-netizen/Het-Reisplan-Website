@@ -929,3 +929,69 @@ main > section.wrap:first-child{padding-top:64px}
 .legal .btn{text-decoration:none}
 .legal .btn--accent{color:var(--navy)}
 .legal .btn--ghost{color:var(--ink)}
+
+/* Voorbeeldreizen: kaarten (overzicht + homepage), filters en het reisplan in een venster */
+.trip-tile{
+  display:flex;flex-direction:column;width:100%;padding:0;border:0;margin:0;text-align:left;cursor:pointer;
+  background:var(--surface);color:var(--ink);font:inherit;border-radius:var(--radius-card);overflow:hidden;
+  transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s cubic-bezier(.22,1,.36,1);
+}
+.trip-tile[hidden]{display:none}
+.trip-tile:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(0,0,0,.6)}
+.trip-tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.trip-tile__img{display:block;aspect-ratio:4/3;overflow:hidden}
+.trip-tile__img img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.trip-tile:hover .trip-tile__img img{transform:scale(1.05)}
+.trip-tile__body{display:flex;flex-direction:column;gap:6px;padding:20px 22px 24px;flex:1}
+.trip-tile__cat{font-size:.88rem;color:var(--accent-tint)}
+.trip-tile__title{font-size:1.32rem;line-height:1.2;color:var(--ink)}
+.trip-tile__desc{font-size:.92rem;line-height:1.5;color:var(--ink-muted)}
+@media (prefers-reduced-motion: reduce){ .trip-tile,.trip-tile__img img{transition:none} }
+
+/* homepage: vier reizen als blikvanger */
+.trip-featured{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-bottom:36px}
+@media (max-width:1080px){ .trip-featured{grid-template-columns:repeat(2,minmax(0,1fr))} }
+/* gsm: een strook die je zijwaarts schuift */
+@media (max-width:620px){
+  .trip-featured{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:80%;overflow-x:auto;scroll-snap-type:x mandatory;
+    margin:0 -28px 32px;padding:0 28px 6px;scroll-padding:0 28px;scrollbar-width:none}
+  .trip-featured::-webkit-scrollbar{display:none}
+  .trip-featured .trip-tile{scroll-snap-align:start}
+}
+
+/* pagina Voorbeeldreizen */
+.trips-intro{padding:72px 0 8px}
+.trips-intro h1{font-size:clamp(2.4rem,5vw,3.4rem);letter-spacing:-.02em;margin:12px 0 0;max-width:760px}
+.trips-intro .lead{max-width:640px;margin:18px 0 0;font-size:1.1rem}
+.trip-gallery{padding:40px 0 96px}
+.trip-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.trip-filter{
+  font:inherit;font-size:.95rem;color:var(--ink-muted);background:transparent;cursor:pointer;
+  border:1px solid var(--border);border-radius:6px;padding:9px 16px;transition:color .2s ease, background .2s ease, border-color .2s ease;
+}
+.trip-filter:hover{color:var(--ink);border-color:var(--ink-muted)}
+.trip-filter[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--navy)}
+.trip-filter:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.trip-gallery__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:1000px){ .trip-gallery__grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:620px){
+  .trips-intro{padding-top:40px}
+  .trip-gallery{padding-top:28px}
+  .trip-gallery__grid{grid-template-columns:1fr}
+}
+
+/* het reisplan in een venster */
+.trip-dialog{
+  width:min(880px,calc(100% - 32px));max-height:calc(100dvh - 48px);padding:0;border:0;border-radius:var(--radius-card);
+  background:var(--surface);color:var(--ink);overflow:auto;box-shadow:var(--shadow);
+}
+.trip-dialog::backdrop{background:rgba(8,14,30,.72)}
+.trip-dialog .trip-card__detail-body{padding:34px 44px 40px;display:flex;flex-direction:column}
+.trip-dialog h2{font-size:1.9rem;line-height:1.1;margin:8px 0 0;letter-spacing:-.01em}
+.trip-dialog .btn--accent{align-self:flex-start}
+html:has(.trip-dialog[open]){overflow:hidden}
+@media (max-width:620px){
+  .trip-dialog{width:100%;max-height:100dvh;height:100dvh;border-radius:0;margin:0;max-width:none}
+  .trip-dialog .trip-card__detail-body{padding:24px 20px 32px}
+  .trip-dialog h2{font-size:1.5rem}
+}
