@@ -339,15 +339,22 @@ main > section.wrap:first-child{padding-top:64px}
 
 /* Pillars */
 .process h2{font-size:clamp(2.2rem,4.2vw,3.3rem);max-width:720px;margin:0;letter-spacing:-.02em}
-/* doorlopende lijn over de kolommen heen: goud tijdens de voorbereiding, cyaan bij de reis zelf */
+/* stappen 1-4, verbonden met een gestippelde reisroute: een boog van cijfer naar cijfer.
+   De laatste stap (de reis zelf) kleurt cyaan. */
 .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 0;margin-top:56px}
-.pillar{padding:30px 32px 0 0;border-top:2px solid var(--accent)}
-.pillar:last-child{border-top-color:var(--accent-3)}
+.pillar{position:relative;padding:0 32px 0 0}
 .pillar__num{
-  font-family:'Marcellus',serif;font-weight:600;font-variant-numeric:tabular-nums;font-weight:400;font-size:.85rem;color:var(--accent);
-  display:block;margin-bottom:14px;
+  display:block;font-size:2.5rem;line-height:1;color:var(--accent);
+  font-variant-numeric:lining-nums;margin-bottom:20px;
 }
 .pillar:last-child .pillar__num{color:var(--accent-3)}
+.pillar__route{
+  position:absolute;top:-6px;left:46px;width:calc(100% - 56px);height:28px;overflow:visible;pointer-events:none;
+}
+.pillar__route path{
+  fill:none;stroke:var(--accent);stroke-width:2.8;stroke-linecap:round;stroke-dasharray:0 9;
+  vector-effect:non-scaling-stroke;opacity:.9;
+}
 .pillar h3{font-size:1.3rem;color:var(--ink);margin-bottom:12px}
 .pillar p{font-size:.98rem;margin:0}
 
@@ -828,6 +835,8 @@ main > section.wrap:first-child{padding-top:64px}
 
 @media (max-width:1080px){
   .pillars{grid-template-columns:repeat(2,1fr)}
+  /* twee per rij: de route loopt enkel van 1 naar 2 en van 3 naar 4 */
+  .pillar:nth-child(2) .pillar__route{display:none}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
@@ -850,6 +859,15 @@ main > section.wrap:first-child{padding-top:64px}
 }
 @media (max-width:620px){
   .pillars{grid-template-columns:1fr}
+  /* onder elkaar: cijfers links, de stippellijn loopt verticaal van cijfer naar cijfer */
+  .pillar{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:18px;padding:0}
+  .pillar__num{grid-row:1 / span 2;text-align:center;margin:0}
+  .pillar h3,.pillar p{grid-column:2}
+  .pillar__route{display:none}
+  .pillar:not(:last-child)::after{
+    content:"";position:absolute;left:18.5px;top:52px;bottom:-32px;width:3px;
+    background:radial-gradient(circle,rgba(201,162,78,.9) 1.4px,transparent 1.8px) center top/3px 9px repeat-y;
+  }
   .footer-grid{grid-template-columns:1fr;gap:30px}
   /* ruimere aanraakvlakken voor de footerlinks op gsm */
   .site-footer ul{gap:0}
