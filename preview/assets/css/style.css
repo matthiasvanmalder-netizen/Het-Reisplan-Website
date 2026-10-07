@@ -815,7 +815,7 @@ main > section.wrap:first-child{padding-top:64px}
 .modal-card__img{max-height:64px;max-width:100%;width:auto;object-fit:contain;display:block}
 .modal-card h3{color:var(--ink);font-size:1.35rem}
 .modal-card p{margin-bottom:26px}
-.modal-card__fact{margin:-6px 0 22px;padding-left:14px;border-left:2px solid var(--accent)}
+.modal-card__fact{margin:-6px 0 22px}
 .modal-card__fact-label{
   display:block;font-family:'Marcellus',serif;font-weight:600;font-variant-numeric:tabular-nums;font-weight:400;font-size:.82rem;
   color:var(--accent);margin-bottom:4px;
