@@ -175,7 +175,9 @@ section{padding:88px 0}
   .hero-full{height:80vh;min-height:520px}
   .hero-full__content{justify-content:flex-end;padding-bottom:52px}
   .hero-full h1{font-size:2.3rem}
-  .hero-full::after{background:linear-gradient(180deg, rgba(15,23,43,.15) 0%, rgba(15,23,43,.45) 45%, rgba(15,23,43,.92) 100%)}
+  .hero-full::after{background:linear-gradient(180deg, rgba(15,23,43,.55) 0%, rgba(15,23,43,.6) 40%, rgba(15,23,43,.92) 100%)}
+  /* op gsm staat de tekst over de lichte lucht: bovenregel lichter en met schaduw */
+  .hero-full .eyebrow{color:var(--accent-tint);text-shadow:0 1px 10px rgba(0,0,0,.55)}
 }
 @media (max-width:600px){
   .hero-full{height:auto;min-height:0;max-height:none;padding:0}
