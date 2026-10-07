@@ -349,11 +349,11 @@ main > section.wrap:first-child{padding-top:64px}
 }
 .pillar:last-child .pillar__num{color:var(--accent-3)}
 .pillar__route{
-  position:absolute;top:-6px;left:46px;width:calc(100% - 56px);height:28px;overflow:visible;pointer-events:none;
+  position:absolute;top:-16px;left:46px;width:calc(100% - 56px);height:auto;overflow:visible;pointer-events:none;
 }
 .pillar__route path{
-  fill:none;stroke:var(--accent);stroke-width:2.3;stroke-linecap:round;stroke-dasharray:0 7;
-  vector-effect:non-scaling-stroke;opacity:.85;
+  fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-dasharray:6 6;
+  opacity:.85;
 }
 .pillar h3{font-size:1.3rem;color:var(--ink);margin-bottom:12px}
 .pillar p{font-size:.98rem;margin:0}
@@ -835,8 +835,8 @@ main > section.wrap:first-child{padding-top:64px}
 
 @media (max-width:1080px){
   .pillars{grid-template-columns:repeat(2,1fr)}
-  /* twee per rij: de route loopt enkel van 1 naar 2 en van 3 naar 4 */
-  .pillar:nth-child(2) .pillar__route{display:none}
+  /* twee per rij: de lussen passen niet, enkel de cijfers */
+  .pillar__route{display:none}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
@@ -865,8 +865,8 @@ main > section.wrap:first-child{padding-top:64px}
   .pillar h3,.pillar p{grid-column:2}
   .pillar__route{display:none}
   .pillar:not(:last-child)::after{
-    content:"";position:absolute;left:18.5px;top:52px;bottom:-32px;width:3px;
-    background:radial-gradient(circle,rgba(201,162,78,.9) 1.4px,transparent 1.8px) center top/3px 9px repeat-y;
+    content:"";position:absolute;left:19px;top:52px;bottom:-32px;width:2px;
+    background:linear-gradient(to bottom,rgba(201,162,78,.85) 50%,transparent 0) center top/2px 12px repeat-y;
   }
   .footer-grid{grid-template-columns:1fr;gap:30px}
   /* ruimere aanraakvlakken voor de footerlinks op gsm */
