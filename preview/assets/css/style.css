@@ -572,7 +572,7 @@ main > section.wrap:first-child{padding-top:64px}
 .when-panel__body h3{font-size:1.6rem;margin:0 0 10px;letter-spacing:-.01em}
 .when-panel__body > p:first-of-type{font-size:.96rem}
 .when-panel .ctype-facts{margin:20px 0 20px;padding:18px 0;gap:14px 22px}
-.when-tip{margin:0 0 24px;padding-left:14px;border-left:2px solid var(--accent-3);font-size:.9rem}
+.when-tip{margin:0 0 24px;font-size:.9rem}
 .when-tip strong{color:var(--ink)}
 
 /* Intercontinentaal: reisvormen op een schaal van "alles geregeld" naar "jouw eigen ritme" */
