@@ -382,7 +382,7 @@ main > section.wrap:first-child{padding-top:64px}
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;
 }
 .footer-legal{display:flex;flex-wrap:wrap;gap:8px 20px}
-.site-footer .footer-legal a{font-size:.8rem;text-decoration:underline;text-underline-offset:3px}
+.site-footer .footer-legal a{font-size:.8rem}
 @media (max-width:600px){
   .footer-legal{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;width:100%}
 }
