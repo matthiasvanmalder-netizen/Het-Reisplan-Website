@@ -111,21 +111,6 @@ window.TRIPS = [
     cta: 'Vraag een reis naar Portugal aan', ctaHref: 'contact.html?interesse=Fly%20%26%20drive%20Portugal'
   },
   {
-    id: 'peru', category: 'rondreizen', placeholder: true,
-    img: 'assets/img/regios/zuid-amerika.jpg', imgAlt: 'Machu Picchu in Peru',
-    kicker: 'Rondreis', title: 'Rondreis Peru', desc: '11 dagen, van Lima tot Cusco',
-    from: 'Brussel', to: 'Lima',
-    how: 'Vlucht via Madrid (&plusmn; 14&ndash;15u reistijd)',
-    days: [
-      ['Dag 1&ndash;3', 'Lima', 'Aankomst in de Peruaanse hoofdstad: koloniale binnenstad, kliffen aan de Grote Oceaan en de beste keuken van Zuid-Amerika.'],
-      ['Dag 4&ndash;5', 'Arequipa', 'De &lsquo;witte stad&rsquo;, gebouwd uit vulkanisch gesteente, aan de voet van drie vulkanen.'],
-      ['Dag 6&ndash;7', 'Colca Canyon', 'E&eacute;n van de diepste canyons ter wereld, met kans op vliegende condors.'],
-      ['Dag 8&ndash;11', 'Cusco, Heilige Vallei &amp; Machu Picchu', 'Het hoogtepunt van de reis: de legendarische Inca-stad hoog in de Andes.']
-    ],
-    note: 'Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.',
-    cta: 'Vraag deze reis aan', ctaHref: 'contact.html?interesse=Rondreis%20Peru'
-  },
-  {
     id: 'oeganda', category: 'safari', placeholder: false,
     img: 'assets/img/regios/rwanda-oeganda.jpg', imgAlt: 'Berggorilla in het regenwoud van Oeganda',
     kicker: 'Priv&eacute;-safari met gids', title: 'Oeganda, van de Nijl tot de berggorilla&rsquo;s', desc: '13 dagen, van Entebbe tot Lake Mburo',
@@ -162,21 +147,6 @@ window.TRIPS = [
     cta: 'Vraag deze reis aan', ctaHref: 'contact.html?interesse=Safari%20Zuid-Afrika'
   },
   {
-    id: 'tanzania', category: 'safari', placeholder: true,
-    img: 'assets/img/regios/tanzania.jpg', imgAlt: 'Tanzania',
-    kicker: 'Safari', title: 'Safari op maat door Tanzania', desc: '10 dagen, van Tarangire tot de Serengeti',
-    from: 'Brussel', to: 'Kilimanjaro',
-    how: 'Vlucht met 1 tussenstop (&plusmn; 12&ndash;13u reistijd)',
-    days: [
-      ['Dag 1&ndash;3', 'Tarangire &amp; Lake Manyara', 'Aankomst en eerste game drives tussen olifantenkuddes en baobabs.'],
-      ['Dag 4&ndash;6', 'Serengeti', 'Het hart van de grote trek: eindeloze vlaktes vol leeuwen, giraffen en zebra&rsquo;s.'],
-      ['Dag 7&ndash;8', 'Ngorongoro krater', 'Afdalen in een van de dichtste concentraties wildlife ter wereld.'],
-      ['Dag 9&ndash;10', 'Zanzibar (optioneel)', 'Afsluiten met een paar dagen strand na de safari.']
-    ],
-    note: 'Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.',
-    cta: 'Vraag deze reis aan', ctaHref: 'contact.html?interesse=Safari%20Tanzania'
-  },
-  {
     id: 'new-york', category: 'strand-stedentrips', placeholder: false,
     img: 'assets/img/reizen/new-york.jpg', imgAlt: 'Gietijzeren gevels aan Prince Street in SoHo, New York',
     kicker: 'Stedenreis', title: 'New York in drie wijken', desc: '9 nachten, Manhattan en Brooklyn',
@@ -189,36 +159,6 @@ window.TRIPS = [
     ],
     note: 'Een stedenreis die we op maat samenstelden voor de lente: drie hotels in drie buurten, zodat je New York telkens vanuit een andere wijk beleeft. Goed om te weten: voor de Verenigde Staten heb je een ESTA nodig, aan te vragen minstens 72 uur voor vertrek.',
     cta: 'Vraag een reis naar New York aan', ctaHref: 'contact.html?interesse=Stedenreis%20New%20York'
-  },
-  {
-    id: 'malediven', category: 'strand-stedentrips', placeholder: true,
-    img: 'assets/img/regios/malediven.jpg', imgAlt: 'Malediven',
-    kicker: 'Strandvakantie', title: 'Strandvakantie Malediven', desc: '9 dagen op een resorteiland',
-    from: 'Brussel', to: 'Mal&eacute;',
-    how: 'Vlucht via Doha of Dubai (&plusmn; 11&ndash;12u reistijd)',
-    days: [
-      ['Dag 1', 'Aankomst Mal&eacute;', 'Overstap per speedboot of watervliegtuig naar het resorteiland.'],
-      ['Dag 2&ndash;7', 'Overwater villa', 'Dagen vullen met snorkelen boven het huisrif, spa en niets doen.'],
-      ['Dag 8', 'Excursie', 'Optionele dolfijnentocht of duik bij een nabijgelegen atol.'],
-      ['Dag 9', 'Terugreis', 'Via Mal&eacute; terug naar Brussel.']
-    ],
-    note: 'Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.',
-    cta: 'Vraag deze reis aan', ctaHref: 'contact.html?interesse=Strandvakantie%20Malediven'
-  },
-  {
-    id: 'zanzibar', category: 'strand-stedentrips', placeholder: true,
-    img: 'assets/img/regios/zanzibar.jpg', imgAlt: 'Zanzibar',
-    kicker: 'Strandvakantie', title: 'Strandvakantie Zanzibar', desc: '9 dagen, Stone Town en de noordkust',
-    from: 'Brussel', to: 'Zanzibar',
-    how: 'Vlucht via Addis Abeba of Nairobi (&plusmn; 12&ndash;13u reistijd)',
-    days: [
-      ['Dag 1&ndash;2', 'Stone Town', 'UNESCO-werelderfgoed: smalle straatjes, kruidenmarkten en Swahili-cultuur.'],
-      ['Dag 3&ndash;7', 'Noordkust (Nungwi/Kendwa)', 'Witte stranden en turkoois water, ideaal om te ontspannen.'],
-      ['Dag 8', 'Excursie', 'Optionele snorkeltrip naar het Mnemba-atol of een kruidentocht.'],
-      ['Dag 9', 'Terugreis', 'Via de luchthaven van Zanzibar terug naar Brussel.']
-    ],
-    note: 'Fictief voorbeeld ter inspiratie. We stellen dit reisschema samen op maat van jouw wensen.',
-    cta: 'Vraag deze reis aan', ctaHref: 'contact.html?interesse=Strandvakantie%20Zanzibar'
   }
 ];
 

@@ -1017,3 +1017,16 @@ html:has(.trip-dialog[open]){overflow:hidden}
   .trip-dialog .trip-card__detail-body{padding:24px 20px 32px}
   .trip-dialog h2{font-size:1.5rem}
 }
+
+/* één enkele voorbeeldreis op een reispagina: liggende kaart, foto links */
+.trip-card:only-child:not(.is-expanded) .trip-card__summary{flex-direction:row}
+.trip-card:only-child:not(.is-expanded) .trip-card__img{flex:0 0 58%;aspect-ratio:auto;min-height:340px}
+.trip-card:only-child:not(.is-expanded) .trip-card__meta{padding:40px 44px;justify-content:center;gap:10px}
+.trip-card:only-child:not(.is-expanded) .trip-card__title{font-size:1.8rem}
+.trip-card:only-child:not(.is-expanded) .trip-card__hint{margin-top:14px}
+@media (max-width:860px){
+  .trip-card:only-child:not(.is-expanded) .trip-card__summary{flex-direction:column}
+  .trip-card:only-child:not(.is-expanded) .trip-card__img{flex:none;aspect-ratio:4/3;min-height:0}
+  .trip-card:only-child:not(.is-expanded) .trip-card__meta{padding:22px 24px 24px}
+  .trip-card:only-child:not(.is-expanded) .trip-card__title{font-size:1.3rem}
+}
