@@ -429,7 +429,7 @@ main > section.wrap:first-child{padding-top:64px}
 .dest-body p{font-size:1.04rem}
 .dest-body p:first-of-type{font-size:1.14rem;color:var(--ink)}
 
-.dest-aside{border-top:2px solid var(--accent);padding-top:22px}
+.dest-aside{padding-top:0}
 .dest-body .dest-aside .dest-aside__label{margin:0 0 10px;font-family:'Marcellus',serif;font-weight:600;font-variant-numeric:tabular-nums;font-size:.82rem;color:var(--accent)}
 .dest-aside h2,.dest-aside h3{font-size:1.3rem;margin:0 0 12px;letter-spacing:-.01em}
 .dest-body .dest-aside p:not([class]){font-size:.98rem;color:var(--ink-muted);margin:0}
