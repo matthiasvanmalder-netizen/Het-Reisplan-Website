@@ -352,8 +352,8 @@ main > section.wrap:first-child{padding-top:64px}
   position:absolute;top:-6px;left:46px;width:calc(100% - 56px);height:28px;overflow:visible;pointer-events:none;
 }
 .pillar__route path{
-  fill:none;stroke:var(--accent);stroke-width:2.8;stroke-linecap:round;stroke-dasharray:0 9;
-  vector-effect:non-scaling-stroke;opacity:.9;
+  fill:none;stroke:var(--accent);stroke-width:2.3;stroke-linecap:round;stroke-dasharray:0 7;
+  vector-effect:non-scaling-stroke;opacity:.85;
 }
 .pillar h3{font-size:1.3rem;color:var(--ink);margin-bottom:12px}
 .pillar p{font-size:.98rem;margin:0}
