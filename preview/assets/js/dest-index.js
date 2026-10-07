@@ -17,7 +17,8 @@
   var lines = Array.prototype.slice.call(root.querySelectorAll('.dest-index__line'));
   function sizeLines() {
     list.style.removeProperty('--line-h');
-    var w = items[0].clientWidth;
+    // meten op de breedte van een actieve regel: het gouden streepje (36px + 18px marge) neemt dan plaats in
+    var w = items[0].clientWidth - 54;
     var h = 0;
     lines.forEach(function (el) {
       el.style.width = w + 'px';
