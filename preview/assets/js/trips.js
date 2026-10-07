@@ -71,7 +71,76 @@
   document.querySelectorAll('[data-trip-featured]').forEach(function (el) {
     el.innerHTML = el.getAttribute('data-trip-featured').split(',').map(byId).filter(function (t) { return t && !t.placeholder; })
       .map(function (t) { return tile(t, 'a', 'href="voorbeeldreizen.html#' + t.id + '"'); }).join('');
+    rail(el);
   });
+
+  /* Rij die je met de muis opzij sleept of met het scrollwiel doorloopt.
+     Op aanraakschermen gewoon vegen (de browser doet dat zelf). */
+  function rail(el) {
+    var section = el.closest('section');
+    var arrows = section ? section.querySelectorAll('.trip-featured__arrow') : [];
+    el.querySelectorAll('img').forEach(function (img) { img.draggable = false; });
+
+    function step() {
+      var card = el.querySelector('.trip-tile');
+      return card ? card.getBoundingClientRect().width + 20 : 300;
+    }
+    function update() {
+      var max = el.scrollWidth - el.clientWidth - 2;
+      el.classList.toggle('is-start', el.scrollLeft <= 2);
+      el.classList.toggle('is-end', el.scrollLeft >= max);
+      arrows.forEach(function (a) {
+        a.disabled = a.getAttribute('data-dir') === '-1' ? el.scrollLeft <= 2 : el.scrollLeft >= max;
+      });
+    }
+    arrows.forEach(function (a) {
+      a.addEventListener('click', function () {
+        el.scrollBy({ left: step() * Number(a.getAttribute('data-dir')), behavior: 'smooth' });
+      });
+    });
+    el.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+
+    // slepen met de muis
+    var down = false, moved = false, startX = 0, startLeft = 0;
+    el.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      down = true; moved = false; startX = e.clientX; startLeft = el.scrollLeft;
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!down) return;
+      var dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) > 6) { moved = true; el.classList.add('is-dragging'); }
+      if (moved) el.scrollLeft = startLeft - dx;
+    });
+    window.addEventListener('pointerup', function () {
+      if (!down) return;
+      down = false;
+      el.classList.remove('is-dragging');
+    });
+    // na het slepen geen klik doorlaten (anders opent er per ongeluk een reis)
+    el.addEventListener('click', function (e) {
+      if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+    }, true);
+
+    // scrollwiel: verticaal scrollen schuift de rij opzij, tot aan het einde
+    el.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      var max = el.scrollWidth - el.clientWidth;
+      if ((e.deltaY > 0 && el.scrollLeft >= max - 1) || (e.deltaY < 0 && el.scrollLeft <= 1)) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    }, { passive: false });
+
+    // pijltjestoetsen als de rij focus heeft
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        el.scrollBy({ left: step() * (e.key === 'ArrowRight' ? 1 : -1), behavior: 'smooth' });
+      }
+    });
+  }
 
   /* 3. Voorbeeldreizen: filters, kaarten en het reisplan in een venster */
   var gallery = document.querySelector('[data-trip-gallery]');

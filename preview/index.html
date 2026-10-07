@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=91">
+<link rel="stylesheet" href="assets/css/style.css?v=92">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -201,8 +201,14 @@
         <p>Echte reizen die we eerder voor onze klanten samenstelden. Laat je inspireren, en maak er de jouwe van.</p>
       </div>
       <!-- de reizen staan in assets/js/trips-data.js -->
-      <div class="trip-featured" data-trip-featured="douro,oeganda,antarctica,sri-lanka"></div>
-      <a class="btn btn--accent" href="voorbeeldreizen.html">Bekijk alle voorbeeldreizen</a>
+      <div class="trip-featured" data-trip-featured="douro,oeganda,antarctica,sri-lanka,adriatische-zee,zuid-afrika,portugal,new-york" tabindex="0" aria-label="Voorbeeldreizen, sleep of scroll opzij"></div>
+      <div class="trip-featured__foot">
+        <a class="btn btn--accent" href="voorbeeldreizen.html">Bekijk alle voorbeeldreizen</a>
+        <div class="trip-featured__nav">
+          <button type="button" class="trip-featured__arrow" data-dir="-1" aria-label="Vorige reizen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button type="button" class="trip-featured__arrow" data-dir="1" aria-label="Volgende reizen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -275,6 +281,6 @@
 <script src="assets/js/nav.js?v=2"></script>
 <script src="assets/js/dest-index.js?v=4"></script>
 <script src="assets/js/trips-data.js?v=1"></script>
-<script src="assets/js/trips.js?v=2"></script>
+<script src="assets/js/trips.js?v=3"></script>
 </body>
 </html>
