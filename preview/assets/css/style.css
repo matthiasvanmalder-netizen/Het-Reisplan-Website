@@ -120,7 +120,6 @@ section{padding:88px 0}
 .nav-dest__menu li a:hover{background:var(--cream);color:var(--ink)}
 /* waar je nu bent: de reispagina in het menu en "Reizen" zelf */
 .nav-dest__menu li a[aria-current="page"]{color:var(--accent-tint)}
-.nav-dest__menu li a[aria-current="page"]::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 .nav-dest:has(a[aria-current="page"]) summary{text-decoration:underline;text-decoration-color:var(--underline);text-underline-offset:8px;text-decoration-thickness:1.5px}
 .header-phone{
   display:flex;flex-direction:column;line-height:1.15;
