@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=72">
+<link rel="stylesheet" href="assets/css/style.css?v=75">
 <style>
   .contact-section{padding-top:48px}
   .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(40px,6vw,80px);align-items:start}
@@ -33,11 +33,12 @@
   .form-card{--cream:#27497c;--surface:#203f6f;background:var(--cream);border-radius:10px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px}
   .form-card__head h2{font-size:1.6rem;margin:0 0 8px;letter-spacing:-.01em}
   .form-card__head p{margin:0;font-size:.95rem}
-  .form-card__divider{height:1px;background:var(--border);margin:4px 0}
   .form-card__submit{align-self:flex-start}
   fieldset.field{border:0;padding:0;margin:0;min-width:0}
   .field legend{padding:0;margin-bottom:10px;font-size:.85rem;font-weight:600;color:var(--ink)}
   .field .field__section{font-family:'Marcellus',serif;font-size:1.1rem;font-weight:800;margin-bottom:16px}
+  /* tweede deel van het formulier: losgezet met ruimte in plaats van een lijn */
+  fieldset.field--contact{margin-top:20px}
   .field__hint{font-weight:400;color:var(--ink-muted);margin-left:6px}
   .field-row{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
   .field{display:flex;flex-direction:column;gap:8px}
@@ -71,7 +72,7 @@
   .form-note{font-size:.82rem;color:var(--ink-muted);margin:0}
   .contact-photo{margin-top:36px;border-radius:10px;overflow:hidden;max-width:440px}
   .contact-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
-  .info-list dd a[target]{display:inline-block;margin-top:4px;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+  .info-list dd a[target]{display:inline-block;margin-top:4px;text-decoration:underline;text-underline-offset:4px}
   @media (max-width:1000px){
     .field-row{grid-template-columns:1fr}
   }
@@ -242,9 +243,7 @@
             <textarea id="message" name="Wat vind je belangrijk" rows="4" placeholder="Rust, cultuur, lekker eten, avontuur, een speciale gelegenheid..."></textarea>
           </div>
 
-          <div class="form-card__divider" role="presentation"></div>
-
-          <fieldset class="field">
+          <fieldset class="field field--contact">
             <legend class="field__section">Hoe kunnen we je bereiken?</legend>
             <div class="field-row">
               <div class="field">
