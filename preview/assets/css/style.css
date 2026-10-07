@@ -187,17 +187,19 @@ section{padding:88px 0}
 }
 
 /* Trust strip */
-.trust-strip{padding:34px 0}
+.trust-strip{padding:34px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .trust-strip .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
 .trust-strip p{margin:0;font-size:.86rem;color:var(--ink-muted);font-weight:600}
-.trust-strip .trust-items{display:flex;flex-wrap:wrap;gap:12px 40px}
+.trust-strip .trust-items{display:flex;flex-wrap:wrap}
 .trust-item{
   font-size:.88rem;font-weight:600;color:var(--ink);
-  padding:0;
+  padding:0 24px;border-left:1px solid var(--border);
 }
+.trust-item:first-child{padding-left:0;border-left:none}
 @media (max-width:600px){
   .trust-strip .trust-items{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;width:100%}
-  .trust-strip .trust-items{gap:12px 20px}
+  .trust-item{padding:0 0 0 12px;border-left:2px solid var(--accent)}
+  .trust-item:first-child{padding-left:12px;border-left:2px solid var(--accent)}
 }
 
 /* Category cards */
