@@ -1,0 +1,13 @@
+# Beveiligingsheaders voor elke pagina (Cloudflare leest dit bestand automatisch).
+# - nosniff: de browser raadt het bestandstype niet zelf
+# - Referrer-Policy: andere sites zien enkel "hetreisplan.be", niet de volledige pagina
+# - X-Frame-Options + frame-ancestors: andere sites mogen deze pagina's niet in een kader tonen
+# - Permissions-Policy: geen toegang tot camera, microfoon of locatie
+# - Content-Security-Policy: enkel eigen bestanden, het Google-lettertype, het contactformulier
+#   (FormSubmit) en Cloudflare-bezoekersmeting zijn toegelaten
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; form-action 'self' https://formsubmit.co; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
