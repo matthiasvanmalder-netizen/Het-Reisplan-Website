@@ -136,17 +136,18 @@ section{padding:88px 0}
 .hero-full__bg{position:absolute;inset:0;background:var(--navy)}
 .hero-full__slide{
   position:absolute;inset:0;background-size:cover;background-position:center;
-  opacity:0;animation:heroFade 24s infinite;
+  opacity:0;animation:heroFade 30s infinite;
 }
 .hero-full__slide--1{animation-delay:0s}
 .hero-full__slide--2{animation-delay:6s}
 .hero-full__slide--3{animation-delay:12s}
 .hero-full__slide--4{animation-delay:18s}
+.hero-full__slide--5{animation-delay:24s}
 @keyframes heroFade{
   0%{opacity:0}
-  4%{opacity:1}
-  21%{opacity:1}
-  25%{opacity:0}
+  3.3%{opacity:1}
+  16.7%{opacity:1}
+  20%{opacity:0}
   100%{opacity:0}
 }
 .hero-full::after{
