@@ -11,3 +11,8 @@ papa/
 
 # correspondentie met DeZign Crew (privé, niet publiceren)
 *.pdf
+
+# losse foto's die in de hoofdmap worden aangeleverd (bewerkte versies staan in preview/assets/img)
+/*.jpg
+/*.jpeg
+/*.png
