@@ -25,7 +25,8 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* basisgrootte: 17px in plaats van de standaard 16px (Marcellus oogt klein); alles in rem schuift mee */
+html{scroll-behavior:smooth;font-size:106.25%}
 /* clip i.p.v. hidden: hidden maakt body een scroll-container en breekt de sticky header */
 html,body{overflow-x:clip;max-width:100%}
 body{
