@@ -898,6 +898,16 @@ main > section.wrap:first-child{padding-top:64px}
 .journal__item:nth-child(6){--tilt:1.2deg;margin-top:6px}
 .journal__item:nth-child(7){--tilt:-2.4deg;margin-top:22px}
 .journal__item:nth-child(8){--tilt:1.8deg;margin-top:10px}
+.journal__item:nth-child(9){--tilt:-1.4deg;margin-top:4px}
+.journal__item:nth-child(10){--tilt:2deg;margin-top:24px}
+.journal__item:nth-child(11){--tilt:-2.2deg;margin-top:8px}
+.journal__item:nth-child(12){--tilt:1.2deg;margin-top:20px}
+.journal__item:nth-child(13){--tilt:-1.8deg}
+.journal__item:nth-child(14){--tilt:1.6deg;margin-top:28px}
+.journal__item:nth-child(15){--tilt:-1deg;margin-top:10px}
+.journal__item:nth-child(16){--tilt:2.4deg;margin-top:4px}
+.journal__item:nth-child(17){--tilt:-2deg;margin-top:26px}
+.journal__item:nth-child(18){--tilt:1.4deg;margin-top:12px}
 .journal__print{
   margin:0;background:#eef1f6;padding:10px 10px 0;border-radius:3px;
   box-shadow:0 18px 36px -18px rgba(5,12,28,.75),0 2px 6px rgba(5,12,28,.35);
